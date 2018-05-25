@@ -65,6 +65,15 @@ kramdown:
 
 permalink: pretty
 
+sass:
+  # loading path from site root
+  # default to _sass
+  sass_dir: node_modules/bootstrap/scss
+
+  # style : nested (default), compact, compressed, expanded
+  #         :nested, :compact, :compressed, :expanded also works
+  # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: nested
 
 ############### RELATED ARTICLES ####################
 # if set to true print a list of related articles
