@@ -1,5 +1,14 @@
-    <footer>
-      {% include components/nav-footer.html %}
-    </footer>
+<footer>
+  <ul class="nav nav-pills justify-content-end">
+  {% include components/nav-segment.html navId='footer' %}
+  </ul>
+</footer>
 
-{% include foot.html %}
+<script src="{{ site.baseurl }}/node_modules/jquery/dist/jquery.slim.js"></script>
+<script src="{{ site.baseurl }}/node_modules/jquery.cookie/jquery.cookie.js"></script>
+<script src="{{ site.baseurl }}/node_modules/popper.js/dist/umd/popper.js"></script>
+<script src="{{ site.baseurl }}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="{{ site.baseurl }}/assets/js/script.js"></script>
+
+</body>
+</html>
