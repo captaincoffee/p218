@@ -1,0 +1,52 @@
+{% comment %} ++++ Knowledge base main menu ++++ {% endcomment %}
+
+{% comment %}Get Knowledge base collections{% endcomment %}
+{% assign kbCollections = site.collections | where: "isKB", "true" %}
+
+{% for collection in kbCollections %}
+
+  {% comment %}Interoperability trick{% endcomment %}
+  {% assign versionMajor = jekyll.version | split: "." | first %}
+  {% if versionMajor == "2" %}
+      {% assign currentCollection = collection[1] %}
+  {% else %}
+      {% assign currentCollection = collection %}
+  {% endif %}
+
+  {% comment %}Only print if we have article in the currentCollection{% endcomment %}
+  {% if currentCollection.docs.size > 0 %}
+      {% assign urlStart = currentCollection.label | append: "/" | prepend: "/" %}
+      {% assign categoryClass = "" %}
+
+      {% if page.url == urlStart %}
+        {% assign categoryClass = "current" %}
+      {% endif %}
+
+      {% assign isChildCategoryPage = page.url | split: urlStart | first %}
+      {% if isChildCategoryPage == "" %}
+        {% assign categoryClass = "current" %}
+      {% endif %}
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle {{ categoryClass }}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ currentCollection.name }}
+        </a>
+
+        {% comment %}Sort collections articles by category{% endcomment %}
+        {% assign byCategory = currentCollection.docs | group_by: 'category' %}
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% comment %}Prints categories in the same order as collection.categories{% endcomment %}
+          {% for cat in currentCollection.categories %}
+            {% assign currentCat = cat.slug %}
+            {% assign pageUrl = urlStart | append: currentCat | append: "/" %}
+            {% comment %}Look for docs whith a category{% endcomment %}
+            {% assign currentCatDocs = byCategory | where: "name", currentCat | first %}
+            {% if currentCatDocs != nil %}
+                {% assign categoryDatas = currentCollection.categories | where: 'slug', currentCat | first  %}
+                <a class="dropdown-item {% if page.url == pageUrl %}current{% endif %}" href="{{ site.baseurl }}/{{ currentCollection.label }}/{{ categoryDatas.slug }}/">{{ categoryDatas.name }}</a>
+            {% endif %}
+        {% endfor %}
+        </div>
+      </li>
+  {% endif %}
+{% endfor %}
