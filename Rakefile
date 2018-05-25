@@ -29,13 +29,15 @@ $configPath = File.join($rootPath, '_config.yml')
 
 $posts_dir      = "_posts"
 $pages_dir      = "_pages"
+# $collectionsNames = ['manage']
 $collectionsNames = ['manage', 'materials', 'methods']
 
-$articlesPerCollection = 1
+$numberOfPosts = 3
+$articlesPerCollection = 2
 
 $default_ext    = "md"
 
-$numberOfCategories = 3 # or less depending on collection's categories number
+$numberOfCategories = 30 # or less depending on collection's categories number
 
 ################  TAGS SETUP #####################
 $numberOfTags   = 50 # total number of tags - common to all collections
@@ -55,7 +57,7 @@ task :dummy do
         create_elements( 'collection', $articlesPerCollection, true, collectionName )
     end
 
-    # create_elements( 'post', 3, true )
+    create_elements( 'post', $numberOfPosts, true )
 
     Rake::Task[:catpages].invoke
 
