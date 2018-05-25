@@ -1,7 +1,22 @@
+{% if site.debug %}
+{% include utils/breakpoints.md %}
+{% endif %}
 <div class="container-fluid">
+{% include utils/noscript.md %}
+{% include utils/cookiewarning.md %}
 {% include header.html %}
 
     {{ content }}
 
 {% include footer.html %}
 </div>
+{% if site.debug %}
+<p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Debug</button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    {% include utils/breakpoints.md %}
+    {% include utils/site_vars.md %}
+  </div>
+</div>
+{% endif %}

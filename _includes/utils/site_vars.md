@@ -1,5 +1,5 @@
 {% comment %}
- ### see _config_dev.yml for variables lists
+ ### see _config.yml for variables lists
 {% endcomment %}
 
 <ul>

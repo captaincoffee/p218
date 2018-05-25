@@ -174,4 +174,69 @@ defaults:
   - { scope: { type: "materials" }, values: { layout: "collection" } }
   - { scope: { type: "manage" }, values: { layout: "collection" } }
 
+############### DEBUG ####################
+debug: true
 
+site_vars_NOT_to_print:
+# - config
+# - data
+# - time
+# - tags
+ - pages
+ - posts
+ - static_files
+ - documents
+# - categories
+ - collections
+ - html_pages
+# - source
+# - destination
+# - plugins_dir
+# - layouts_dir
+# - data_dir
+# - includes_dir
+# - safe
+# - include
+# - exclude
+# - keep_files
+# - encoding
+# - markdown_ext
+# - strict_front_matter
+# - show_drafts
+# - limit_posts
+# - future
+# - unpublished
+# - whitelist
+# - plugins
+# - markdown
+# - highlighter
+# - lsi
+# - excerpt_separator
+# - incremental
+# - detach
+# - port
+# - host
+# - baseurl
+# - show_dir_listing
+# - permalink
+# - paginate_path
+# - timezone
+# - quiet
+# - verbose
+# - defaults
+# - liquid
+# - rdiscount
+# - redcarpet
+# - kramdown
+# - title
+# - email
+# - description
+# - url
+# - twitter_username
+# - github_username
+# - sass
+# - show_debug
+# - site_vars_to_print
+# - serving
+# - watch
+ - related_posts
