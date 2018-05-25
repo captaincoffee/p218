@@ -1,7 +1,7 @@
 ---
 title:  Documentation
-layout: page
-permalink: /doc/
+menu: footer
+weight: 20
 ---
 
 {% comment %}
