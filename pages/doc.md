@@ -2,6 +2,7 @@
 title:  Documentation
 menu: footer
 weight: 20
+permalink: documentation/
 ---
 
 {% comment %}

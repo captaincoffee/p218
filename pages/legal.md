@@ -2,6 +2,7 @@
 title: Legal
 menu: footer
 weight: 20
+permalink: legal/
 ---
 
 ## License
