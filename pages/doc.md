@@ -128,23 +128,4 @@ Create `methods/fog-seals.md` page containing :
 {% endhighlight %}
 
 {% endcapture %}
-
-<style>
-  pre{
-    background: #E6E6E6;
-  }
-  code{
-    background: #E6E6E6;
-    border: none;
-  }
-</style>
-
-
-<div class="row">
-  <div class="medium-4 columns">
-{{ toc }}
-  </div>
-  <div class="medium-8 columns">
-{{ text }}
-  </div>
-</div>
+{% include rows/1-2-thirds.html left=toc right=text %}
