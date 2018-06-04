@@ -13,14 +13,24 @@
 # we cannot do _mycollection/my/path to get categories [my, path]
 
 Jekyll::Hooks.register :documents, :post_init do |document, payload|
+
+  conf    = document.site.config #["config"]
+  debugOn = conf["CollectionCatFromPath"]["debug"]
+
   isArticle = document.collection.metadata['isKB']
+
   path = document.relative_path
+
   if isArticle
     cat = path.split("/")
     document.data['category'] = cat[1]
-    puts("assigned category #{cat[1]} to #{path}")
+    if debugOn
+      puts("assigned category #{cat[1]} to #{path}")
+    end
   else
-    puts("no category from path assigned to #{path}")
+    if debugOn
+      puts("no category from path assigned to #{path}")
+    end
   end
 
 end
