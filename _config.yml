@@ -173,8 +173,9 @@ defaults:
 
   - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/" } }
 
-
   - { scope: { type: "pages" }, values: { layout: "default" } }
+
+  - { scope: { type: "pages", path: "pages/doc" }, values: { isDoc: true } }
 
   # default layout for collections articles
   - { scope: { type: "methods" }, values: { layout: "collection" } }
@@ -185,7 +186,7 @@ defaults:
 ############### Jekyll built-in profiler ####################
 profile: true
 
-############### DEBUG Widget ####################
+############### custom DEBUG Widget ####################
 debug: true
 
 ## site variables output
