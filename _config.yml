@@ -181,6 +181,10 @@ defaults:
   - { scope: { type: "materials" }, values: { layout: "collection" } }
   - { scope: { type: "manage" }, values: { layout: "collection" } }
 
+
+############### Jekyll built-in profiler ####################
+profile: true
+
 ############### DEBUG Widget ####################
 debug: true
 
