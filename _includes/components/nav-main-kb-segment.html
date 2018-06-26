@@ -1,6 +1,8 @@
 {% comment %} ++++ Knowledge base main menu ++++ {% endcomment %}
 {% comment %}Get Knowledge base collections{% endcomment %}
 {%- assign kbCollections = site.collections | where: "isKB", "true" -%}
+{%- assign categories = site.data.kb-categories -%}
+
 {%- for currentCollection in kbCollections -%}
   {% comment %}Only print if we have article in the currentCollection{% endcomment %}
   {%- if currentCollection.docs.size > 0 -%}
@@ -23,14 +25,13 @@
   {%- assign byCategory = currentCollection.docs | group_by: 'category' -%}
   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
     {% comment %}Prints categories in the same order as collection.categories{% endcomment %}
-    {%- for cat in currentCollection.categories -%}
+    {%- for cat in categories[currentCollection.label] -%}
       {%- assign currentCat = cat.slug -%}
       {%- assign pageUrl = urlStart | append: currentCat | append: "/" -%}
       {% comment %}Look for docs with a category{% endcomment %}
       {%- assign currentCatDocs = byCategory | where: "name", currentCat | first -%}
       {%- if currentCatDocs != nil -%}
-          {%- assign categoryDatas = currentCollection.categories | where: 'slug', currentCat | first  -%}
-          <a class="dropdown-item {% if page.url == pageUrl %}current{% endif %}" href="{{ site.baseurl }}/{{ currentCollection.label }}/{{ categoryDatas.slug }}/">{{ categoryDatas.name }}</a>
+        <a class="dropdown-item {% if page.url == pageUrl %}current{% endif %}" href="{{ site.baseurl }}/{{ currentCollection.label }}/{{ cat.slug }}/">{{ cat.name }}</a>
       {%- endif -%}
   {%- endfor %}
   </div>

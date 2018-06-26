@@ -14,14 +14,15 @@
 
 Jekyll::Hooks.register :documents, :post_init do |document, payload|
 
-  conf    = document.site.config #["config"]
-  debugOn = conf["CollectionCatFromPath"]["debug"]
+  conf      = document.site.config #["config"]
+  debugOn   = conf["CollectionCatFromPath"]["debug"]
+  isKBItem  = document.collection.metadata['isKB']
+  path      = document.relative_path
 
-  isArticle = document.collection.metadata['isKB']
-
-  path = document.relative_path
-
-  if isArticle
+  if isKBItem
+    # we assume that KB item path is always
+    # /collection/category/filename/
+    # this is bad fingerprinting !
     cat = path.split("/")
     document.data['category'] = cat[1]
     if debugOn

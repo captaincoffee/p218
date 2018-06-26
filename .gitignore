@@ -2,7 +2,9 @@ _site
 .sass-cache
 
 .idea
+
 .bundle
+node_modules
 vendor
 
 !assets/vendor

@@ -1,15 +1,13 @@
 {% comment %} >>>>>>>>>>>>>>>>>> Generates a menu Twitter Bootstrap style
-Include with :  {% include components/nav-segment.html navId='main' %}
+Include with :  {% inc components/nav-segment.html navId='main' %}
 Pages that have a corresponding "menu: main" in front matter will be included in this menu
 Pages are sorted by "weight" front matter variable
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {% endcomment %}
 {%- assign navbarId = include.navId -%}
 {%- assign pages = site.pages | sort: "weight" -%}
-<!--Navbar {{ navbarId }}-->
 {%- for p in pages -%}{%- if p.menu == navbarId %}
   <li class="nav-item {% if p.url == page.url %} active{% endif %}">
     <a class="nav-link" href="{{ site.baseurl }}{{ p.url }}">{{ p.title }} {% if p.url == page.url %}<span class="sr-only">(current)</span>{% endif %}</a>
   </li>
 {%- endif -%}
 {% endfor %}
-<!--End Navbar {{ navbarId }}-->

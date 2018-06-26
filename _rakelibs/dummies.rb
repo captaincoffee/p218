@@ -1,4 +1,4 @@
-require "stringex"
+# require "stringex"
 
 def create_elements( type = 'post', numberOf = 1, clean = false, collectionName = "methods" )
   d1("## Create_elements : type=#{type} - numberOf=#{numberOf} - clean=#{clean} - collectionName=#{collectionName}")
@@ -91,64 +91,4 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
   end
 
   d1( "created #{currentCounter} item of type #{type}" )
-end
-
-def create_categories_pages( collectionName )
-  d2("## Creating Categories pages for #{collectionName}")
-
-  # get collections datas
-  $config = YAML::load_file($configPath)
-  collectionDatas = $config["collections"][collectionName]
-  collectionCategories = collectionDatas["categories"]
-
-  # get folder list in "_#{collectionName}"
-  folders = Dir.entries("_#{collectionName}").reject{|entry| [".", ".."].include?(entry) }
-  d1("Listed categories folders #{folders}")
-
-  # work early with absolute path
-  collectionFolderFullPath = File.join($rootPath, collectionName)
-  d1("Working in #{collectionFolderFullPath}")
-  # check for path validity
-  inRootPath?($rootPath, collectionFolderFullPath)
-
-  # for each folder
-  categoriesCount = 0
-  folders.each do |folder|
-    d2("--------------> folder #{folder}")
-    categoryPageFullPath = "#{collectionFolderFullPath}/#{folder}.html"
-    if !File.exist?(categoryPageFullPath)
-      d1("categoryPageFullPath #{categoryPageFullPath} doesn't exists create it !")
-      categoriesCount += 1
-      categoryDatas = collectionCategories.select{|cat| cat["slug"]==folder }.first
-      pageTitle = "#{collectionDatas['name']} - #{categoryDatas['name']}"
-      d2("pageTitle #{pageTitle}")
-      open(categoryPageFullPath, 'w') do |f|
-        f.puts "---"
-        f.puts "title: #{pageTitle} "
-        f.puts "---"
-        f.puts "{% include components/category-page.html %}"
-      end
-    end
-  end
-  d2("## Created #{categoriesCount} Categories for #{collectionName}")
-end
-
-def clean_categories_pages(collectionName)
-  collectionFolderFullPath = File.join($rootPath, collectionName)
-  d2("Working in #{collectionFolderFullPath}")
-  # check for path validity
-  inRootPath?($rootPath, collectionFolderFullPath)
-  # find categories pages
-  pages = FileList.new("#{collectionFolderFullPath}/*")
-  pages.exclude('**/index.html')
-  d2("Pages selected for deletion : #{pages}")
-  # remove all files in #{collectionName} folder except index.html
-  # check that each file can be removed safely
-  pages.each do |file|
-    raise "### safe_clean_folder - Wrong path for file #{file}" if !child?($rootPath, collectionFolderFullPath)
-    d1("#{file} can be safely removed")
-  end
-  ################ BEWARE THIS IS DANGEROUS !!!!
-  d2(" ++++++++++++++++++ REMOVING")
-  rm_rf [ pages ], :verbose => true, :secure => true
 end

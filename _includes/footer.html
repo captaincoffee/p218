@@ -1,6 +1,6 @@
-<footer>
+<footer class="border-top">
   <ul class="nav nav-pills justify-content-end">
-  {% include components/nav-segment.html navId='footer' %}
+  {% inc components/nav-segment.html navId='footer' %}
   </ul>
 </footer>
 
@@ -8,7 +8,12 @@
 <script src="{{ site.baseurl }}/node_modules/jquery.cookie/jquery.cookie.js"></script>
 <script src="{{ site.baseurl }}/node_modules/popper.js/dist/umd/popper.js"></script>
 <script src="{{ site.baseurl }}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="{{ site.baseurl }}/node_modules/algoliasearch/dist/algoliasearch.js"></script>
+<script src="{{ site.baseurl }}/node_modules/instantsearch.js/dist/instantsearch.js"></script>
+
+<!-- Custom scripts -->
 <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+<script src="{{ site.baseurl }}/assets/js/search.js"></script>
 
 </body>
 </html>

@@ -18,8 +18,6 @@ exclude:
  - Rakefile
  - vendor
 
-# keep_files:  ['.git','.svn']
-
 plugins:
  - jekyll-sitemap
  - jekyll-paginate
@@ -33,7 +31,7 @@ timezone:    America/New_York
 # highlighter: pygments
 
 paginate_path: '/news/page:num'
-paginate:      5
+paginate: 5
 
 # markdown:      kramdown
 # markdown_ext:  markdown,mkdown,mkdn,mkd,md
@@ -82,7 +80,7 @@ liquid:
   strict_filters: true # default: false
   error_mode: strict # default: warn
 
-  ############### RELATED ARTICLES ####################
+############### RELATED ARTICLES ####################
 # if set to true print a list of related articles
 # on collection's articles
 printRelatedArticles: true
@@ -98,63 +96,16 @@ collections:
     output: true   # every page in the collection will be created
     isKB: true     # is part of Knowledge base
     name: "Methods" # Print name used in titles, menus, ...
-    categories:
-      - { name: "Fog Seals", slug: "fog-seals" }
-      - { name: "Chip Seals", slug: "chip-seals" }
-      - { name: "Spray Seals", slug: "spray-seals" }
-      - { name: "Microsurfacing & Slurry", slug: "microsurfacing-and-slurry" }
-      - { name: "Combination Seals", slug: "combination-seals" }
-      - { name: "Cold-Mix Asphalt", slug: "cold-mix-asphalt" }
-      - { name: "Warm-Mix Asphalt", slug: "warm-mix-asphalt" }
-      - { name: "Asphalt Overlays", slug: "asphalt-overlays" }
-      - { name: "Recycling - Plant", slug: "recycling-plant" }
-      - { name: "Recycling - In-Place", slug: "recycling-in-place" }
-      - { name: "Crack & Joint Treatments", slug: "crack-joint-treatments" }
-      - { name: "Concrete Overlays", slug: "concrete-overlays" }
-      - { name: "Concrete Treatment", slug: "concrete-treatment" }
-      - { name: "Patching & Preparation", slug: "patching-preparation" }
-      - { name: "Milling & Grinding", slug: "milling-and-grinding" }
 
   materials:
     output: true
     isKB: true
     name: Materials
-    categories:
-      - { name: "Aggregates", slug: "aggregates" }
-      - { name: "Asphalt Emulsions", slug: "asphalt-emulsions" }
-      - { name: "Modified Emulsions", slug: "modified-emulsions" }
-      - { name: "Rejuvenators and Recycling Agents", slug: "rejuvenators-and-recycling-agents" }
-      - { name: "Asphalt Binders", slug: "asphalt-binders" }
-      - { name: "Modified Binders", slug: "modified-binders" }
-      - { name: "Asphalt Modification", slug: "asphalt-modification" }
-      - { name: "GTR", slug: "gtr" }
-      - { name: "Polymers", slug: "polymers" }
-      - { name: "Moisture Damage Control", slug: "moisture-damage-control" }
-      - { name: "Asphalt Additives", slug: "asphalt-additives" }
-      - { name: "Mixture Additives", slug: "mixture-additives" }
-      - { name: "Fibers", slug: "fibers" }
-      - { name: "RAP", slug: "rap" }
-      - { name: "RAS", slug: "ras" }
-      - { name: "Other Recycled Materials", slug: "other-recycled-materials" }
-      - { name: "Cement", slug: "cement" }
-      - { name: "Concrete Additives", slug: "concrete-additives" }
 
   manage:
     output: true
     isKB: true
     name: Manage
-    categories:
-      - { name: "Safety", slug: "safety" }
-      - { name: "Policy", slug: "policy" }
-      - { name: "Strategy", slug: "strategy" }
-      - { name: "Pavement Management Systems", slug: "pavement-management-systems" }
-      - { name: "Specifications", slug: "specifications" }
-      - { name: "Tests", slug: "tests" }
-      - { name: "Quality Control & Assurance", slug: "quality-control-assurance" }
-      - { name: "Research", slug: "research" }
-      - { name: "Life Cycle Cost Analysis", slug: "life-cycle-cost-analysis" }
-      - { name: "Data Management", slug: "data-management" }
-      - { name: "Training", slug: "training" }
 
 # this array determine article's types and order
 # a collection article with non matching type will not be listed
@@ -170,24 +121,32 @@ articleTypes :
 
 ############### DEFAULT CONFIGURATION ####################
 defaults:
-
   - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/" } }
-
   - { scope: { type: "pages" }, values: { layout: "default" } }
-
   - { scope: { type: "pages", path: "pages/doc" }, values: { isDoc: true } }
-
   # default layout for collections articles
   - { scope: { type: "methods" }, values: { layout: "collection" } }
   - { scope: { type: "materials" }, values: { layout: "collection" } }
   - { scope: { type: "manage" }, values: { layout: "collection" } }
 
+############### Algolia jekyll plugin configuration ####################
+
+algolia:
+  application_id: 'K3NGJZEZ95'
+  search_only_api_key: '66a4234e97f1002b75f7eb36ed40eee7'
+  index_name: 'p218'
+
+  files_to_exclude:
+    - pages/*
+
+  # nodes_to_index: 'p,.summary'
 
 ############### Jekyll built-in profiler ####################
-profile: true
+profile: false
 
 ############### custom DEBUG Widget ####################
 debug: true
+comment_includes: true
 
 ## site variables output
 ## commented variables are outputed
@@ -258,4 +217,4 @@ site_vars_NOT_to_print:
 
 ############### Collection Category from Path Hook configuration ####################
 CollectionCatFromPath:
-  debug: true
+  debug: false

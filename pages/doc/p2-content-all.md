@@ -59,7 +59,7 @@ For our **methods** collection we have a methods/index.html page.
 {% raw %}
 ---
 ---
-{% include components/collection-page.html %}
+{% inc components/collection-page.html %}
 {% endraw %}
 {% endhighlight %}
 
@@ -125,4 +125,4 @@ Create `methods/fog-seals.md` page containing :
 {% endhighlight %}
 
 {% endcapture %}
-{% include rows/1-2-thirds.html left=toc right=text %}
+{% inc rows/1-2-thirds.html left=toc right=text %}

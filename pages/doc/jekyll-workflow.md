@@ -54,9 +54,46 @@ jekyll.serve
 
                 retrieve_static_files
 
+              CollectionReader.new(site).read
+                collection_reader.read
+                  document new
+                    Hook :posts, :post_init, document
+                    Hook :documents, :post_init, document
+
             Hook :site, :post_read, site
+
           generate
+
+            post and document post init hook can be called
+            depending on what type of content is created (??)
+
+
           render
+
+            Jekyll::Hooks.trigger :site, :pre_render, site, payload
+
+            render_docs(payload)
+
+              Hook :posts, :pre_render, document, payload
+              Hook :documents, :pre_render, document, payload
+              render_regenerated
+              Hook :posts, :post_render, document
+              Hook :documents, :post_render, document
+
+            render_pages(payload)
+              Hook :pages, :pre_render, page, payload
+              Hook :pages, :post_render, page
+
+            Jekyll::Hooks.trigger :site, :post_render, site, payload
+
           cleanup
+            Jekyll::Hooks.trigger :clean, :on_obsolete, out
+
           write
+
+            pages, documents and collections specific hook are fired
+            on post_write
+
+            Jekyll::Hooks.trigger :site, :post_write, self
+
           print_stats if config["profile"]

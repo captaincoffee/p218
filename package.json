@@ -11,7 +11,8 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "jquery": "^3.2.1",
+    "jquery.cookie": "^1.4.1",
     "popper.js": "^1.13.0",
-    "jquery.cookie": "^1.4.1"
+    "instantsearch.js": "^2.8.0"
   }
 }

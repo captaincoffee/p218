@@ -1,20 +1,12 @@
-{% include head.html %}
-<div class="container-fluid">
-{% include utils/noscript.md %}
-{% include utils/cookiewarning.md %}
-{% include header.html %}
-
-    {{ content }}
-
-{% include footer.html %}
+{% inc head.html %}
+<div class="container">
+  {% inc utils/noscript.md %}
+  {% inc utils/cookiewarning.md %}
+  {% inc header.html %}
+  {% inc components/search-results.html %}
+      {{ content }}
+  {% inc footer.html %}
+  {% if site.debug %}
+    {% include debug/debug.html %}
+  {% endif %}
 </div>
-{% if site.debug %}
-<p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Debug</button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    {% include utils/breakpoints.md %}
-    {% include utils/site_vars.md %}
-  </div>
-</div>
-{% endif %}
