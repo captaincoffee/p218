@@ -17,6 +17,7 @@ exclude:
  - Gemfile.lock
  - Rakefile
  - vendor
+ - .idea
 
 plugins:
  - jekyll-sitemap
@@ -121,7 +122,7 @@ articleTypes :
 
 ############### DEFAULT CONFIGURATION ####################
 defaults:
-  - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/" } }
+  - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/", layout: "post" } }
   - { scope: { type: "pages" }, values: { layout: "default" } }
   - { scope: { type: "pages", path: "pages/doc" }, values: { isDoc: true } }
   # default layout for collections articles

@@ -22,18 +22,19 @@ $rootPath = __dir__
 d1("Current directory : #{$rootPath}")
 
 $configPath = File.join($rootPath, '_config.yml')
+$kbCategoriesPath = File.join($rootPath, '_data/kb-categories.yaml')
 
 $posts_dir      = "_posts"
 $pages_dir      = "_pages"
 # $collectionsNames = ['manage']
 $collectionsNames = ['manage', 'materials', 'methods']
 
-$numberOfPosts = 3
-$articlesPerCollection = 2
+$numberOfPosts = 20
+$articlesPerCollection = 100
 
 $default_ext    = "md"
 
-$numberOfCategories = 30 # or less depending on collection's categories number
+$numberOfCategories = 3 # or less depending on collection's categories number
 
 ################  TAGS SETUP #####################
 $numberOfTags   = 50 # total number of tags - common to all collections
@@ -44,6 +45,7 @@ task :default => [:bench]
 
 desc "Creates dummy posts"
 task :dp do
+    $tagsPool = get_tags_pool()
     create_elements( 'post', $numberOfPosts, true )
     d2( "created #{$elementCounter} total posts" )
 end

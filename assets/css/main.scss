@@ -1,7 +1,5 @@
 ---
 ---
-
-
 // override twb variables here
 // list of available variables
 // here : https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss
@@ -11,14 +9,12 @@ $font-family-monospace:  Courier New, Courier, Lucida Sans Typewriter, Lucida Ty
 
 $blue: #176c9c !default;
 
+$navbar-dark-color: white;
 
 
 @import "functions";
 @import "variables";
 @import "mixins";
-
-// put custom style at the end of this file
-
 @import "root";
 @import "reboot";
 @import "type";

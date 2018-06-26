@@ -6,8 +6,8 @@ def get_dummy_title( length = 5 )
 end
 
 def get_categories_pool(collectionName)
-  caetegoriesForCollection = $config['collections'][collectionName]['categories']
-  categories = caetegoriesForCollection.sample($numberOfCategories)
+  categoriesForCollection = $kbCategories[collectionName]
+  categories = categoriesForCollection.sample($numberOfCategories)
   d1("++++++++++ categories poll #{$numberOfCategories} : #{categories}")
   categories
 end

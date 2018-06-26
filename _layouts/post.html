@@ -3,16 +3,35 @@ layout: default
 ---
 
 <div class="row">
-  <div class="medium-10 large-8 medium-centered columns">
-
-
+  <div class="col-md-8 p-3 border-right">
     <article>
       <h1>{{ page.title }}</h1>
-       <p class="post-meta">{{ page.date | date_to_string }}</p>
+      <p class="small">
+      {{ page.date | date_to_string: "ordinal", "US" }}
+      {% if page.tags %} - Tags : {{ page.tags | join:', ' }}{% endif %}
+      </p>
+      <p class="post-meta">{{ page.date | date_to_string }}</p>
+      {{ content }}
+      </article>
+  </div>
 
-       {{ content }}
-
-    </article>
-
-  </div><!-- /.medium-10 large-8 medium-centered columns -->
-</div><!-- /.row -->
+  <div class="col col-md-4 p-3">
+    <h2>Recent posts</h2>
+    <ul class="list-unstyled">
+  {% for post in site.posts limit: 6 %}
+    <li>
+      <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+      <p class="small">
+      {{ post.date | date_to_string: "ordinal", "US" }}
+      {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
+      </p>
+      {% if post.content == post.excerpt %}
+        {{ post.content | truncate: 50 }}
+      {% else %}
+        {{ post.content }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+  </div>
+</div>

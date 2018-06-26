@@ -1,0 +1,18 @@
+<h2>P<sup>2</sup> News</h2>
+
+<ul class="list-unstyled">
+  {% for post in site.posts limit: 6 %}
+    <li>
+      <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+      <p class="small">
+      {{ post.date | date_to_string: "ordinal", "US" }}
+      {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
+      </p>
+      {% if post.content == post.excerpt %}
+        {{ post.content | truncate: 50 }}
+      {% else %}
+        {{ post.content }}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>

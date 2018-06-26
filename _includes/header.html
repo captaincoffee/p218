@@ -1,4 +1,15 @@
 <header role="banner">
-  {% inc components/nav-main.html %}
-
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+  <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="">Menu</span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      {% inc nav/nav-pages.html navId='main1' %}
+      {% inc nav/nav-main-kb-segment.html %}
+    </ul>
+  </div>
+  {% inc components/search.html %}
+</nav>
 </header>

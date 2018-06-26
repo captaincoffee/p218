@@ -1,9 +1,12 @@
-# require "stringex"
+require "stringex"
+require "safe_yaml/load"
 
 def create_elements( type = 'post', numberOf = 1, clean = false, collectionName = "methods" )
   d1("## Create_elements : type=#{type} - numberOf=#{numberOf} - clean=#{clean} - collectionName=#{collectionName}")
   currentCounter = 0
-  $config        = YAML::load_file($configPath)
+  $config        = SafeYAML::load_file($configPath)
+  $kbCategories = SafeYAML::load_file($kbCategoriesPath)
+
   $categoriesPool= get_categories_pool(collectionName)
 
   case type

@@ -78,6 +78,7 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    stringex (2.8.4)
     verbal_expressions (0.1.5)
 
 PLATFORMS
@@ -89,6 +90,7 @@ DEPENDENCIES
   jekyll-paginate
   jekyll-sitemap
   rake
+  stringex
 
 BUNDLED WITH
    1.16.2
