@@ -13,8 +13,10 @@ module Jekyll
 
       kbCollections.each {|collectionName, collectionDatas|
 
-        # read subdirectories in collection
+        # Changes the current working directory of the process to collection dir
         Dir.chdir(collectionDatas.directory)
+
+        # read subdirectories in collection
         subdirs = Dir['*/']
 
         # each subdir
@@ -44,7 +46,12 @@ module Jekyll
           index = Jekyll::KBCategoryIndexPage.new(site, collectionDatas, category)
           site.pages << index
         }
+
       }
+
+      # Changes the current working directory of the process back to base dir
+      Dir.chdir(site.source)
+
     end
 
   end
