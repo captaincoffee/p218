@@ -5,18 +5,17 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
   d1("## Create_elements : type=#{type} - numberOf=#{numberOf} - clean=#{clean} - collectionName=#{collectionName}")
   currentCounter = 0
   $config        = SafeYAML::load_file($configPath)
-  $kbCategories = SafeYAML::load_file($kbCategoriesPath)
-
+  $kbCategories  = SafeYAML::load_file($kbCategoriesPath)
   $categoriesPool= get_categories_pool(collectionName)
 
   case type
     when "post"
       elementsFolder = $posts_dir
     when "page"
-      elementsFolder = $pages_dir
+-     elementsFolder = $pages_dir
     when "collection"
       elementsFolder  = "_#{collectionName}"
-      collectionDatas = $config["collections"][collectionName]
+      #collectionDatas = $config["collections"][collectionName]
       categories      = $categoriesPool
       types           = $config["articleTypes"]
     else
@@ -81,7 +80,7 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
       when "collection"
         tags          = get_tags()
         front["tags"] = tags
-        itemType          = types.sample(1).first
+        itemType      = types.sample(1).first
         front["type"] = itemType["slug"]
     end
 

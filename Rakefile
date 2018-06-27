@@ -34,10 +34,10 @@ $articlesPerCollection = 100
 
 $default_ext    = "md"
 
-$numberOfCategories = 3 # or less depending on collection's categories number
+$numberOfCategories = 30 # or less depending on collection's categories number
 
 ################  TAGS SETUP #####################
-$numberOfTags   = 50 # total number of tags - common to all collections
+$numberOfTags   = 100 # total number of tags - common to all collections
 $minTagsPerItem = 5  # minimum number of tag attributed to one article
 $maxTagsPerItem = 10 # maximum number of tag attributed to one article
 
