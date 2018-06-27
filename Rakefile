@@ -6,9 +6,8 @@ include Benchmark # we need the CAPTION and FORMAT constants
 require_relative '_rakelibs/benchUtils.rb'
 require_relative '_rakelibs/dummies.rb'
 require_relative '_rakelibs/dummiesUtils.rb'
-require_relative '_rakelibs/githubUtils.rb'
 
-$debug1 = false
+$debug1 = true
 $debug2 = true
 
 # number of time site is build when doing a rake bench
@@ -29,29 +28,33 @@ $pages_dir      = "_pages"
 # $collectionsNames = ['manage']
 $collectionsNames = ['manage', 'materials', 'methods']
 
-$numberOfPosts = 20
-$articlesPerCollection = 100
+$numberOfPosts = 1
+$articlesPerCollection = 10
 
 $default_ext    = "md"
 
 $numberOfCategories = 30 # or less depending on collection's categories number
 
 ################  TAGS SETUP #####################
+$maxParagraphNumber = 4
+$maxParagraphLength = 100
+
+################  TAGS SETUP #####################
 $numberOfTags   = 100 # total number of tags - common to all collections
-$minTagsPerItem = 5  # minimum number of tag attributed to one article
+$minTagsPerItem = 3  # minimum number of tag attributed to one article
 $maxTagsPerItem = 10 # maximum number of tag attributed to one article
 
 task :default => [:bench]
 
 desc "Creates dummy posts"
-task :dp do
+task :dpost do
     $tagsPool = get_tags_pool()
     create_elements( 'post', $numberOfPosts, true )
     d2( "created #{$elementCounter} total posts" )
 end
 
 desc "Creates dummy kb article"
-task :da do
+task :darticle do
     # create a tag pool that is common to all collections
     $tagsPool = get_tags_pool()
     $collectionsNames.each do |collectionName|

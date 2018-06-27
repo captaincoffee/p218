@@ -8,6 +8,10 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
   $kbCategories  = SafeYAML::load_file($kbCategoriesPath)
   $categoriesPool= get_categories_pool(collectionName)
 
+  $tags     = get_tags()
+  tagsAsStr = "[#{$tags.join(', ')}]"
+  content   = get_content($maxParagraphNumber, $maxParagraphLength)
+
   case type
     when "post"
       elementsFolder = $posts_dir
@@ -73,18 +77,16 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
 
     case type
       when "post"
-        tags = get_tags()
+        tags = tagsAsStr
         front["tags"] = tags
       when "page"
         #
       when "collection"
-        tags          = get_tags()
+        tags          = tagsAsStr
         front["tags"] = tags
         itemType      = types.sample(1).first
         front["type"] = itemType["slug"]
     end
-
-    content = get_content( 4, 30 )
 
     create_file(filenameFullPath, front, content)
     $elementCounter += 1

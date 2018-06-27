@@ -14,23 +14,34 @@ end
 
 def get_tags_pool(numberOfTags = $numberOfTags)
   tags = $corpus.sample(numberOfTags)
+  tags.each {|tag| tag.to_s}
   d2("++++++++++ tags poll #{numberOfTags} : #{tags}")
   tags
 end
 
-def get_tags( min = $minTagsPerItem, max = $maxTagsPerItem )
+def get_tags()
   prng = Random.new
-  tagsArray = $tagsPool.sample(prng.rand(min...max))
-  tags = "[#{tagsArray.join(', ')}]"
-  d1("assigned TAGS : #{tags}")
-  return tags
+  tagsArray = $tagsPool.sample(prng.rand($minTagsPerItem...$maxTagsPerItem))
+  d1("assigned TAGS : #{tagsArray.join(", ")}")
+  tagsArray
 end
 
-def get_content( paraNumber = 2, paraLength = 20)
+def get_content( paraNumber = 3, paraLength = 20)
   prng = Random.new
-  content = prng.rand(1...paraNumber).times.map do |c|
-    $corpus.sample(prng.rand(1...paraLength)).join(' ').capitalize
+  content = prng.rand(2...paraNumber).times.map do |c|
+    $corpus.sample(prng.rand(2...paraLength)).join(' ').capitalize
   end.join(".\n\n")
+  # get all space chr occurence in current content
+  i = -1
+  all = []
+  while i = content.index(' ',i+1)
+    all << i
+  end
+  # insert tags in content
+  $tags.each {|tag|
+    pos = all.sample()
+    content.insert(pos, " #{tag}")
+  }
   content
 end
 
