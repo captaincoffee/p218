@@ -50,3 +50,59 @@ const search = instantsearch({
     console.log(helper);
   }
 });
+
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits',
+    templates: {
+      empty: 'No results',
+      item: function(hit) {
+        console.log(hit);
+        return `
+          <div class="post-item">
+            <span class="post-meta">${hit.date}</span>
+            <h2><a class="post-link" href="{{ site.baseurl }}${hit.url}">${hit._highlightResult.title.value}</a></h2>
+            <div class="post-snippet">${hit._highlightResult.html.value}</div>
+          </div>
+        `;
+      }
+    }
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-box',
+    placeholder: 'Search P2 ...',
+    poweredBy: true,
+    magnifier: true,
+    loadingIndicator: true,
+    searchOnEnterKeyPressOnly: false
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#refinement-list',
+    attributeName: 'collection',
+    collapsible: true,
+    operator: 'or',
+    templates: {
+      header: 'Collection'
+    }
+  })
+);
+
+search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#refinement-list2',
+    attributeName: 'categories',
+    collapsible: true,
+    operator: 'or',
+    templates: {
+      header: 'Category'
+    }
+  })
+);
+
+search.start();
