@@ -1,0 +1,80 @@
+{% assign category = include.category %}
+
+{% comment %}
+  Look for docs in current listed Category
+  returns a hash : {"name"=>"chip-seals", "items"=>[#, #]}
+{% endcomment %}
+{% assign categoryDocs = currentCollectionDocsByCategory | where: "name", category.slug | first %}
+
+{% if categoryDocs != nil %}
+
+  {% capture categoryUrl %}{{ site.baseurl }}/{{ currentCollection.label }}/{{ category.slug }}/{% endcapture %}
+  <h1><a href="{{ categoryUrl }}">{{ category.name }}</a></h1>
+
+  {% comment %}Sort category documents by type
+    return an array  : [ {"name"=>"videos", "items"=>[#]},
+                         {"name"=>"articles", "items"=>[#]} ]
+  {% endcomment %}
+  {% assign byType = categoryDocs.items | group_by: 'type' %}
+
+  {% assign tabsOutput = "" | split: "/" %}
+  {% assign documentsOutput = "" | split: "/" %}
+
+  {% comment %}Sorting documents by type in site.articleTypes order{% endcomment %}
+  {% for typeInfos in site.articleTypes %}
+    {% assign currentType = typeInfos.slug %}
+    {% comment %}Get documents for currentType{% endcomment %}
+    {% assign currentTypeDocs = byType | where: "name", currentType | first %}
+    {% if currentTypeDocs != nil %}
+      {% capture targetId %}{{ category.slug }}-{{typeInfos.slug}}{% endcapture %}
+      {% capture tabId %}{{typeInfos.slug}}-tab{% endcapture %}
+
+      {% if tabsOutput.size < 1 %}
+        {% assign activeClass = "active" %}
+        {% assign ariaSelected = "true" %}
+        {% assign tabClass = "show active" %}
+      {% else %}
+        {% assign activeClass = "" %}
+        {% assign ariaSelected = "false" %}
+        {% assign tabClass = "" %}
+      {% endif %}
+      {% capture tab %}
+<li class="nav-item">
+  <a class="nav-link {{activeClass}}" href="#{{targetId}}" id="{{ tabId }}" data-toggle="tab" role="tab" aria-controls="{{typeInfos.slug}}" aria-selected="{{ ariaSelected }}">
+    <i class="{{ typeInfos.icon }}"></i> {{ typeInfos.plural }} ({{ currentTypeDocs.size }})
+  </a>
+</li>
+      {% endcapture %}
+      {% assign tabsOutput = tabsOutput | push: tab %}
+      {% capture allDocs %}
+<div class="tab-pane fade {{tabClass}}" id="{{ targetId }}" role="tabpanel" aria-labelledby="{{typeInfos.slug}}-tab">
+  {% for doc in currentTypeDocs.items %}
+      <h2>
+        <a href="{{ site.baseurl }}{{ doc.url }}">
+          <i class="{{ typeInfos.icon }}"></i>
+          {{ doc.title }}
+        </a>
+      </h2>
+      {% if page.date %}
+        <p>date : {{ doc.date | date: '%y/%m/%d %H:%M:%S' }}</p>
+      {% endif %}
+  {% endfor %}
+</div>
+      {% endcapture %}
+      {% assign documentsOutput = documentsOutput | push: allDocs %}
+    {% endif %}
+  {% endfor %}
+
+  {% if byType.size > 1 %}
+    <ul class="nav nav-tabs" id="{{ category.slug }}-tabs" role="tablist">
+      {% for tab in tabsOutput %}{{ tab }}{% endfor %}
+    </ul>
+    <div class="tab-content" id="{{ category.slug }}-documents">
+      {% for doc in documentsOutput %}{{ doc }}{% endfor %}
+    </div>
+  {% else %}
+    {% for doc in documentsOutput %}{{ doc }}{% endfor %}
+  {% endif %}
+
+{% endif %}
+
