@@ -33,6 +33,9 @@ const search = instantsearch({
   indexName: '{{ site.algolia.index_name }}',
   searchClient: algoliasearch('{{ site.algolia.application_id }}', '{{ site.algolia.search_only_api_key }}'),
   routing: true,
+  searchParameters: {
+    typoTolerance: false
+  },
   searchFunction: function(helper){
     let q = helper.state.query;
 
@@ -104,5 +107,22 @@ search.addWidget(
     }
   })
 );
+
+search.addWidget(
+  instantsearch.widgets.currentRefinedValues({
+    container: '#current-refined-values',
+    attributes: [
+      {name: 'collection', label: 'Collection'},
+      {name: 'categories', label: 'Category'},
+    ],
+    onlyListedAttributes: true,
+    clearAll: 'before',
+    clearsQuery: true,
+    onlyListedAttributes: true,
+    collapsible: true,
+    clearsQuery: true
+  })
+);
+
 
 search.start();
