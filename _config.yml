@@ -17,6 +17,7 @@ exclude:
  - Gemfile.lock
  - Rakefile
  - vendor
+ - .sass-cache
  - .idea
 
 plugins:
@@ -67,7 +68,13 @@ permalink: pretty
 sass:
   # loading path from site root
   # default to _sass
-  sass_dir: node_modules/bootstrap/scss
+  # sass_dir: node_modules/bootstrap/scss
+
+  # multiple load paths
+  # doesn't work in safe mode (github pages)
+  load_paths:
+    - assets
+    - node_modules
 
   # style : nested (default), compact, compressed, expanded
   #         :nested, :compact, :compressed, :expanded also works
@@ -138,7 +145,13 @@ algolia:
   index_name: 'p218'
 
   files_to_exclude:
-    - pages/*
+    - manage/*/index.html
+    - materials/*/index.html
+    - methods/*/index.html*
+    - documentation/**
+    - faq/**
+    - legal/**
+    - pages/**
 
   # nodes_to_index: 'p,.summary'
 
