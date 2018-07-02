@@ -71,13 +71,13 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(@base, '_layouts'), 'kb_category_index.html')
       self.data = Utils.deep_merge_hashes(
-          self.data,
-          {
-            'title' => "#{category["name"]}",
-            'url'   => @dir,
-            'collection'=> collectionDatas.label,
-            'category'  => category["slug"]
-          }
+        self.data,
+        {
+          'title' => "#{category["name"]}",
+          'url'   => @dir,
+          'collection'=> collectionDatas.label,
+          'category'  => category["slug"]
+        }
       )
     end
 
