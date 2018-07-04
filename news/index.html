@@ -3,26 +3,8 @@ menu: main1
 weight: 20
 title: News
 ---
-{% for post in paginator.posts %}
-<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-<p class="small">
-{{ post.date | date_to_string: "ordinal", "US" }}
-{% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
-</p>
-{% if post.content == post.excerpt %}
-    {{ post.content | truncate: 50 }}
-{% else %}
-    {{ post.content }}
-{% endif %}
-<a href="{{ post.url }}">Read more...</a>
-{% unless forloop.last %}
-<hr>
-{% endunless %}
 
-{% endfor %}
-
-<br><br>
-
+{% capture pagination %}
 <!-- Pagination links -->
 {% if paginator.total_pages > 1 %}
 <nav aria-label="Page navigation">
@@ -49,3 +31,33 @@ title: News
   </ul>
 </nav>
 {% endif %}
+{% endcapture %}
+
+<div class="row">
+  <div class="col">
+    <h1>News &gt; page {{ paginator.page }}/{{ paginator.total_pages }}</h1>
+  </div>
+</div>
+
+<div class="col">
+  {{ pagination }}
+
+  {% for post in paginator.posts %}
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <p class="small">
+    {{ post.date | date_to_string: "ordinal", "US" }}
+    {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
+    </p>
+    {% if post.content == post.excerpt %}
+        {{ post.content | truncate: 50 }}
+    {% else %}
+        {{ post.content }}
+    {% endif %}
+    <a href="{{ post.url }}">Read more...</a>
+    {% unless forloop.last %}
+    <hr>
+    {% endunless %}
+    {% endfor %}
+
+    {{ pagination }}
+</div>
