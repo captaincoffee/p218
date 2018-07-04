@@ -33,7 +33,7 @@ timezone:    America/New_York
 # highlighter: pygments
 
 paginate_path: '/news/page:num'
-paginate: 5
+paginate: 10
 
 # markdown:      kramdown
 # markdown_ext:  markdown,mkdown,mkdn,mkd,md
@@ -131,7 +131,7 @@ articleTypes :
 defaults:
   - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/", layout: "post" } }
   - { scope: { type: "pages" }, values: { layout: "default" } }
-  - { scope: { type: "pages", path: "pages/doc" }, values: { isDoc: true } }
+  - { scope: { type: "pages", path: "pages/documentation" }, values: { isDoc: true, layout: "documentation" } }
   # default layout for collections articles
   - { scope: { type: "methods" }, values: { layout: "collection" } }
   - { scope: { type: "materials" }, values: { layout: "collection" } }

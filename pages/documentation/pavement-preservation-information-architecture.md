@@ -1,17 +1,34 @@
 ---
-title: P2 Content all
+title: Pavement Preservation (P2) Information Architecture (IA)
 ---
 
-{% comment %}
+{% comment %} -----------------------------------------------------------------
 Trick to get TOC Generating
 If content is enclosed in html tag, toc doesn't generate
-{% endcomment %}
+---------------------------------------------------------------{% endcomment %}
 {% capture toc %}
 * TOC WILL GO HERE DO NOT REMOVE
 {:toc}
 {% endcapture %}
+{% comment %}--------------------------------------------------{% endcomment %}
 
 {% capture text %}
+## Website structure
+
+ - Home page
+ - News
+ - Agenda
+ - Knowledge Base (KB)
+
+
+
+
+
+
+
+<hr>
+# WIP
+
 ## Pavement Preservation Knowledge Base
 The **Pavement Preservation Knowledge Base** (aka **KB** in this document) website is build with [Jekyll](http://jekyllrb.com/).
 
