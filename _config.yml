@@ -1,5 +1,7 @@
-language:               en
-title:                  "Pavement Preservation"
+language:            en
+title:               "Pavement Preservation"
+title_html:          "Pavement Preservation (P<sup>2</sup>)"
+
 description:            "Resource for Practicing Professionals"
 google-verification:    ""
 
@@ -89,14 +91,14 @@ liquid:
   error_mode: strict # default: warn
 
 ############### RELATED ARTICLES ####################
-# if set to true print a list of related articles
-# on collection's articles
-printRelatedArticles: true
+# see _pligins/hook-related-article.rb
 
 # maximum number of related articles searched in each collection
 maxRelated : 5
 # minimum number of tag match to be a related
-minTagMatch: 4
+minTagMatch: 1
+
+
 ############### COLLECTIONS ####################
 collections:
 
@@ -115,6 +117,9 @@ collections:
     isKB: true
     name: Manage
 
+  documentation:
+    output: true
+
 # this array determine article's types and order
 # a collection article with non matching type will not be listed
 # article must be tagged with a type.slug
@@ -131,7 +136,7 @@ articleTypes :
 defaults:
   - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/", layout: "post" } }
   - { scope: { type: "pages" }, values: { layout: "default" } }
-  - { scope: { type: "pages", path: "pages/documentation" }, values: { isDoc: true, layout: "documentation" } }
+  - { scope: { type: "documentation" }, values: { layout: "documentation" } }
   # default layout for collections articles
   - { scope: { type: "methods" }, values: { layout: "collection" } }
   - { scope: { type: "materials" }, values: { layout: "collection" } }
@@ -156,15 +161,32 @@ algolia:
   # nodes_to_index: 'p,.summary'
 
 ############### Jekyll built-in profiler ####################
+# this is an alternative to
+#  `jekyll build --profile`
 profile: false
 
-############### custom DEBUG Widget ####################
-debug: true
+############### custom DEBUG Widgets ####################
+
+#### Commented includes tag (_plugins/tag-commented-include.rb)
+#
+# Wile digging into jekyll's code, it's not always easy to spot
+# where code comes from.
+# Commenting start and end for an include, helps a lot.
+# Use :
+# {% inc path/filename.ext param='value' param2='value' %}
 comment_includes: true
 
-## site variables output
-## commented variables are outputed
-## thus the name
+#### Debug site variables
+#
+# If set to true, will output site variables
+#
+# variables present in **site_vars_NOT_to_print** array
+# will not be printed
+
+debug: true # deprecated
+
+debug_site_vars: true
+
 site_vars_NOT_to_print:
 # - config
 # - data
@@ -228,6 +250,37 @@ site_vars_NOT_to_print:
 # - serving
 # - watch
  - related_posts
+
+#### Debug page variables
+#
+# If set to true, will output page variables
+#
+# variables present in **page_vars_NOT_to_print** array
+# will not be printed
+debug_page_vars: true
+
+page_vars_NOT_to_print:
+  - next
+  - previous
+#  - path
+  - output
+#  - url
+  - content
+#  - relative_path
+#  - id
+#  - collection
+  - excerpt
+#  - draft
+#  - categories
+#  - category
+#  - layout
+#  - title
+#  - author
+#  - date
+#  - date_added_kb
+#  - slug
+#  - ext
+  - related
 
 ############### Collection Category from Path Hook configuration ####################
 CollectionCatFromPath:
