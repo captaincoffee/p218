@@ -1,0 +1,38 @@
+{% comment %}
+###  Outputing page vars
+###  see _config.yml for variables lists
+{% endcomment %}
+
+{% if site.debug_page_vars == true %}
+<h3>Page variables</h3>
+<ul>
+  {% for prop in page %}
+  <li>
+    {% comment %} ########################################
+    Accessing properties on a page or on a collection item is different
+    #################################### {% endcomment %}
+    {% if page.collection != null %}{% comment %} ### Collection item ### {% endcomment %}
+      {% assign key = prop %}
+      {% assign value = prop %}
+    {% else %}{% comment %} ### Page ### {% endcomment %}
+      {% assign key = prop[0] %}
+      {% assign value = prop[1] %}
+    {% endif %}
+
+    {% if site.page_vars_NOT_to_print contains key %}
+      <strong>NOT PRINTING</strong> page.{{ key }}
+    {% else %}
+      <strong>page.{{ key }} : </strong>
+      {% comment %} ### tricky array detection ### {% endcomment %}
+      {% if page[key].first %}
+        <ul>
+{% for element in page[key] %}<li>{{ element | inspect }}</li>{% endfor %}
+        </ul>
+      {% else %}
+        {{ page[key] | inspect }}
+      {% endif %}
+    {% endif %}
+  </li>
+  {%- endfor %}
+</ul>
+{% endif %}
