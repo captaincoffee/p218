@@ -1,12 +1,10 @@
 {% inc head.html %}
 <div class="container">
-  {% inc utils/noscript.md %}
-  {% inc utils/cookiewarning.md %}
-  {% inc header.html %}
-  {% inc components/search-results.html %}
-      {{ content }}
-  {% inc footer.html %}
-  {% if site.debug %}
-    {% include debug/debug.html %}
-  {% endif %}
+{% inc utils/noscript.md %}
+{% inc utils/cookiewarning.md %}
+{% inc header.html %}
+{% inc components/search-results.html %}
+{{ content }}
+{% inc footer.html %}
+{% include debug/debug.html %}
 </div>
