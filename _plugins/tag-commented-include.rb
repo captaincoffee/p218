@@ -4,7 +4,7 @@ module Jekyll
     # Custom include tag
     # add comments around includes
     # if *comment_includes* configuration is set to *true* in _config.yml
-    # use :
+    # use the **inc** tag instead of usual **include** : eg
     # {% inc path/filename.ext param='value' param2='value' %}
     class IncludeCustomTag < IncludeTag
 
