@@ -1,49 +1,50 @@
 methods:
-  - { name: "Fog Seals", slug: "fog-seals" }
+  # - { name: "Fog Seals", slug: "fog-seals" }
   - { name: "Chip Seals", slug: "chip-seals" }
-  - { name: "Spray Seals", slug: "spray-seals" }
-  - { name: "Microsurfacing & Slurry", slug: "microsurfacing-and-slurry" }
-  - { name: "Combination Seals", slug: "combination-seals" }
-  - { name: "Cold-Mix Asphalt", slug: "cold-mix-asphalt" }
-  - { name: "Warm-Mix Asphalt", slug: "warm-mix-asphalt" }
-  - { name: "Asphalt Overlays", slug: "asphalt-overlays" }
-  - { name: "Recycling - Plant", slug: "recycling-plant" }
-  - { name: "Recycling - In-Place", slug: "recycling-in-place" }
+  - { name: "Fog Tack and Spray Seals", slug: "fog-tack-and-spray-seals" }
+  # - { name: "Microsurfacing & Slurry", slug: "microsurfacing-and-slurry" }
+  # - { name: "Combination Seals", slug: "combination-seals" }
+  # - { name: "Cold-Mix Asphalt", slug: "cold-mix-asphalt" }
+  - { name: "Hot and Warm Mix Asphalt", slug: "hot-and-warm-mix-asphalt" }
+  # - { name: "Asphalt Overlays", slug: "asphalt-overlays" }
+  # - { name: "Recycling - Plant", slug: "recycling-plant" }
+  # - { name: "Recycling - In-Place", slug: "recycling-in-place" }
   - { name: "Crack & Joint Treatments", slug: "crack-joint-treatments" }
-  - { name: "Concrete Overlays", slug: "concrete-overlays" }
-  - { name: "Concrete Treatment", slug: "concrete-treatment" }
-  - { name: "Patching & Preparation", slug: "patching-preparation" }
-  - { name: "Milling & Grinding", slug: "milling-and-grinding" }
+  # - { name: "Concrete Overlays", slug: "concrete-overlays" }
+  # - { name: "Concrete Treatment", slug: "concrete-treatment" }
+  # - { name: "Patching & Preparation", slug: "patching-preparation" }
+  # - { name: "Milling & Grinding", slug: "milling-and-grinding" }
 
 materials:
-  - { name: "Aggregates", slug: "aggregates" }
+  # - { name: "Aggregates", slug: "aggregates" }
   - { name: "Asphalt Emulsions", slug: "asphalt-emulsions" }
-  - { name: "Modified Emulsions", slug: "modified-emulsions" }
-  - { name: "Rejuvenators and Recycling Agents", slug: "rejuvenators-and-recycling-agents" }
+  # - { name: "Modified Emulsions", slug: "modified-emulsions" }
+  # - { name: "Rejuvenators and Recycling Agents", slug: "rejuvenators-and-recycling-agents" }
   - { name: "Asphalt Binders", slug: "asphalt-binders" }
-  - { name: "Modified Binders", slug: "modified-binders" }
-  - { name: "Asphalt Modification", slug: "asphalt-modification" }
-  - { name: "GTR", slug: "gtr" }
-  - { name: "Polymers", slug: "polymers" }
-  - { name: "Moisture Damage Control", slug: "moisture-damage-control" }
-  - { name: "Asphalt Additives", slug: "asphalt-additives" }
-  - { name: "Mixture Additives", slug: "mixture-additives" }
-  - { name: "Fibers", slug: "fibers" }
+  # - { name: "Modified Binders", slug: "modified-binders" }
+  # - { name: "Asphalt Modification", slug: "asphalt-modification" }
+  # - { name: "GTR", slug: "gtr" }
+  # - { name: "Polymers", slug: "polymers" }
+  # - { name: "Moisture Damage Control", slug: "moisture-damage-control" }
+  # - { name: "Asphalt Additives", slug: "asphalt-additives" }
+  # - { name: "Mixture Additives", slug: "mixture-additives" }
+  # - { name: "Fibers", slug: "fibers" }
   - { name: "RAP", slug: "rap" }
-  - { name: "RAS", slug: "ras" }
-  - { name: "Other Recycled Materials", slug: "other-recycled-materials" }
-  - { name: "Cement", slug: "cement" }
-  - { name: "Concrete Additives", slug: "concrete-additives" }
+  # - { name: "RAS", slug: "ras" }
+  # - { name: "Other Recycled Materials", slug: "other-recycled-materials" }
+  # - { name: "Cement", slug: "cement" }
+  # - { name: "Concrete Additives", slug: "concrete-additives" }
 
 manage:
-  - { name: "Safety", slug: "safety" }
-  - { name: "Policy", slug: "policy" }
+  # - { name: "Safety", slug: "safety" }
+  # - { name: "Policy", slug: "policy" }
   - { name: "Strategy", slug: "strategy" }
-  - { name: "Pavement Management Systems", slug: "pavement-management-systems" }
-  - { name: "Specifications", slug: "specifications" }
-  - { name: "Tests", slug: "tests" }
-  - { name: "Quality Control & Assurance", slug: "quality-control-assurance" }
+  # - { name: "Pavement Management Systems", slug: "pavement-management-systems" }
+  - { name: "Specifications and Tests", slug: "specifications-and-tests" }
+  # - { name: "Tests", slug: "tests" }
+  # - { name: "Quality Control & Assurance", slug: "quality-control-assurance" }
   - { name: "Research", slug: "research" }
   - { name: "Life Cycle Cost Analysis", slug: "life-cycle-cost-analysis" }
-  - { name: "Data Management", slug: "data-management" }
+  # - { name: "Data Management", slug: "data-management" }
   - { name: "Training", slug: "training" }
+  - { name: "Quick Links", slug: "quick-links" }
