@@ -4,7 +4,7 @@ Pages that have a corresponding "menu: main" in front matter will be included in
 Pages are sorted by "weight" front matter variable
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> {% endcomment %}
 {%- assign navbarId = include.navId -%}
-{%- assign pages = site.pages | sort: "weight" -%}
+{%- assign pages = site.pages | where_exp: "page", "page.menu == navbarId" | sort: "weight" -%}
 {% for p in pages -%}
   {%- if p.menu == navbarId -%}
   {% comment %}we dont want pagination pages in our menu{% endcomment %}
