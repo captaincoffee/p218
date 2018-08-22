@@ -1,30 +1,29 @@
 ---
-title: Pavement Preservation (P2) Information Architecture (IA)
+title: Pavement Preservation (P2) Information Architecture (IA) - Base
 ---
 
 {% comment %} -----------------------------------------------------------------
 Trick to get TOC Generating
 If content is enclosed in html tag, toc doesn't generate
 ---------------------------------------------------------------{% endcomment %}
-{% capture toc %}
-* TOC WILL GO HERE DO NOT REMOVE
-{:toc}
-{% endcapture %}
-{% comment %}--------------------------------------------------{% endcomment %}
 
-{% capture text %}
+
+What's {{ site.title_html }} content ?
+
+Tons of news about research, method and materials.
+
+A huge Knowledge base served by an efficient search engine.
+
+How is it organized ?
+
+<!--more-->"
+
 ## Website structure
 
  - Home page
  - News
  - Agenda
  - Knowledge Base (KB)
-
-
-
-
-
-
 
 <hr>
 # WIP
@@ -141,5 +140,3 @@ Create `methods/fog-seals.md` page containing :
 {% endraw %}
 {% endhighlight %}
 
-{% endcapture %}
-{% inc rows/1-2-thirds.html left=toc right=text %}
