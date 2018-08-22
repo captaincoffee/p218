@@ -1,7 +1,10 @@
-# Jekyll generator for kb categories index file creation
+########################################################################
+###
+###    Pavement Preservation - Knowledge Base (kb)
+###    generator for kb categories index file creation
+###
 
 module Jekyll
-
   class JekyllKBCategoryIndex < Jekyll::Generator
     safe true
     priority :lowest
@@ -21,14 +24,12 @@ module Jekyll
 
         # each subdir
         subdirs.each {|subdir|
-
-          # do subdir contains files
-          isEmpty = Dir.empty?(subdir)
-
-          if isEmpty
+          # if subdir contains no file, do nothing
+          if Dir.empty?(subdir)
             break
           end
 
+          # get folder's name by splitting path
           categorySlug = subdir.split('/').first
 
           # do we have a corresponding entry in kb categories data file ?
@@ -37,32 +38,23 @@ module Jekyll
           }
 
           if kbCategoryEntry.empty?
-            raise("#{collectionName}:#{categorySlug} as no corresponding entry in kb-categories data file")
+            Jekyll.logger.error "#{collectionName}:#{categorySlug} as no corresponding entry in _data/kb-categories.yaml file"
           end
 
           category = kbCategoryEntry.first
-
           # creates an index file for category
           index = Jekyll::KBCategoryIndexPage.new(site, collectionDatas, category)
           site.pages << index
+          Jekyll.logger.info "Category index generator : created index at #{ index.dir }#{ index.name }"
         }
-
       }
 
       # Changes the current working directory of the process back to base dir
       Dir.chdir(site.source)
-
     end
-
   end
 
-end
-
-
-module Jekyll
-
   class KBCategoryIndexPage < Page
-
     def initialize(site, collectionDatas, category)
       @site = site
       @base = site.source
@@ -75,12 +67,11 @@ module Jekyll
         {
           'title' => "#{category["name"]}",
           'url'   => @dir,
-          'collection'=> collectionDatas.label,
+          #'collection'=> collectionDatas.label,
           'category'  => category["slug"]
         }
       )
     end
-
   end
 
 end
