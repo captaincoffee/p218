@@ -3,7 +3,7 @@
 #  Can be used anywhere liquid syntax is parsed (templates, includes, posts/pages)
 #  {{ site | debug }}
 #  {{ site.posts | debug }}
-#
+# original work at https://raw.githubusercontent.com/progrium/blogrium/master/_plugins/debug.rb
 require 'pp'
 module Jekyll
   # Need to overwrite the inspect method here because the original
@@ -32,7 +32,7 @@ module Jekyll
       "<pre>#{obj.class}\n#{obj.pretty_inspect}</pre>"
     end
 
-  end # DebugFilter
-end # Jekyll
+  end
+end
 
 Liquid::Template.register_filter(Jekyll::DebugFilter)
