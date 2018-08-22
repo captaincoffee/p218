@@ -2,7 +2,7 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
 
 =begin
   Get related articles from each collection based on tag matches
-  @todo : check that related articles are sort by date desc
+  @todo : check that related articles are sorted by date desc
 =end
 
   isArticle = document.collection.metadata['isKB']
