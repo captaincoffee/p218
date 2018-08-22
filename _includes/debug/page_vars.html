@@ -2,8 +2,6 @@
 ###  Outputing page vars
 ###  see _config.yml for variables lists
 {% endcomment %}
-
-{% if site.debug_page_vars == true %}
 <h3>Page variables</h3>
 <ul>
   {% for prop in page %}
@@ -35,4 +33,3 @@
   </li>
   {%- endfor %}
 </ul>
-{% endif %}

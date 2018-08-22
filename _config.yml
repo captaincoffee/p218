@@ -185,6 +185,8 @@ comment_includes: true
 
 debug: true # deprecated
 
+debug_breakpoints : true
+
 debug_site_vars: true
 
 site_vars_NOT_to_print:

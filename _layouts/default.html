@@ -4,6 +4,9 @@
 {% inc utils/cookiewarning.md %}
 {% inc header.html %}
 {% inc components/search-results.html %}
+{% if site.debug_breakpoints == true %}
+  {% inc debug/breakpoints.html %}
+{% endif %}
 {{ content }}
 {% inc footer.html %}
 {% include debug/debug.html %}

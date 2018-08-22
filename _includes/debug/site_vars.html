@@ -2,8 +2,6 @@
 ###  Outputing site vars
 ###  see _config.yml for variables lists
 {% endcomment %}
-
-{% if site.debug_site_vars == true %}
 <h3>Jekyll version : {{ jekyll.version }}</h3>
 <h3>Jekyll environment : {{ jekyll.environment }}</h3>
 <h3>Site variables</h3>
@@ -25,4 +23,3 @@
   </li>
 {%- endfor %}
 </ul>
-{% endif %}
