@@ -48,20 +48,11 @@ When on a category index page, we also create :
           <a href="{{ site.baseurl }}{{ article.url }}">
             <i class="{{ articleType.icon }}"></i> {{ article.title }}
           </a>
-
           {% assign currentCollectionSlug = article.collection %}
           {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}
           date: {{ article.date | date_to_string }} -
           in {{ currentCollection.name }} collection -
-
-
-              {% assign matchingTags = "" | split:"/" %}
-              {% for t in article.tags %}
-                {% if page.tags contains t %}
-                  {% assign matchingTags = matchingTags | push: t %}
-                {% endif %}
-              {% endfor %}
-            matching on : <span>{{ matchingTags | join: ", " }}</span>
+          matching on : <span>{{ article.commonTags | join: ", " }}</span>
         </li>
       {% endfor %}
       </ul>
