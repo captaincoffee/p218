@@ -19,7 +19,6 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
     'collection' => str,
     'commonTags' => array
   }
-
 =end
 
   # only for knowledge base documents
@@ -52,8 +51,6 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
 
       # get common tags
       commonTags = tags & docTags
-
-      p="e"
 
       if commonTags.length >= minTagMatch
 
