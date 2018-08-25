@@ -7,7 +7,7 @@
   </ul>
 </footer>
 
-{% comment %} ### minified versions
+{% comment %} ### minified versions {% endcomment %}
 <script src="{{ site.baseurl }}/node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="{{ site.baseurl }}/node_modules/jquery.cookie/jquery.cookie.js"></script>
 <script src="{{ site.baseurl }}/node_modules/popper.js/dist/umd/popper.min.js"></script>
@@ -15,16 +15,14 @@
 <script src="{{ site.baseurl }}/node_modules/algoliasearch/dist/algoliasearch.min.js"></script>
 <script src="{{ site.baseurl }}/node_modules/instantsearch.js/dist/instantsearch.min.js"></script>
 
-{% endcomment %}
-
-{% comment %} ### unminified versions{% endcomment %}
-
+{% comment %} ### unminified versions
 <script src="{{ site.baseurl }}/node_modules/jquery/dist/jquery.slim.js"></script>
 <script src="{{ site.baseurl }}/node_modules/jquery.cookie/jquery.cookie.js"></script>
 <script src="{{ site.baseurl }}/node_modules/popper.js/dist/umd/popper.js"></script>
 <script src="{{ site.baseurl }}/node_modules/bootstrap/dist/js/bootstrap.js"></script>
 <script src="{{ site.baseurl }}/node_modules/algoliasearch/dist/algoliasearch.js"></script>
 <script src="{{ site.baseurl }}/node_modules/instantsearch.js/dist/instantsearch.js"></script>
+{% endcomment %}
 
 <!-- Custom scripts -->
 <script src="{{ site.baseurl }}/assets/js/script.js"></script>
