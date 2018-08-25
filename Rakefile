@@ -28,7 +28,7 @@ $pages_dir      = "_pages"
 # $collectionsNames = ['manage']
 $collectionsNames = ['manage', 'materials', 'methods']
 
-$numberOfPosts = 1
+$numberOfPosts = 10
 $articlesPerCollection = 10
 
 $default_ext    = "md"
@@ -49,7 +49,7 @@ task :default => [:bench]
 desc "Creates dummy posts"
 task :dpost do
     $tagsPool = get_tags_pool()
-    create_elements( 'post', $numberOfPosts, true )
+    create_elements( 'post', $numberOfPosts, false )
     d2( "created #{$elementCounter} total posts" )
 end
 
