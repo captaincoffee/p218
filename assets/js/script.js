@@ -9,6 +9,7 @@ layout: null
        if (links[i].hostname != window.location.hostname) {
            links[i].target = '_blank'
            links[i].className += ' externalLink'
+           links[i].rel = "noopener noreferrer"
        }
     }
 })();
