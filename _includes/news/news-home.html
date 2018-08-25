@@ -9,7 +9,7 @@
       {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
       </p>
       {% if post.content == post.excerpt %}
-        {{ post.content | truncate: 50 }}
+        {{ post.content | truncate: 150 }}
       {% else %}
         {{ post.content }}
       {% endif %}
