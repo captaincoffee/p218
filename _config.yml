@@ -244,9 +244,9 @@ comment_includes: true
 
 debug: true # deprecated
 
-debug_breakpoints : true
+debug_breakpoints: false
 
-debug_site_vars: true
+debug_site_vars: false
 
 site_vars_NOT_to_print:
 # - config
@@ -318,7 +318,7 @@ site_vars_NOT_to_print:
 #
 # variables present in **page_vars_NOT_to_print** array
 # will not be printed
-debug_page_vars: true
+debug_page_vars: false
 
 page_vars_NOT_to_print:
   - next
