@@ -7,6 +7,11 @@ gem 'stringex'
 
 group :jekyll_plugins do
   gem 'jekyll-sitemap'
-  gem 'jekyll-paginate-v2'
+
+  ############################################
+  # CHANGE THIS IN PRODUCTION
+  # gem 'jekyll-paginate-v2'
+  gem "jekyll-paginate-v2", :git => "git@github.com:djacquel/jekyll-paginate-v2.git"
+
   gem 'jekyll-algolia'
 end

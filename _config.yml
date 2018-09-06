@@ -98,13 +98,16 @@ pagination:
 autopages:
   enabled: true
   tags:
-    enabled: false
+    enabled: true
     title:   "tag : :tag"
     layouts:
       - kb_autopage_collections_tags.html
+    slugify:
+      mode: 'ascii'
+      cased: true
 
   categories:
-    enabled: true
+    enabled: false
     title:   "category : :category"
     layouts:
       - kb_autopage_collections_categories.html
