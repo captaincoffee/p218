@@ -27,6 +27,6 @@ When on a category index page, we also create :
     {% assign currentCategorySlug = dirParts[2] %}
     {% capture currentCategoryIndexUrl %}{{ currentCollectionIndexUrl }}/{{ currentCategorySlug }}/{% endcapture %}
 
-    {% assign currentCategoryDatas = site.data.kb-categories[currentCollectionSlug] | where: "slug", currentCategorySlug | first %}
+    {% assign currentCategoryDatas = site.kbCategories[currentCollectionSlug] | where: "slug", currentCategorySlug | first %}
 
 {% endif %}

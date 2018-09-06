@@ -5,7 +5,7 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
   d1("## Create_elements : type=#{type} - numberOf=#{numberOf} - clean=#{clean} - collectionName=#{collectionName}")
   currentCounter = 0
   $config        = SafeYAML::load_file($configPath)
-  $kbCategories  = SafeYAML::load_file($kbCategoriesPath)
+  $kbCategories  = $config["kbCategories"]
   $categoriesPool= get_categories_pool(collectionName)
 
   $tags     = get_tags()

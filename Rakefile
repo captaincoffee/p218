@@ -21,7 +21,6 @@ $rootPath = __dir__
 d1("Current directory : #{$rootPath}")
 
 $configPath = File.join($rootPath, '_config.yml')
-$kbCategoriesPath = File.join($rootPath, '_data/kb-categories.yaml')
 
 $posts_dir      = "_posts"
 $pages_dir      = "_pages"
@@ -67,7 +66,7 @@ end
 desc "Launch n successive builds to test performance"
 task :bench do
     d2(">> Starting benchmarks")
-    Rake::Task[:dummy].invoke
+    Rake::Task[:dpost].invoke
     Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:", ">avg:") do |x|
 
         total = Benchmark::Tms.new
@@ -82,6 +81,16 @@ task :bench do
 
         [ total, total / $benchmarkCycles ]
     end
+end
+
+desc "Serve site locally"
+task :serve do
+    system "bundle exec jekyll serve --trace"
+end
+
+desc "Build jekyll site"
+task :build do
+    system "bundle exec jekyll build --trace"
 end
 
 desc "list tasks"

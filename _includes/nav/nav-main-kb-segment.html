@@ -27,9 +27,10 @@ How can we have better perf for this menu ?
 Get Knowledge Base (kb) collections by selecting ones with default isKB set to true
 See _config.yml for kb collections
 {% endcomment %}
+
 {%- assign kbCollections = site.collections | where: "isKB", "true" -%}
 
-{%- assign categories = site.data.kb-categories -%}
+{%- assign categories = site.kbCategories -%}
 
 {%- for currentCollection in kbCollections -%}
   {% comment %}Only print if we have article in the currentCollection{% endcomment %}
