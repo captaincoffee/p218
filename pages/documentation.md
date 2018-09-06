@@ -1,8 +1,10 @@
 ---
-title: Documentation Home
+title: Documentation
+menu: footer
+weight: 30
 permalink: /documentation/
-layout: default
 ---
+
 <h1>Documentation</h1>
 {% assign documentation = site.collections | where: "label", "documentation" | first %}
 {% assign docs = documentation.docs %}

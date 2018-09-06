@@ -53,39 +53,26 @@ In order to differentiate **KB** collections from other collections we set a `is
 
 ### Collection's index page
 
-For our **methods** collection we have a methods/index.html page.
 
-{% highlight yaml %}
-{% raw %}
----
----
-{% inc components/collection-page.html %}
-{% endraw %}
-{% endhighlight %}
-
-This page will then be reached at **/methods/index.html** that can be shortened to **/methods/**.
 
 ## Create a Category
 
 Articles are organized in collections, then in categories inside each collection.
 
 Article can be part of only one **category**.
+
 Each collection has is own categories.
 
 A category is automatically assigned depending on the folder name and default configuration rules.
 
-### Add the category in parent collection configuration.
+### Add the category to kbCategories configuration.
 
-Add `- { name: "Fog Seals", slug: fog-seals }` in :
 
-{% highlight yaml %}
-collections:
+``` yaml
+kbCategories
   methods:
-    output: true
-    # categories will appear in the order they are here
-    categories:
-        - { name: "Fog Seals", slug: fog-seals }
-{% endhighlight %}
+    - { name: "Fog Seals", slug: fog-seals }
+```
 
 Here we've added the **Fog Seals** category to the methods collection.
 Category name is used for presentation and **slug** is used for path and url generation.

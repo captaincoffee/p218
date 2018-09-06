@@ -25,7 +25,7 @@ Regular pages, News listing pages and KB indexes pages are not indexed.
 
 jekyll _config.yaml file :
 
-
+``` yaml
 algolia:
   application_id: 'K3NGJZEZ95'
   search_only_api_key: '66a4234e97f1002b75f7eb36ed40eee7'
@@ -39,8 +39,11 @@ algolia:
     - faq/**
     - legal/**
     - pages/**
-
+```
 
 Launch indexation after each content edition.
+See Algolia dashboard for Algolia API key.
 
-    ALGOLIA_API_KEY='0d9e779b8a547c439a5f297983a65c41' bundle exec jekyll algolia
+``` bash
+ALGOLIA_API_KEY='your_secret_key' bundle exec jekyll algolia
+```
