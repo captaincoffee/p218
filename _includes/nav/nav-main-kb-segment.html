@@ -1,11 +1,40 @@
 {% comment %} ++++ Knowledge base main menu ++++ {% endcomment %}
-{% comment %}Get Knowledge base collections{% endcomment %}
+
+
+
+{% comment %}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++ Refactoring              ++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+How can we have better perf for this menu ?
+
+  - already sort all Kb categories index in a hash stored in site.kbMenu
+
+    -
+      collection_1
+        categories:
+          -
+            title: category_title
+            docs:
+              -
+                title: doc_title
+                url:   doc_url
+
+{% endcomment %}
+
+{% comment %}
+Get Knowledge Base (kb) collections by selecting ones with default isKB set to true
+See _config.yml for kb collections
+{% endcomment %}
 {%- assign kbCollections = site.collections | where: "isKB", "true" -%}
+
 {%- assign categories = site.data.kb-categories -%}
 
 {%- for currentCollection in kbCollections -%}
   {% comment %}Only print if we have article in the currentCollection{% endcomment %}
   {%- if currentCollection.docs.size > 0 -%}
+
     {%- assign urlStart = currentCollection.label | append: "/" | prepend: "/" -%}
     {%- assign categoryClass = "" -%}
     {%- if page.url == urlStart -%}
@@ -31,7 +60,7 @@
       {% comment %}Look for docs with a category{% endcomment %}
       {%- assign currentCatDocs = byCategory | where: "name", currentCat | first -%}
       {%- if currentCatDocs != nil -%}
-        <a class="dropdown-item {% if page.url == pageUrl %}current{% endif %}" href="{{ site.baseurl }}/{{ currentCollection.label }}/{{ cat.slug }}/">{{ cat.name }}</a>
+        <a class="dropdown-item {% if page.url == pageUrl %}current{% endif %}" href="{{ site.baseurl }}/kb/{{ currentCollection.label }}/{{ cat.slug }}/">{{ cat.name }}</a>
       {%- endif -%}
   {%- endfor %}
   </div>

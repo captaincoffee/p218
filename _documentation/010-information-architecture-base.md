@@ -2,34 +2,18 @@
 title: Pavement Preservation (P2) Information Architecture (IA) - Base
 ---
 
-{% comment %} -----------------------------------------------------------------
-Trick to get TOC Generating
-If content is enclosed in html tag, toc doesn't generate
----------------------------------------------------------------{% endcomment %}
-
-
-What's {{ site.title_html }} content ?
-
-Tons of news about research, method and materials.
-
-A huge Knowledge base served by an efficient search engine.
-
-How is it organized ?
-
-<!--more-->"
-
 ## Website structure
 
  - Home page
  - News
  - Agenda
- - Knowledge Base (KB)
+ - Pavement Preservation Knowledge Base
 
 <hr>
-# WIP
+
+## WIP
 
 ## Pavement Preservation Knowledge Base
-The **Pavement Preservation Knowledge Base** (aka **KB** in this document) website is build with [Jekyll](http://jekyllrb.com/).
 
 ### Knowledge base organization
 Base KB's element is **article**.

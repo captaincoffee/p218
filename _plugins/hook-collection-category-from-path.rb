@@ -1,4 +1,4 @@
-# Normal jekyll behaviour is to assign a category
+# Normal jekyll behavior is to assign a category
 # to a collection document depending on path
 # In the case of es/_posts, 'es' is added as a category.
 # In the case of _posts/es, 'es' is NOT added as a category.

@@ -1,4 +1,4 @@
-{% if site.debug_site_vars == true %}
+{% if site.debug_site_vars == true -%}
   <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#siteVariables" aria-expanded="false" aria-controls="siteVariables">Site vars</button>
   </p>
   <div class="collapse" id="siteVariables">
@@ -6,9 +6,8 @@
       {% inc debug/site_vars.html %}
     </div>
   </div>
-{% endif %}
-
-{% if site.debug_page_vars == true %}
+{%- endif %}
+{% if site.debug_page_vars == true -%}
   <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pageVariables" aria-expanded="false" aria-controls="pageVariables">Page vars</button>
   </p>
   <div class="collapse" id="pageVariables">
@@ -16,4 +15,4 @@
       {% inc debug/page_vars.html %}
     </div>
   </div>
-{% endif %}
+{%- endif %}

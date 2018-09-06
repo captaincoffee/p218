@@ -9,7 +9,7 @@
     {% comment %} ########################################
     Accessing properties on a page or on a collection item is different
     #################################### {% endcomment %}
-    {% if page.collection != null %}{% comment %} ### Collection item ### {% endcomment %}
+    {% if page.collection != null and page.isKBCategoryIndex != true %}{% comment %} ### Collection item ### {% endcomment %}
       {% assign key = prop %}
       {% assign value = prop %}
     {% else %}{% comment %} ### Page ### {% endcomment %}

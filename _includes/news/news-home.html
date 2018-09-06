@@ -8,11 +8,15 @@
       {{ post.date | date_to_string: "ordinal", "US" }}
       {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
       </p>
+    {% comment %}
       {% if post.content == post.excerpt %}
         {{ post.content | truncate: 150 }}
       {% else %}
         {{ post.content }}
       {% endif %}
+    {% endcomment %}
+
+    {{ post.content | truncate: 150 }}
     </li>
   {% endfor %}
 </ul>

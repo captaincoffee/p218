@@ -1,0 +1,19 @@
+---
+title: Categories
+menu: main1
+weight: 90
+permalink: kb/categories/
+---
+
+<h2>KB Categories</h2>
+
+<ul>
+{% assign sorted = site.pages | sort: "title" %}
+{% for my_page in sorted %}
+  {% if my_page.url contains "/kb/category/" and my_page.autogen == nil %}
+
+    <li><a href="{{ my_page.url }}"> - title : {{ my_page.title }}</a></li>
+
+  {% endif %}
+{% endfor %}
+</ul>

@@ -1,0 +1,46 @@
+---
+title: Search
+---
+
+## How we search on P2
+
+Search is performed thanks to [Jekyll Algolia](https://community.algolia.com/jekyll-algolia/getting-started.html) and [InstantSearch.js](https://community.algolia.com/instantsearch.js/v2/getting-started.html).
+
+
+Jekyll algolia gem
+
+
+## Jekyll Algolia
+
+Jekyll Algolia is used to send site content indexing to Algolia servers.
+
+Indexed elements are posts, Knowledge base collections items
+
+Regular pages, News listing pages and KB indexes pages are not indexed.
+
+## Need to review this because kb permalinks have changed.
+
+
+## Setup
+
+jekyll _config.yaml file :
+
+
+algolia:
+  application_id: 'K3NGJZEZ95'
+  search_only_api_key: '66a4234e97f1002b75f7eb36ed40eee7'
+  index_name: 'p218'
+
+  files_to_exclude:
+    - kb/manage/*/index.html
+    - kb/materials/*/index.html
+    - kb/methods/*/index.html*
+    - documentation/**
+    - faq/**
+    - legal/**
+    - pages/**
+
+
+Launch indexation after each content edition.
+
+    ALGOLIA_API_KEY='0d9e779b8a547c439a5f297983a65c41' bundle exec jekyll algolia

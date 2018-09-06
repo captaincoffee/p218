@@ -24,7 +24,7 @@ exclude:
 
 plugins:
  - jekyll-sitemap
- - jekyll-paginate-v2
+# - jekyll-paginate-v2
 
 timezone:    America/New_York
 # encoding:    nil
@@ -35,15 +35,15 @@ timezone:    America/New_York
 # highlighter: pygments
 
 ############################################################
-# Site configuration for the Jekyll 3 Pagination Gem
-# The values here represent the defaults if nothing is set
+# Site configuration for the Jekyll Pagination V2 Gem
+# see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
 pagination:
 
   # Site-wide kill switch, disabled here it doesn't run at all
-  enabled: true
+  enabled: false
 
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
-  debug: true
+  debug: false
 
   # The default document collection to paginate if nothing is specified ('posts' is default)
   collection: 'posts'
@@ -93,6 +93,29 @@ pagination:
   indexpage: 'index'
 
 ############################################################
+# automatic page creation configuration
+# see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-AUTOPAGES.md
+autopages:
+  enabled: false
+  tags:
+    enabled:    true
+    title:      "tag : :tag"
+    layouts:
+      - kb_autopage_collections_tags.html
+
+  categories:
+    enabled:    true
+    title:      "category : :category"
+    layouts:
+      - kb_autopage_collections_categories.html
+
+  collections:
+    enabled: false
+    slugify:
+      mode: 'ascii'
+      cased: true
+############################################################
+
 
 
 
@@ -165,16 +188,17 @@ collections:
     output: true   # every page in the collection will be created
     isKB: true     # is part of Knowledge base
     name: "Methods" # Print name used in titles, menus, ...
-
+    permalink: "/kb/:path/"
   materials:
     output: true
     isKB: true
     name: Materials
-
+    permalink: "/kb/:path/"
   manage:
     output: true
     isKB: true
     name: Manage
+    permalink: "/kb/:path/"
 
   documentation:
     output: true
@@ -193,13 +217,39 @@ articleTypes :
 
 ############### DEFAULT CONFIGURATION ####################
 defaults:
-  - { scope: { type: "posts" }, values: { permalink: "/news/:year/:title/", layout: "post" } }
-  - { scope: { type: "pages" }, values: { layout: "default" } }
-  - { scope: { type: "documentation" }, values: { layout: "documentation" } }
+  -
+    scope:
+      type: "posts"
+    values:
+      permalink: "/news/:year/:title/"
+      layout: "post"
+  -
+    scope:
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      type: "documentation"
+    values:
+      layout: "documentation"
+
   # default layout for collections articles
-  - { scope: { type: "methods" }, values: { layout: "collection" } }
-  - { scope: { type: "materials" }, values: { layout: "collection" } }
-  - { scope: { type: "manage" }, values: { layout: "collection" } }
+  -
+    scope:
+      type: "methods"
+    values:
+      layout: "kb_collection_item"
+  -
+    scope:
+      type: "materials"
+    values:
+      layout: "kb_collection_item"
+  -
+    scope:
+      type: "manage"
+    values:
+      layout: "kb_collection_item"
 
 ############### Algolia jekyll plugin configuration ####################
 
@@ -209,9 +259,9 @@ algolia:
   index_name: 'p218'
 
   files_to_exclude:
-    - manage/*/index.html
-    - materials/*/index.html
-    - methods/*/index.html*
+    - kb/manage/*/index.html
+    - kb/materials/*/index.html
+    - kb/methods/*/index.html*
     - documentation/**
     - faq/**
     - legal/**
@@ -242,7 +292,7 @@ comment_includes: true
 # variables present in **site_vars_NOT_to_print** array
 # will not be printed
 
-debug: true # deprecated
+debug_hooks: true
 
 debug_breakpoints: false
 
@@ -318,7 +368,7 @@ site_vars_NOT_to_print:
 #
 # variables present in **page_vars_NOT_to_print** array
 # will not be printed
-debug_page_vars: false
+debug_page_vars: true
 
 page_vars_NOT_to_print:
   - next
@@ -329,7 +379,7 @@ page_vars_NOT_to_print:
   - content
 #  - relative_path
 #  - id
-#  - collection
+  - collection
   - excerpt
 #  - draft
 #  - categories
