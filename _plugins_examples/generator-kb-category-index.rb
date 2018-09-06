@@ -14,7 +14,7 @@ module Jekyll
     def generate(site)
       @site = site
       kbCollections = site.collections.select {|k, v| v.metadata["isKB"] }
-      kbCategories  = site.data["kb-categories"
+      kbCategories  = site.config["kbCategories"]
 
       kbCollections.each {|collectionName, collectionDatas|
 
