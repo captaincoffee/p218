@@ -1,3 +1,10 @@
+GIT
+  remote: git@github.com:djacquel/jekyll-paginate-v2.git
+  revision: f9b661f119ad6484b27b95987c243cdd94af6dbe
+  specs:
+    jekyll-paginate-v2 (2.0.0)
+      jekyll (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -16,7 +23,7 @@ GEM
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
     ffi (1.9.25)
-    filesize (0.1.1)
+    filesize (0.2.0)
     forwardable-extended (2.6.0)
     http_parser.rb (0.6.0)
     httpclient (2.8.3)
@@ -44,8 +51,6 @@ GEM
       nokogiri (~> 1.6)
       progressbar (~> 1.9)
       verbal_expressions (~> 0.1.5)
-    jekyll-paginate-v2 (2.0.0)
-      jekyll (~> 3.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-sitemap (1.2.0)
@@ -88,7 +93,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 3.8.1)
   jekyll-algolia
-  jekyll-paginate-v2
+  jekyll-paginate-v2!
   jekyll-sitemap
   rake
   stringex

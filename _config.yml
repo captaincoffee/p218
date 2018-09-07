@@ -107,10 +107,13 @@ autopages:
       cased: true
 
   categories:
-    enabled: false
-    title:   "category : :category"
+    enabled: true
+    title:   "category : :cat"
     layouts:
       - kb_autopage_collections_categories.html
+    slugify:
+      mode: 'ascii'
+      cased: true
 
   collections:
     enabled: false
@@ -314,13 +317,8 @@ algolia:
   index_name: 'p218'
 
   files_to_exclude:
-    - kb/manage/*/index.html
-    - kb/materials/*/index.html
-    - kb/methods/*/index.html*
-    - documentation/**
-    - faq/**
-    - legal/**
-    - pages/**
+    - _documentation/*
+    - pages/*
 
   # nodes_to_index: 'p,.summary'
 
@@ -328,6 +326,9 @@ algolia:
 # this is an alternative to
 #  `jekyll build --profile`
 profile: false
+
+# quiet: false
+# verbose: true
 
 ############### custom DEBUG Widgets ####################
 
