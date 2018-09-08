@@ -24,7 +24,7 @@ exclude:
 
 plugins:
  - jekyll-sitemap
-# - jekyll-paginate-v2
+ - jekyll-paginate-v2
 
 timezone:    America/New_York
 # encoding:    nil
@@ -313,19 +313,27 @@ algolia:
   application_id: 'K3NGJZEZ95'
   search_only_api_key: '66a4234e97f1002b75f7eb36ed40eee7'
   index_name: 'p218'
+
   settings:
+    searchableAttributes:
+      - title
+      - unordered(content)
+      - category
+      - tags
 
   files_to_exclude:
     - _documentation/*
+    - news/*
+    - pages/**/*
     - pages/*
-    - kb/category/*
-    - kb/tag/*
 
 ###########################################
 #  All debugs are disabled for production #
 ###########################################
 
 profile: false
+
+verbose: false
 
 comment_includes: false
 
