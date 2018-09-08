@@ -164,13 +164,13 @@ sass:
   # style : nested (default), compact, compressed, expanded
   #         :nested, :compact, :compressed, :expanded also works
   # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-  style: nested
+  style: compressed
 
 
 ## new in 2.8
 liquid:
   strict_variables: false # default: false
-  strict_filters: true # default: false
+  strict_filters: false # default: false
   error_mode: strict # default: warn
 
 ############### RELATED ARTICLES ####################
@@ -321,135 +321,21 @@ algolia:
     - kb/category/*
     - kb/tag/*
 
-  # nodes_to_index: 'p,.summary'
+###########################################
+#  All debugs are disabled for production #
+###########################################
 
-############### Jekyll built-in profiler ####################
-# this is an alternative to
-#  `jekyll build --profile`
 profile: false
 
-# quiet: false
-# verbose: true
+comment_includes: false
 
-############### custom DEBUG Widgets ####################
-
-#### Commented includes tag (_plugins/tag-commented-include.rb)
-#
-# Wile digging into jekyll's code, it's not always easy to spot
-# where code comes from.
-# Commenting start and end for an include, helps a lot.
-# Use :
-# {% inc path/filename.ext param='value' param2='value' %}
-comment_includes: true
-
-#### Debug site variables
-#
-# If set to true, will output site variables
-#
-# variables present in **site_vars_NOT_to_print** array
-# will not be printed
-
-debug_hooks: true
+debug_hooks: false
 
 debug_breakpoints: false
 
 debug_site_vars: false
 
-site_vars_NOT_to_print:
-# - config
-# - data
-# - time
-# - tags
- - pages
- - posts
- - static_files
- - documents
-# - categories
- - collections
- - html_pages
-# - source
-# - destination
-# - plugins_dir
-# - layouts_dir
-# - data_dir
-# - includes_dir
-# - safe
-# - include
-# - exclude
-# - keep_files
-# - encoding
-# - markdown_ext
-# - strict_front_matter
-# - show_drafts
-# - limit_posts
-# - future
-# - unpublished
-# - whitelist
-# - plugins
-# - markdown
-# - highlighter
-# - lsi
-# - excerpt_separator
-# - incremental
-# - detach
-# - port
-# - host
-# - baseurl
-# - show_dir_listing
-# - permalink
-# - paginate_path
-# - timezone
-# - quiet
-# - verbose
-# - defaults
-# - liquid
-# - rdiscount
-# - redcarpet
-# - kramdown
-# - title
-# - email
-# - description
-# - url
-# - twitter_username
-# - github_username
-# - sass
-# - show_debug
-# - site_vars_to_print
-# - serving
-# - watch
- - related_posts
+debug_page_vars: false
 
-#### Debug page variables
-#
-# If set to true, will output page variables
-#
-# variables present in **page_vars_NOT_to_print** array
-# will not be printed
-debug_page_vars: true
-
-page_vars_NOT_to_print:
-  - next
-  - previous
-#  - path
-  - output
-#  - url
-  - content
-#  - relative_path
-#  - id
-  - collection
-  - excerpt
-#  - draft
-#  - categories
-#  - category
-#  - layout
-#  - title
-#  - author
-#  - date
-#  - date_added_kb
-#  - slug
-#  - ext
-  - related
-
-############### Collection Category from Path Hook configuration ####################
 CollectionCatFromPath:
   debug: false
