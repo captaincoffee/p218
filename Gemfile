@@ -13,5 +13,6 @@ group :jekyll_plugins do
   # gem 'jekyll-paginate-v2'
   gem "jekyll-paginate-v2", :git => "git@github.com:djacquel/jekyll-paginate-v2.git"
 
-  gem 'jekyll-algolia'
+  # gem 'jekyll-algolia'
+  gem 'jekyll-algolia', :git => "git@github.com:djacquel/jekyll-algolia.git", :branch => 'develop'
 end

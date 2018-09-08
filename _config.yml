@@ -117,9 +117,7 @@ autopages:
 
   collections:
     enabled: false
-    slugify:
-      mode: 'ascii'
-      cased: true
+
 ############################################################
 
 # markdown:      kramdown
@@ -315,10 +313,13 @@ algolia:
   application_id: 'K3NGJZEZ95'
   search_only_api_key: '66a4234e97f1002b75f7eb36ed40eee7'
   index_name: 'p218'
+  settings:
 
   files_to_exclude:
     - _documentation/*
     - pages/*
+    - kb/category/*
+    - kb/tag/*
 
   # nodes_to_index: 'p,.summary'
 
