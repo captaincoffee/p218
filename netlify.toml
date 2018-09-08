@@ -1,0 +1,13 @@
+# Netlify build & deploy setup
+# see https://www.netlify.com/docs/netlify-toml-reference/
+
+[Settings]
+ID = "p218"
+
+[build]
+  command = "jekyll build --config _config.yml,_config_dev.yml && jekyll algolia"
+  publish = "_site"
+
+[context.production]
+  command = "jekyll build && jekyll algolia"
+
