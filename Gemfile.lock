@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:djacquel/jekyll-algolia.git
+  remote: https://github.com/djacquel/jekyll-algolia.git
   revision: 8770ce4a0740fc45db8af667acfbb7afec0a50dc
   branch: develop
   specs:
@@ -14,7 +14,7 @@ GIT
       verbal_expressions (~> 0.1.5)
 
 GIT
-  remote: git@github.com:djacquel/jekyll-paginate-v2.git
+  remote: https://github.com/sverrirs/jekyll-paginate-v2.git
   revision: f9b661f119ad6484b27b95987c243cdd94af6dbe
   specs:
     jekyll-paginate-v2 (2.0.0)

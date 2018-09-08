@@ -11,8 +11,8 @@ group :jekyll_plugins do
   ############################################
   # CHANGE THIS IN PRODUCTION
   # gem 'jekyll-paginate-v2'
-  gem "jekyll-paginate-v2", :git => "git@github.com:djacquel/jekyll-paginate-v2.git"
+  gem "jekyll-paginate-v2", :git => "https://github.com/sverrirs/jekyll-paginate-v2.git"
 
   # gem 'jekyll-algolia'
-  gem 'jekyll-algolia', :git => "git@github.com:djacquel/jekyll-algolia.git", :branch => 'develop'
+  gem 'jekyll-algolia', :git => "https://github.com/djacquel/jekyll-algolia.git", :branch => 'develop'
 end
