@@ -11,10 +11,11 @@ permalink: /check_auto_pge/
 {% assign sorted = site.pages | sort: "url" %}
 {% for p in sorted %}
 <li>
-  <a href="{{ p.url }}">{{ p.title }}</a>
+
   {{ p.url }}
   - autogen:{{ p.autogen | inspect }}
   - {{ p.autopages.display_name }}
+  <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
 
 {% endfor %}
