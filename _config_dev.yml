@@ -115,8 +115,8 @@ liquid:
 #  `jekyll build --profile`
 profile: false
 
-# quiet: false
-# verbose: true
+# jekyll verbosity
+verbose: false
 
 ############### custom DEBUG Widgets ####################
 
@@ -136,11 +136,11 @@ comment_includes: true
 # variables present in **site_vars_NOT_to_print** array
 # will not be printed
 
-debug_hooks: true
+debug_hooks: false
 
-debug_breakpoints: true
+debug_breakpoints: false
 
-debug_site_vars: true
+debug_site_vars: false
 
 site_vars_NOT_to_print:
 # - config
@@ -239,4 +239,4 @@ page_vars_NOT_to_print:
 
 ############### Collection Category from Path Hook configuration ####################
 CollectionCatFromPath:
-  debug: true
+  debug: false
