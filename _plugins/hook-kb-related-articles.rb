@@ -33,7 +33,7 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
     matchedComplete = false
 
     site['collections'].each { |collection|
-      if collection["isKB"]
+      if collection["isKB"] == true
         allDocs += collection['docs']
       end
     }
