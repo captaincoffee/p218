@@ -11,3 +11,7 @@ ID = "p218"
 [context.production]
   command = "jekyll build && jekyll algolia"
 
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Content-Type = "text/html;/json"

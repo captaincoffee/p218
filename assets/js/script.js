@@ -87,18 +87,6 @@ search.addWidget(
 
 search.addWidget(
   instantsearch.widgets.refinementList({
-    container: '#refinement-list',
-    attributeName: 'collection',
-    collapsible: true,
-    operator: 'or',
-    templates: {
-      header: 'Collection'
-    }
-  })
-);
-
-search.addWidget(
-  instantsearch.widgets.refinementList({
     container: '#refinement-list2',
     attributeName: 'categories',
     collapsible: true,
@@ -110,11 +98,23 @@ search.addWidget(
 );
 
 search.addWidget(
+  instantsearch.widgets.refinementList({
+    container: '#refinement-list',
+    attributeName: 'tags',
+    collapsible: true,
+    operator: 'or',
+    templates: {
+      header: 'Tags'
+    }
+  })
+);
+
+search.addWidget(
   instantsearch.widgets.currentRefinedValues({
     container: '#current-refined-values',
     attributes: [
-      {name: 'collection', label: 'Collection'},
       {name: 'categories', label: 'Category'},
+      {name: 'tags', label: 'Tags'},
     ],
     onlyListedAttributes: true,
     clearAll: 'before',
