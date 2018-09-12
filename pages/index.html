@@ -5,17 +5,29 @@ menu: main1
 weight: 10
 ---
 <div class="row">
-  <div class="col-md-8 p-3 border-right">
+  <div class="col-md-6 p-3 border-right">
     {% inc news/news-home.html %}
   </div>
 
-  <div class="col col-md-4 p-3">
-    <h2>Upcoming Events</h2>
+  <div class="col col-md-6 p-3">
+    <h2>iP Knownledge Base (KB)</h2>
+    <p>Browse Knowledge Base by <a href="/kb/categories">category</a></p>
+
+    <h3>New articles in KB</h3>
+    {% assign kb_collections = site.collections | where: "isKB", "true" %}
+    {% assign all_kb_docs = "" | split: "" %}
+
+    {% for collection in kb_collections %}
+      {% assign all_kb_docs = all_kb_docs | concat: collection.docs %}
+    {% endfor %}
+
+    {% assign sorted = all_kb_docs | sort: 'date_added_kb' %}
     <ul>
-      <li>event 1 - date</li>
-      <li>event 2 - date</li>
-      <li>event 3 - date</li>
+      {% for d in all_kb_docs limit: 5 %}
+        <li>{{ d.date_added_kb }} - {{ d.title }} - {{ d.url }}</li>
+      {% endfor %}
     </ul>
-    <p><a href="{{site.baseurl}}/events/">Find All Upcoming Events</a></li>
+
   </div>
 </div>
+
