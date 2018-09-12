@@ -67,20 +67,20 @@ pagination:
 # see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-AUTOPAGES.md
 autopages:
   enabled: true
-  tags:
-    enabled: true
-    title:   "tag : :tag"
-    layouts:
-      - kb_autopage_collections_tags.html
-    slugify:
-      mode: 'ascii'
-      cased: true
 
   categories:
     enabled: true
     title:   "category : :cat"
     layouts:
       - kb_autopage_collections_categories.html
+    slugify:
+      mode: 'ascii'
+      cased: true
+  tags:
+    enabled: false
+    title:   "tag : :tag"
+    layouts:
+      - kb_autopage_collections_tags.html
     slugify:
       mode: 'ascii'
       cased: true
@@ -122,12 +122,12 @@ verbose: false
 
 #### Commented includes tag (_plugins/tag-commented-include.rb)
 #
-# Wile digging into jekyll's code, it's not always easy to spot
+# Wile digging into jekyll generated code, it's not always easy to spot
 # where code comes from.
 # Commenting start and end for an include, helps a lot.
 # Use :
 # {% inc path/filename.ext param='value' param2='value' %}
-comment_includes: true
+comment_includes: false
 
 #### Debug site variables
 #
@@ -212,7 +212,7 @@ site_vars_NOT_to_print:
 #
 # variables present in **page_vars_NOT_to_print** array
 # will not be printed
-debug_page_vars: true
+debug_page_vars: false
 
 page_vars_NOT_to_print:
   - next

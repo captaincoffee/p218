@@ -1,6 +1,6 @@
 language:            en
-title:               "iPavement"
-title_html:          "iPavement"
+title:               "iPavements"
+title_html:          "iPavements"
 
 description:         "Resource for Pavement Preservation Practicing Professionals"
 google-verification:    ""
@@ -98,7 +98,7 @@ pagination:
 autopages:
   enabled: true
   tags:
-    enabled: true
+    enabled: false
     title:   "tag : :tag"
     layouts:
       - kb_autopage_collections_tags.html
@@ -318,8 +318,9 @@ algolia:
     searchableAttributes:
       - title
       - unordered(content)
-      - category
-      - tags
+      - author
+#      - category
+#      - tags
 
   files_to_exclude:
     - _documentation/*
