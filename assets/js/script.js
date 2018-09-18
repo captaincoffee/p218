@@ -98,18 +98,6 @@ search.addWidget(
 );
 
 search.addWidget(
-  instantsearch.widgets.refinementList({
-    container: '#refinement-list',
-    attributeName: 'tags',
-    collapsible: true,
-    operator: 'or',
-    templates: {
-      header: 'Tags'
-    }
-  })
-);
-
-search.addWidget(
   instantsearch.widgets.currentRefinedValues({
     container: '#current-refined-values',
     attributes: [
@@ -125,5 +113,24 @@ search.addWidget(
   })
 );
 
+  // initialize pagination
+  search.addWidget(
+    instantsearch.widgets.pagination({
+      container: '#pagination',
+      maxPages: 20,
+      // default is to scroll to 'body', here we disable this behavior
+      scrollTo: false
+    })
+  );
 
+search.addWidget(
+  instantsearch.widgets.hitsPerPageSelector({
+    container: '#hits-per-page-selector',
+    items: [
+      {value: 3, label: '3 per page', default: true},
+      {value: 6, label: '6 per page'},
+      {value: 12, label: '12 per page'},
+    ]
+  })
+);
 search.start();
