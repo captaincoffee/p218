@@ -8,3 +8,6 @@ title: Production Check list
 
  - check Netlify Identity
 
+ - change url in config
+
+ - change commit branch in admin config
