@@ -1,6 +1,6 @@
 language:            en
-title:               "iPavements"
-title_html:          "iPavements"
+title:               "Pavement Preservation"
+title_html:          "Pavement Preservation"
 
 description:         "Resource for Pavement Preservation Practicing Professionals"
 google-verification:    ""
@@ -33,6 +33,61 @@ timezone:    America/New_York
 # show_drafts: false
 # limit_posts: 0
 # highlighter: pygments
+
+
+
+# markdown:      kramdown
+# markdown_ext:  markdown,mkdown,mkdn,mkd,md
+
+excerpt_separator: "<!--more-->"
+
+# url: ""
+baseurl: ""
+
+kramdown:
+#   auto_ids: true
+#   footnote_nr: 1
+#   entity_output: as_char
+#   toc_levels: 1..6
+#   smart_quotes: lsquo,rsquo,ldquo,rdquo
+#   use_coderay: false
+    parse_block_html: true
+    parse_span_html: true
+#   coderay:
+#     coderay_wrap: div
+#     coderay_line_numbers: inline
+#     coderay_line_numbers_start: 1
+#     coderay_tab_width: 4
+#     coderay_bold_every: 10
+#     coderay_css: style
+
+# redcloth:
+#   hard_breaks: true
+
+permalink: pretty
+
+sass:
+  # loading path from site root
+  # default to _sass
+  # sass_dir: node_modules/bootstrap/scss
+
+  # multiple load paths
+  # doesn't work in safe mode (github pages)
+  load_paths:
+    - assets
+    - node_modules
+
+  # style : nested (default), compact, compressed, expanded
+  #         :nested, :compact, :compressed, :expanded also works
+  # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed
+
+
+## new in 2.8
+liquid:
+  strict_variables: false # default: false
+  strict_filters: false # default: false
+  error_mode: strict # default: warn
 
 ############################################################
 # Site configuration for the Jekyll Pagination V2 Gem
@@ -97,14 +152,6 @@ pagination:
 # see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-AUTOPAGES.md
 autopages:
   enabled: true
-  tags:
-    enabled: false
-    title:   "tag : :tag"
-    layouts:
-      - kb_autopage_collections_tags.html
-    slugify:
-      mode: 'ascii'
-      cased: true
 
   categories:
     enabled: true
@@ -115,63 +162,19 @@ autopages:
       mode: 'ascii'
       cased: true
 
+  tags:
+    enabled: false
+    title:   "tag : :tag"
+    layouts:
+      - kb_autopage_collections_tags.html
+    slugify:
+      mode: 'ascii'
+      cased: true
+
   collections:
     enabled: false
 
 ############################################################
-
-# markdown:      kramdown
-# markdown_ext:  markdown,mkdown,mkdn,mkd,md
-
-excerpt_separator: "<!--more-->"
-
-# url: ""
-baseurl: ""
-
-kramdown:
-#   auto_ids: true
-#   footnote_nr: 1
-#   entity_output: as_char
-#   toc_levels: 1..6
-#   smart_quotes: lsquo,rsquo,ldquo,rdquo
-#   use_coderay: false
-    parse_block_html: true
-    parse_span_html: true
-#   coderay:
-#     coderay_wrap: div
-#     coderay_line_numbers: inline
-#     coderay_line_numbers_start: 1
-#     coderay_tab_width: 4
-#     coderay_bold_every: 10
-#     coderay_css: style
-
-# redcloth:
-#   hard_breaks: true
-
-permalink: pretty
-
-sass:
-  # loading path from site root
-  # default to _sass
-  # sass_dir: node_modules/bootstrap/scss
-
-  # multiple load paths
-  # doesn't work in safe mode (github pages)
-  load_paths:
-    - assets
-    - node_modules
-
-  # style : nested (default), compact, compressed, expanded
-  #         :nested, :compact, :compressed, :expanded also works
-  # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-  style: compressed
-
-
-## new in 2.8
-liquid:
-  strict_variables: false # default: false
-  strict_filters: false # default: false
-  error_mode: strict # default: warn
 
 ############### RELATED ARTICLES ####################
 # see _pligins/hook-related-article.rb
