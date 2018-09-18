@@ -4,7 +4,7 @@ title: Search
 
 ## How we search on P2
 
-Search is performed thanks to [Jekyll Algolia](https://community.algolia.com/jekyll-algolia/getting-started.html) and [InstantSearch.js](https://community.algolia.com/instantsearch.js/v2/getting-started.html).
+Search is performed thanks to [Jekyll Algolia gem](https://community.algolia.com/jekyll-algolia/getting-started.html) that puches site content to Algolia servers, and [InstantSearch.js](https://community.algolia.com/instantsearch.js/v2/getting-started.html) that permit to integrate search on the site.
 
 
 Jekyll algolia gem
@@ -47,3 +47,7 @@ See Algolia dashboard for Algolia API key.
 ``` bash
 ALGOLIA_API_KEY='your_secret_key' bundle exec jekyll algolia
 ```
+
+## Netlify setup
+
+see : https://community.algolia.com/jekyll-algolia/netlify.html
