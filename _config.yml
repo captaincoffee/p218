@@ -292,6 +292,11 @@ defaults:
       type: "documentation"
     values:
       layout: "documentation"
+  -
+    scope:
+      path: "admin"
+    values:
+      layout: null
 
   # default layout for collections articles
   -
