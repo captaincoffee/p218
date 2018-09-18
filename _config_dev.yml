@@ -4,6 +4,11 @@
 ##  Use with jekyll build --config _config.yml,_config_dev.yml  ##
 ##################################################################
 
+
+url: https://admin--p218.netlify.com
+
+
+
 ############################################################
 # Site configuration for the Jekyll Pagination V2 Gem
 # see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
