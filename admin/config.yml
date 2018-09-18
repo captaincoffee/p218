@@ -7,12 +7,12 @@
 ---
 backend:
   name: git-gateway
-  branch: master # Branch to update (master by default)
+  branch: admin # Branch to update (master by default)
   accept_roles: #optional - accepts all users if left out
     - admin
     - editor
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 
 display_url: {{ site.url }}
 
