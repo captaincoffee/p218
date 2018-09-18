@@ -27,8 +27,8 @@ $pages_dir      = "_pages"
 # $collectionsNames = ['manage']
 $collectionsNames = ['manage', 'materials', 'methods']
 
-$numberOfPosts = 10
-$articlesPerCollection = 10
+$numberOfPosts = 100
+$articlesPerCollection = 100
 
 $default_ext    = "md"
 
@@ -66,7 +66,7 @@ end
 desc "Launch n successive builds to test performance"
 task :bench do
     d2(">> Starting benchmarks")
-    Rake::Task[:dpost].invoke
+    # Rake::Task[:dpost].invoke
     Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:", ">avg:") do |x|
 
         total = Benchmark::Tms.new
@@ -85,12 +85,12 @@ end
 
 desc "Serve site locally"
 task :serve do
-    system "bundle exec jekyll serve --trace"
+    system "bundle exec jekyll serve --trace --config _config.yml,_config_dev.yml"
 end
 
 desc "Build jekyll site"
 task :build do
-    system "bundle exec jekyll build --trace"
+    system "bundle exec jekyll build --trace --config _config.yml,_config_dev.yml"
 end
 
 desc "list tasks"
