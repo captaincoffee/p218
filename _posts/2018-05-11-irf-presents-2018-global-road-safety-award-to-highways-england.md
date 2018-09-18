@@ -1,6 +1,7 @@
 ---
 title: IRF Presents 2018 Global Road Safety Award to Highways England
-tags: IRF Safety
+tags: IRF Safety "composed tag" other
+pubdate: '2018-07-02 12:00:00'
 ---
 The International Road Federation (IRF Global) today gave its prestigious annual safety accolade - known as the 'Find a Way' award - to Highways England, a government-owned company charged with operating, maintaining and improving England's motorways and major A roads.
 <!--more-->
