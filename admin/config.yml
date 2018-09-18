@@ -56,7 +56,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Comma separated tags. eg : tag one, tag two, other"}
 
-      - {label: "Start Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+      - {label: "Start Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD hh:mm Z"}
       - {label: "End Date", name: "end_date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
       -
         label: "Contact"
