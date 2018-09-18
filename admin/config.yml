@@ -38,22 +38,17 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {
-         label: "Tags",
-         name: "tags",
-         widget: "list",
-         required: false,
-        }
-
-      - {
-         label: "Tugs",
-         name: "tugs",
-         widget: "list",
-         required: false,
-         field:
-          - {label: Tug, name: tugs, widget: string}
-        }
-
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      -
+        label: "Tugs"
+        name: "tugs"
+        widget: "list"
+        required: false
+        field:
+          -
+            label: Tug,
+            name: tugs,
+            widget: string
 
       - {label: "Published Date", name: "pubdate", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
