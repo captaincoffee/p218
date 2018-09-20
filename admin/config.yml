@@ -23,6 +23,7 @@ slug:
   clean_accents: true
 
 collections: # A list of collections the CMS should be able to edit
+
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Posts" # Used in the UI, ie.: "New Post"
     label_singular: "Post" # singular label for certain elements in the editor; defaults to the value of label
@@ -44,7 +45,6 @@ collections: # A list of collections the CMS should be able to edit
     meta: # Meta data fields. Just like fields, but without any preview element
       - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
 
-
   - name: "event"
     label: "Events"
     label_singular: "Event"
@@ -56,8 +56,10 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Comma separated tags. eg : tag one, tag two, other"}
 
-      - {label: "Start Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD hh:mm Z"}
-      - {label: "End Date", name: "end_date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
+      - {label: "Start Date", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DD hh:mm"}
+      - {label: "End Date", name: "end_date", widget: "datetime", default: "", format: "YYYY-MM-DD hh:mm"}
+
+      - {label: "Place", name: "place", widget: "string"}
       -
         label: "Contact"
         name: "contact"
@@ -66,3 +68,51 @@ collections: # A list of collections the CMS should be able to edit
         label: "Url"
         name: "url"
         widget: "string"
+
+  - name: "manage"
+    label: "Manage"
+    label_singular: "Manage"
+    folder: "_manage"
+    create: true
+    slug: "{% raw %}{{slug}}{% endraw %}"
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+      - {label: "Category", name: "category", widget: "list"}
+      - {label: "Type", name: "type", widget: "list"}
+
+      - {label: "Tags", name: "tags", widget: "list", required: false, hint: "Comma separated tags. eg : tag one, tag two, other"}
+
+      - {label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm"}
+      - {label: "KB publication date", name: "date_added_kb", widget: "datetime", format: "YYYY-MM-DD hh:mm"}
+
+      - {label: "Place", name: "place", widget: "string"}
+      -
+        label: "Contact"
+        name: "contact"
+        widget: "string"
+      -
+        label: "Url"
+        name: "url"
+        widget: "string"
+
+  - name: "kbSetup"
+    label: "KB setup"
+    files:
+
+      - name: "articleType"
+        label: "Article Type"
+        file: "_data/articleTypes.yml"
+        fields:
+          - {label: Name, name: name, widget: string}
+          - {label: Plural, name: plural, widget: string}
+          - {label: Slug, name: slug, widget: string}
+          - {label: Icon, name: icon, widget: string}
+
+      - name: "kbCategories"
+        label: "KB categories"
+        file: "_data/kbCategories.yml"
+        fields:
+          - {label: Name, name: name, widget: string}
+          - {label: Slug, name: slug, widget: string}
