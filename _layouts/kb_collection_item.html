@@ -42,7 +42,7 @@ When on a category index page, we also create :
       <ul>
       {% for article in sortedArticles reversed %}
 
-        {% assign articleType = site.articleTypes | where: "slug", article.type | first %}
+        {% assign articleType = site.data.articleTypes | where: "slug", article.type | first %}
 
         <li>
           <a href="{{ site.baseurl }}{{ article.url }}">
