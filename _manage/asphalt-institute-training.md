@@ -1,5 +1,6 @@
 ---
 title: Asphalt Institute Training Resources
+category: training
 author:
 date: 2018-06-15
 date_added_kb: 2018-06-15
