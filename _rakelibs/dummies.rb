@@ -3,9 +3,13 @@ require "safe_yaml/load"
 
 def create_elements( type = 'post', numberOf = 1, clean = false, collectionName = "methods" )
   d1("## Create_elements : type=#{type} - numberOf=#{numberOf} - clean=#{clean} - collectionName=#{collectionName}")
+
   currentCounter = 0
-  $config        = SafeYAML::load_file($configPath)
-  $kbCategories  = $config["kbCategories"]
+
+  $config           = SafeYAML::load_file($configPath)
+  $kbCategoriesDatas = SafeYAML::load_file($kbCategoriesPath)
+  $articleTypesDatas = SafeYAML::load_file($articleTypesPath)
+
   $categoriesPool= get_categories_pool(collectionName)
 
   $tags     = get_tags()
@@ -16,12 +20,12 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
     when "post"
       elementsFolder = $posts_dir
     when "page"
--     elementsFolder = $pages_dir
+      elementsFolder = $pages_dir
     when "collection"
       elementsFolder  = "_#{collectionName}"
       #collectionDatas = $config["collections"][collectionName]
       categories      = $categoriesPool
-      types           = $config["articleTypes"]
+      types           = $articleTypesDatas
     else
       raise "### Wrong element type. Can be 'post' or 'page'. Passed : #{type}"
   end
