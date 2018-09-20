@@ -4,10 +4,7 @@
 ##  Use with jekyll build --config _config.yml,_config_dev.yml  ##
 ##################################################################
 
-
-url: https://admin--p218.netlify.com
-
-
+url: https://netlifycms--p218.netlify.com/
 
 ############################################################
 # Site configuration for the Jekyll Pagination V2 Gem
