@@ -65,11 +65,11 @@ Each collection has is own categories.
 
 A category is automatically assigned depending on the folder name and default configuration rules.
 
-### Add the category to kbCategories configuration.
+### Add the category to *data/kb_setup.yml* under `kb_categories` configuration key.
 
 
 ``` yaml
-kbCategories
+kb_categories
   methods:
     - { name: "Fog Seals", slug: fog-seals }
 ```
@@ -77,7 +77,7 @@ kbCategories
 Here we've added the **Fog Seals** category to the methods collection.
 Category name is used for presentation and **slug** is used for path and url generation.
 
-Note that the generated url will be **methods/fog-seals/articleTitle.html**.
+Note that the generated url will be **methods/fog-seals/articleTitle/**.
 It's then important to give meaningful slug to categories and to avoid abbreviations.
 
 ### Create a folder for this category

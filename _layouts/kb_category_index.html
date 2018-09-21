@@ -2,7 +2,7 @@
 layout: default
 ---
 {%- assign currentCollection = site.collections | where:'label', page.collection.label | first -%}
-{%- assign currentCategoryDatas = site.kbCategories[currentCollection.label] | where: "slug", page.category | first -%}
+{%- assign currentCategoryDatas = site.data.kb_setup.kb_categories[currentCollection.label] | where: "slug", page.category | first -%}
 
 <div class="row">
   <div class="col">

@@ -101,25 +101,21 @@ collections: # A list of collections the CMS should be able to edit
     label: "KB setup"
     files:
 
-      - name: "articleType"
-        label: "Article Type"
-        file: "_data/articleTypes.yml"
+      - name: "kbSetup"
+        label: "KB setup"
+        file: "_data/kb_setup.yml"
         fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Plural, name: plural, widget: string}
-          - {label: Slug, name: slug, widget: string}
-          - {label: Icon, name: icon, widget: string}
-
-      - name: "kbCategories"
-        label: "KB categories"
-        file: "_data/kbCategories.yml"
-        fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Slug, name: slug, widget: string}
-          - label: Team
-            name: team
+          - label: KB categories
+            name: kb_categories
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
-              - {label: Position, name: position, widget: string}
-              - {label: Photo, name: photo, widget: image}
+              - {label: Slug, name: slug, widget: string}
+          - label: Article Type
+            name: article_types
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Plural, name: plural, widget: string}
+              - {label: Slug, name: slug, widget: string}
+              - {label: Icon, name: icon, widget: string}

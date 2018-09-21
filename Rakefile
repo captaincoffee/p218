@@ -21,8 +21,10 @@ $rootPath = __dir__
 d1("Current directory : #{$rootPath}")
 
 $configPath = File.join($rootPath, '_config.yml')
-$kbCategoriesPath = File.join($rootPath, '_data/kbCategories.yml')
-$articleTypesPath = File.join($rootPath, '_data/articleTypes.yml')
+# $kbCategoriesPath = File.join($rootPath, '_data/kbCategories.yml')
+# $articleTypesPath = File.join($rootPath, '_data/articleTypes.yml')
+
+$kb_setup_file = File.join($rootPath, '_data/kb_setup.yml')
 
 $posts_dir      = "_posts"
 $pages_dir      = "_pages"

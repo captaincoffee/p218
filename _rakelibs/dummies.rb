@@ -7,8 +7,11 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
   currentCounter = 0
 
   $config           = SafeYAML::load_file($configPath)
-  $kbCategoriesDatas = SafeYAML::load_file($kbCategoriesPath)
-  $articleTypesDatas = SafeYAML::load_file($articleTypesPath)
+
+  kb_setup_datas = SafeYAML::load_file($kb_setup_file)
+
+  $kbCategoriesDatas = kb_setup_datas['kb_categories']
+  $articleTypesDatas = kb_setup_datas['article_types']
 
   $categoriesPool= get_categories_pool(collectionName)
 

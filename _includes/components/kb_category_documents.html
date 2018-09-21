@@ -29,8 +29,8 @@
   {% assign tabsOutput = "" | split: "/" %}
   {% assign documentsOutput = "" | split: "/" %}
 
-  {% comment %}Sorting documents by type in site.data.articleTypes order{% endcomment %}
-  {% for typeInfos in site.data.articleTypes %}
+  {% comment %}Sorting documents by type in site.data.kb_setup.article_types order{% endcomment %}
+  {% for typeInfos in site.data.kb_setup.article_types %}
     {% assign currentType = typeInfos.slug %}
     {% comment %}Get documents for currentType{% endcomment %}
     {% assign currentTypeDocs = byType | where: "name", currentType | first %}

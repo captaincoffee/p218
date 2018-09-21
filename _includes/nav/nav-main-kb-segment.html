@@ -30,7 +30,7 @@ See _config.yml for kb collections
 
 {%- assign kbCollections = site.collections | where: "isKB", "true" -%}
 
-{%- assign categories = site.kbCategories -%}
+{%- assign categories = site.data.kb_setup.kb_categories -%}
 
 {%- for currentCollection in kbCollections -%}
   {% comment %}Only print if we have article in the currentCollection{% endcomment %}
