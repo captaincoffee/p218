@@ -12,7 +12,7 @@ pagination:
 </div>
 
 <div class="col">
-  {% inc nav/pagination-full.html %}
+  {% include nav/pagination-full.html %}
 
   {% for post in paginator.posts %}
   <h1><a href="{{ post.url }}">{{ post.title }} yolo</a></h1>
@@ -31,5 +31,5 @@ pagination:
   {% endunless %}
   {% endfor %}
 
-  {% inc nav/pagination-full.html %}
+  {% include nav/pagination-full.html %}
 </div>

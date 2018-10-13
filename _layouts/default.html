@@ -1,19 +1,19 @@
 <!doctype html>
 <html class="no-js" lang="{{ site.language }}">
 <head>
-{% inc head.html %}
+{% include head.html %}
 </head>
 <body>
   <div class="container">
-  {% inc utils/noscript.md %}
-  {% inc utils/cookiewarning.md %}
-  {% inc header.html %}
-  {% inc components/search-results.html %}
+  {% include utils/noscript.md %}
+  {% include utils/cookiewarning.md %}
+  {% include header.html %}
+  {% include components/search-results.html %}
   {% if site.debug_breakpoints == true %}
-    {% inc debug/breakpoints.html %}
+    {% include debug/breakpoints.html %}
   {% endif %}
   {{ content }}
-  {% inc footer.html %}
+  {% include footer.html %}
   {% include debug/debug.html %}
   </div>
 </body>

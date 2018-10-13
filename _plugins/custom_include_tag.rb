@@ -4,11 +4,11 @@ module Jekyll
     # Custom include tag
     # add comments around includes
     # if *comment_includes* configuration is set to *true* in _config.yml
-    # use the **inc** tag instead of usual **include** : eg
-    # {% inc path/filename.ext param='value' param2='value' %}
-    class IncludeCustomTag < IncludeTag
+    class IncludeTag
 
-      # This method allows to modify the file content by inheriting from the class.
+      # override original method
+      alias_method :old_read_file, :read_file
+
       def read_file(file, context)
         fileContent = File.read(file, file_read_opts(context))
 
@@ -28,4 +28,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag("inc", Jekyll::Tags::IncludeCustomTag)
+# Liquid::Template.register_tag("include", Jekyll::Tags::IncludeCustomTag)

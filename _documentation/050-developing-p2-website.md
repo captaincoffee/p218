@@ -28,6 +28,6 @@ Jekyll debugging features :
 Custom debug features :
 
  - Custom Inspect a variable : `{{ myVar | debug }}` (see _plugins/debug.rb)
- - Custom commented includes : {% raw %}`{% inc path/filename.ext param='value' param2='value' %}`{% endraw %} (see _plugins/tag-commented-include.rb)
+ - Custom commented includes : see _plugins/custom_include_tag.rb
  - Site variables output : see _config.yml
 
