@@ -259,6 +259,8 @@ algolia:
 
 ###########################################
 #  All debugs are disabled for production #
+#  DO NOT EDIT HERE !!!                   #
+#  Edit in _config_dev.yml                #
 ###########################################
 
 profile: false
@@ -271,7 +273,7 @@ debug_hooks: false
 
 debug_breakpoints: false
 
-debug_site_vars: true
+debug_site_vars: false
 
 debug_page_vars: false
 

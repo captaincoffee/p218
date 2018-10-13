@@ -139,7 +139,7 @@ debug_hooks: false
 
 debug_breakpoints: false
 
-debug_site_vars: false
+debug_site_vars: true
 
 site_vars_NOT_to_print:
 # - config
