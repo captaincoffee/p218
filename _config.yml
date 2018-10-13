@@ -271,7 +271,7 @@ debug_hooks: false
 
 debug_breakpoints: false
 
-debug_site_vars: false
+debug_site_vars: true
 
 debug_page_vars: false
 

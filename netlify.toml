@@ -7,9 +7,9 @@ ID = "p218"
 [build]
   command = "jekyll build --config _config.yml,_config_dev.yml && jekyll algolia"
   publish = "_site"
-  environment = { JEKYLL_LOG_LEVEL = "debug" }
+  environment = { JEKYLL_LOG_LEVEL = "debug", JEKYLL_ENV = "development" }
 
 
 [context.production]
   command = "jekyll build && jekyll algolia"
-
+  environment = { JEKYLL_LOG_LEVEL = "info", JEKYLL_ENV = "production" }
