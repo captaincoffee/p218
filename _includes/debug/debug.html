@@ -1,4 +1,4 @@
-{% if site.debug_site_vars == true -%}
+{% if site.debug_site_vars == true and site_vars_NOT_to_print -%}
   <p><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#siteVariables" aria-expanded="false" aria-controls="siteVariables">Site vars</button>
   </p>
   <div class="collapse" id="siteVariables">
