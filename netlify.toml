@@ -12,4 +12,4 @@ ID = "p218"
 
 [context.production]
   command = "jekyll build && jekyll algolia"
-  environment = { JEKYLL_LOG_LEVEL = "info", JEKYLL_ENV = "production" }
+#  environment = { JEKYLL_LOG_LEVEL = "info", JEKYLL_ENV = "production" }
