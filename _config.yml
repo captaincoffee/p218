@@ -5,10 +5,6 @@ title_html:          "Pavement Preservation"
 description:         "Resource for Pavement Preservation Practicing Professionals"
 google-verification:    ""
 
-# source:      .
-# destination: ./_site
-# plugins:     ./_plugins
-# layouts:     ./_layouts
 include:
   - .nojekyll
               ]
@@ -27,17 +23,6 @@ plugins:
  - jekyll-paginate-v2
 
 timezone:    America/New_York
-# encoding:    nil
-
-# future:      true
-# show_drafts: false
-# limit_posts: 0
-# highlighter: pygments
-
-
-
-# markdown:      kramdown
-# markdown_ext:  markdown,mkdown,mkdn,mkd,md
 
 excerpt_separator: "<!--more-->"
 
