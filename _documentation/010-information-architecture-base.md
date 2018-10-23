@@ -1,13 +1,32 @@
 ---
-title: Pavement Preservation (P2) Information Architecture (IA) - Base
+title: Pavement Preservation (P2) contents description
 ---
 
 ## Website structure
 
- - Home page
  - News
  - Agenda
  - Pavement Preservation Knowledge Base
+ - Faq
+
+### News
+
+### Agenda
+
+### Knowledge Base
+
+KB base element is a collection's **document**.
+
+Documents are grouped in **collections**, then in **categories**.
+
+KB collections are configured to have an isKB variable set to true.
+
+    collections:
+      methods:
+        output: true
+        isKB: true
+        name: "Methods"
+        permalink: "/kb/:path/"
 
 <hr>
 
