@@ -1,4 +1,3 @@
-kb_categories:
   # Knowledge base categories datas
 
   methods:
@@ -51,16 +50,3 @@ kb_categories:
   # - { name: "Data Management", slug: "data-management" }
     - { name: "Training", slug: "training" }
     - { name: "Quick Links", slug: "quick-links" }
-
-
-article_types:
-  # this array determine article's types and order
-  # a collection article with non matching type will not be listed
-  # article must be tagged with a type.slug
-  # eg : "type: article" or "type: research"
-
-  - { name: "Article", plural: "Articles", slug: "article", icon: "fi-page" }
-  - { name: "Video", plural: "Videos", slug: "video", icon: "fi-video" }
-  - { name: "Link", plural: "Links", slug: "link", icon: "fi-link" }
-  - { name: "Project", plural: "Projects", slug: "project", icon: "fi-page-search" }
-  - { name: "Research", plural: "Research", slug: "research", icon: "fi-compass" }
