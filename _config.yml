@@ -142,7 +142,9 @@ autopages:
     enabled: true
     title:   "category : :cat"
     layouts:
-      - kb_autopage_collections_categories.html
+      - kb_autopage_manage_collection_categories.html
+      - kb_autopage_materials_collection_categories.html
+      - kb_autopage_methods_collection_categories.html
     slugify:
       mode: 'ascii'
       cased: true

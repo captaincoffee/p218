@@ -12,7 +12,7 @@ url: https://p218.netlify.com/
 pagination:
 
   # Site-wide kill switch, disabled here it doesn't run at all
-  enabled: false
+  enabled: true
 
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
   debug: false
@@ -68,16 +68,19 @@ pagination:
 # automatic page creation configuration
 # see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-AUTOPAGES.md
 autopages:
-  enabled: false
+  enabled: true
 
   categories:
     enabled: true
     title:   "category : :cat"
     layouts:
-      - kb_autopage_collections_categories.html
+      - kb_autopage_manage_collection_categories.html
+      - kb_autopage_materials_collection_categories.html
+      - kb_autopage_methods_collection_categories.html
     slugify:
       mode: 'ascii'
       cased: true
+
   tags:
     enabled: false
     title:   "tag : :tag"
@@ -127,7 +130,7 @@ verbose: false
 # Digging into jekyll generated code, it's not always easy to spot
 # where code comes from.
 # Commenting start and end for an include, helps a lot.
-comment_includes: true
+comment_includes: false
 
 #### Debug site variables
 #
@@ -211,7 +214,7 @@ site_vars_NOT_to_print:
 #
 # variables present in **page_vars_NOT_to_print** array
 # will not be printed
-debug_page_vars: false
+debug_page_vars: true
 
 page_vars_NOT_to_print:
   - next

@@ -1,17 +1,34 @@
 ---
 layout: default
-autopages:
-  permalink: /kb/category/:cat/
-pagination:
-  enabled: true
-  collection: manage, material, methods
-  debug: false
 ---
+{% comment %} Deduce collection and category {% endcomment %}
+
+{%- assign currentCategory = page.autopages.display_name -%}
+{%- assign kbCategoriesDatas = site.data.kb_setup.kb_categories -%}
+{% assign categoryFound = false %}
+
+{% for collection in kbCategoriesDatas %}
+  {% if categoryFound == true %}
+    {% break %}
+  {% endif %}
+  {% assign collectionLabel = collection[0] %}
+  {% assign categories = collection[1] %}
+
+  {% for category in categories %}
+    {% if category.slug == currentCategory %}
+      {% assign categoryDisplay = category.name %}
+      {% assign categoryFound = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+{% endfor %}
+
+{%- assign kbCollection = site.collections | where: "label", collectionLabel | first -%}
+
 <div class="home">
 
-  <h1 class="page-heading">AutoPage Collection ALL : Tag <b>{% if page.autopages %}{{page.autopages.display_name}}{% endif %}</b> Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}}</h1>
-
-  This page is automagically created and paginated for each tag available in the posts on this site
+  <h1 class="page-heading">AutoPage Collection {{ kbCollection.name }} : Category <b>{{ categoryDisplay }}</b> Page {{page.pagination_info.curr_page}} of {{page.pagination_info.total_pages}}</h1>
 
   {{ content | markdownify }}
 
