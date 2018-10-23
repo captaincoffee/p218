@@ -1,28 +1,6 @@
 {% comment %} ++++ Knowledge base main menu ++++ {% endcomment %}
 
 
-
-{% comment %}
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+++++++++++++++++++++++++ Refactoring              ++++++++++++++++++++++++++++
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-How can we have better perf for this menu ?
-
-  - already sort all Kb categories index in a hash stored in site.kbMenu
-
-    -
-      collection_1
-        categories:
-          -
-            title: category_title
-            docs:
-              -
-                title: doc_title
-                url:   doc_url
-
-{% endcomment %}
-
 {% comment %}
 Get Knowledge Base (kb) collections by selecting ones with default isKB set to true
 See _config.yml for kb collections

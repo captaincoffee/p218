@@ -97,7 +97,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 3.8.1)
+  jekyll
   jekyll-algolia!
   jekyll-paginate-v2!
   jekyll-sitemap
