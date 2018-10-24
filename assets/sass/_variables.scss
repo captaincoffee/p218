@@ -1,13 +1,30 @@
 
 $blue: #176c9c;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$body-bg:                   $blue !default;
+$body-color:                black !default;
 
 $font-family-sans-serif: Arial, Helvetica Neue, Helvetica, sans-serif;
 $font-family-monospace:  Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
 
 $spacer: 1rem !default;
 
-
-
-
+$navbar-light-color:                rgba($blue, .9) !default;
+$navbar-light-hover-color:          rgba($blue, .7) !default;
+$navbar-light-active-color:         rgba($red, .9) !default;
+$navbar-light-disabled-color:       rgba($blue, .3) !default;
+$navbar-light-toggler-icon-bg:      str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$navbar-light-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$navbar-light-toggler-border-color: rgba($blue, .1) !default;
 
 @import "../node_modules/bootstrap/scss/variables";
+
+
