@@ -1,0 +1,20 @@
+{% comment %}
+Used on kb listings
+{% endcomment %}
+
+{% assign currentDocument = include.document %}
+
+<article>
+  <h2><a href="{{ currentDocument.url | relative_url }}">{{ currentDocument.title }}</a></h2>
+  <p>
+    {% if currentDocument.author %}by {{ currentDocument.author }} - {% endif %}
+    <time datetime="{{ currentDocument.date }}">{{ currentDocument.date | date_to_string: "ordinal", "US" }}</time>
+    {% if currentDocument.tags %} - Tags : {{ currentDocument.tags | join:', ' }}{% endif %}
+  </p>
+  {% if currentDocument.content == currentDocument.excerpt %}
+    {{ currentDocument.content | truncate: 100 }}
+  {% else %}
+    {{ currentDocument.excerpt }}
+  {% endif %}
+  <a href="{{ post.url }}">Read more...</a>
+</article>
