@@ -91,9 +91,11 @@ autopages:
       cased: true
 
   collections:
-    enabled: false
-
-
+    enabled: true
+    layouts:
+      - 'kb_autopage_collection.html'
+    title: 'Posts in collection :coll' # :coll
+    permalink: '/kb/:coll'
 sass:
   # loading path from site root
   # default to _sass

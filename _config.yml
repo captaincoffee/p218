@@ -3,6 +3,12 @@ title:               "Pavement Preservation"
 title_html:          "Pavement Preservation"
 
 description:         "Resource for Pavement Preservation Practicing Professionals"
+
+timezone:    America/New_York
+
+default_author: "P2 editors"
+
+
 google-verification:    ""
 
 include:
@@ -22,7 +28,7 @@ plugins:
  - jekyll-sitemap
  - jekyll-paginate-v2
 
-timezone:    America/New_York
+
 
 excerpt_separator: "<!--more-->"
 
@@ -159,8 +165,11 @@ autopages:
       cased: true
 
   collections:
-    enabled: false
-
+    enabled: true
+    layouts:
+      - 'kb_autopage_collection.html'
+    title: 'Posts in collection :coll' # :coll
+    permalink: '/kb/:coll'
 ############################################################
 
 ############### RELATED ARTICLES ####################
@@ -179,17 +188,17 @@ collections:
     output: true   # every page in the collection will be created
     isKB: true     # is part of Knowledge base
     name: "Methods" # Print name used in titles, menus, ...
-    permalink: "/kb/:path/"
+    permalink: "/kb/:collection/:path/"
   materials:
     output: true
     isKB: true
     name: Materials
-    permalink: "/kb/:path/"
+    permalink: "/kb/:collection/:path/"
   manage:
     output: true
     isKB: true
     name: Manage
-    permalink: "/kb/:path/"
+    permalink: "/kb/:collection/:path/"
 
   documentation:
     output: true
@@ -269,7 +278,7 @@ profile: false
 
 verbose: false
 
-comment_includes: false
+comment_includes: true
 
 debug_hooks: false
 
