@@ -15,9 +15,9 @@ title: Pavement Preservation (P2) contents description
 
 ### Knowledge Base
 
-KB base element is a collection's **document**.
+KB base element is a collection's file, and we call it **article**
 
-Documents are grouped in **collections**, then in **categories**.
+Articles are grouped in **collections**, then in **categories**.
 
 KB collections are configured to have an isKB variable set to true.
 
@@ -27,6 +27,14 @@ KB collections are configured to have an isKB variable set to true.
         isKB: true
         name: "Methods"
         permalink: "/kb/:path/"
+
+Getting all kb collections can be done with :
+{% highlight liquid %}
+{%- raw -%}
+{%- assign kbCollections = site.collections | where: "isKB", "true" -%}
+{%- endraw -%}
+{% endhighlight %}
+
 
 <hr>
 

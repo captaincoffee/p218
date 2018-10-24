@@ -2,6 +2,10 @@
 title: Production Check list
 ---
 
+ - remove test content
+
+ - debug off
+
  - check that client can reach all accounts
    ( Github, Netlify, Algolia, Forestry, ?? )
 
