@@ -1,0 +1,25 @@
+{% comment %}
+Used on kb article page
+{% endcomment %}
+
+{% assign currentPost = include.post %}
+{% assign author = currentPost.author | default: site.default_author %}
+
+<article class="article kb-full">
+
+  <div class="metadatas">
+    by <em>{{ author }}</em> on
+    <time datetime="{{ currentPost.date }}">
+      <em>{{ currentPost.date | date_to_string: "ordinal", "US" }}</em>
+    </time>
+    <br>
+    Category : {{ currentPost.category }}
+    <br>
+    {% if currentPost.tags %}Tags : {{ currentPost.tags | join:', ' }}{% endif %}
+  </div>
+
+  <h2>{{ currentPost.title }}</h2>
+
+  {{ currentPost.content }}
+
+</article>

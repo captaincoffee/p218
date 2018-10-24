@@ -1,0 +1,35 @@
+{% comment %}
+Used to display article's title and excerpt in lists
+Works for posts and KB articles
+{% endcomment %}
+
+{% assign currentPost = include.post %}
+{% assign author = currentPost.author | default: site.default_author %}
+
+<article class="article article-short">
+
+  <div class="metadatas">
+    by <em>{{ author }}</em> on
+    <time datetime="{{ currentPost.date }}">
+      <em>{{ currentPost.date | date_to_string: "ordinal", "US" }}</em>
+    </time>
+  </div>
+
+  <h2><a href="{{ currentPost.url | relative_url }}">{{ currentPost.title }}</a></h2>
+
+{% comment %}
+  <p>{% if currentPost.tags %} - Tags : {{ currentPost.tags | join:', ' }}{% endif %}</p>
+{% endcomment %}
+
+  <span class="lead">
+    {% if currentPost.content == currentPost.excerpt %}
+      {{ currentPost.content | truncate: 100 }}
+    {% else %}
+      {{ currentPost.excerpt }}
+    {% endif %}
+  </span>
+
+  <p>
+    <a href="{{ currentPost.url | relative_url }}">Read more...</a>
+  </p>
+</article>
