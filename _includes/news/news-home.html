@@ -1,25 +1,13 @@
-<h2>iP News</h2>
+<h2>P2 News</h2>
 
-<ul class="list-unstyled">
-  {% for post in site.posts limit: 6 %}
-    <li>
-      <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
-      <p class="small">
-      {{ post.date | date_to_string: "ordinal", "US" }}
-      {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
-      </p>
-    {% comment %}
-      {% if post.content == post.excerpt %}
-        {{ post.content | strip_html | truncate: 150 }}
-      {% else %}
-        {{ post.content }}
-      {% endif %}
-    {% endcomment %}
+{% for post in site.posts limit: 1 %}
+{% include news/news-short.html post=post %}
+{% endfor %}
 
-    {{ post.content | strip_html | truncate: 150 }}
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts limit: 6 offset: 1 %}
+{% include news/news-title.html post=post %}
+{% endfor %}
+
 <p class="lead">
   <a href="{{ site.baseurl }}/news/">Read the news</a>
 </p>

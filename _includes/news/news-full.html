@@ -1,0 +1,15 @@
+{% comment %}
+Used on home page and news listings
+{% endcomment %}
+
+{% assign currentPost = include.post %}
+
+<article>
+  <h2><a href="{{ currentPost.url | relative_url }}">{{ currentPost.title }}</a></h2>
+  <p>
+    {% if currentPost.author %}by {{ currentPost.author }} - {% endif %}
+    <time datetime="{{ currentPost.date }}">{{ currentPost.date | date_to_string: "ordinal", "US" }}</time>
+    {% if currentPost.tags %} - Tags : {{ currentPost.tags | join:', ' }}{% endif %}
+  </p>
+  {{ currentPost.content }}
+</article>

@@ -11,25 +11,13 @@ pagination:
   </div>
 </div>
 
-<div class="col">
-  {% include nav/pagination-full.html %}
-
+<div class="row">
+  <div class="col">
   {% for post in paginator.posts %}
-  <h1><a href="{{ post.url }}">{{ post.title }} yolo</a></h1>
-  <p class="small">
-  {{ post.date | date_to_string: "ordinal", "US" }}
-  {% if post.tags %} - Tags : {{ post.tags | join:', ' }}{% endif %}
-  </p>
-  {% if post.content == post.excerpt %}
-      {{ post.content | truncate: 100 }}
-  {% else %}
-      {{ post.content }}
-  {% endif %}
-  <a href="{{ post.url }}">Read more...</a>
-  {% unless forloop.last %}
-  <hr>
-  {% endunless %}
+    {% include news/news-short.html post=post %}
+    {% unless forloop.last %}<hr>{% endunless %}
   {% endfor %}
 
   {% include nav/pagination-full.html %}
+  </div>
 </div>
