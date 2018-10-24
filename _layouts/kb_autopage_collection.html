@@ -8,13 +8,15 @@ pagination:
   debug: false
 ---
 {% assign currentCollectionSlug = page.pagination.collection %}
+{% assign currentCollection = site.collections | where: "label", currentCollectionSlug | first %}
+{% assign currentCollectionDocsByCategory = currentCollection.docs | group_by: 'category' %}
+
 
 <div class="row">
   <div class="col">
     <h1 class="rubric-title">P2 Knowledge base</h1>
   </div>
 </div>
-
 
 <div class="row">
   <div class="col">
@@ -28,17 +30,41 @@ pagination:
   </div>
 </div>
 
+{% comment %}
+
+  <div class="row">
+    <div class="col-12">
+      <ul class="post-list">
+        {% for post in paginator.posts %}
+          <li>
+  {% include articles/article-short.html post=post %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="col-12">
+      {% include nav/pagination-full.html %}
+    </div>
+  </div>
+
+{% endcomment %}
+
 <div class="row">
   <div class="col-12">
-    <ul class="post-list">
-      {% for post in paginator.posts %}
+    <ul>
+      {% for categoryDatas in currentCollectionDocsByCategory %}
+        {% assign currentCategoryDatas = site.data.kb_setup.kb_categories[currentCollectionSlug] | where: "slug", categoryDatas.name | first %}
+        {% if categoryDatas.size > 0 %}
         <li>
-{% include articles/article-short.html post=post %}
+          <a href="{{ site.baseurl }}/kb/{{ currentCollectionSlug }}/{{ categoryDatas.name }}/">
+            {{ currentCategoryDatas.name }} -
+            {{ categoryDatas.size }} document{% if categoryDatas.size > 1 %}s{% endif %}
+          </a>
         </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>
-  <div class="col-12">
-    {% include nav/pagination-full.html %}
-  </div>
 </div>
+
+
