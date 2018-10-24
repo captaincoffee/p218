@@ -1,13 +1,15 @@
-<h2>P2 News</h2>
+<div class="news-listing">
+  <h2 class="rubric-title">P2 News</h2>
 
-{% for post in site.posts limit: 1 %}
-{% include news/news-short.html post=post %}
-{% endfor %}
+  {% for post in site.posts limit: 1 %}
+  {% include articles/article-short.html post=post %}
+  {% endfor %}
 
-{% for post in site.posts limit: 6 offset: 1 %}
-{% include news/news-title.html post=post %}
-{% endfor %}
+  {% for post in site.posts limit: 6 offset: 1 %}
+  {% include articles/article-title.html post=post %}
+  {% endfor %}
 
-<p class="lead">
-  <a href="{{ site.baseurl }}/news/">Read the news</a>
-</p>
+  <p class="lead text-right">
+    <a href="{{ site.baseurl }}/news/">More news</a>
+  </p>
+</div>

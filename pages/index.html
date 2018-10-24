@@ -1,33 +1,15 @@
 ---
 permalink: /
 title: Home
-menu: main1
+# menu: main1
 weight: 10
 ---
 <div class="row">
-  <div class="col-md-6 p-3">
+  <div class="col-md-7 p-3">
     {% include news/news-home.html %}
   </div>
-
-  <div class="col col-md-6 p-3 kb-box border border-primary">
-    <h2>iP Knownledge Base (KB)</h2>
-    <p>Browse Knowledge Base by <a href="/kb/categories">category</a></p>
-
-    <h3>New articles in KB</h3>
-    {% assign kb_collections = site.collections | where: "isKB", "true" %}
-    {% assign all_kb_docs = "" | split: "" %}
-
-    {% for collection in kb_collections %}
-      {% assign all_kb_docs = all_kb_docs | concat: collection.docs %}
-    {% endfor %}
-
-    {% assign sorted = all_kb_docs | sort: 'date_added_kb' %}
-    <ul>
-      {% for d in all_kb_docs limit: 5 %}
-        <li>{{ d.date_added_kb }} - {{ d.title }} - {{ d.url }}</li>
-      {% endfor %}
-    </ul>
-
+  <div class="col col-md-5 p-3">
+    {% include kb/kb_home.html %}
   </div>
 </div>
 

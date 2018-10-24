@@ -6,34 +6,61 @@ Deriving useful variables from page.url
  - currentCollectionSlug : string current collection slug
  - currentCollection : jekyll:collection current collection
  - currentCollectionIndexUrl : string url for current collection
+ - currentCollectionDocsByCategory : array current collection documents sorted by category
+   returns : [ {"name"=>"chip-seals", "items"=>[#, #]},
+               {"name"=>"crack-joint-treatments", "items"=>[#]},
+               {"name"=>"microsurfacing-slurry", "items"=>[#]} ]
 
 When on a category index page, we also create :
  - currentCategorySlug : string current category slug
+ - currentCategoryDatas : array { name: "Safety", slug: "safety" }
  - currentCategoryIndexUrl : string url for current category
 {% endcomment %}
-{% include components/getVariablesFromPageUrl.html %}
+
+{% assign dirParts = page.url | split: "/"  %}
+{% assign currentCollectionSlug = dirParts[2] %}
+{% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}
+
+{% capture currentCollectionIndexUrl %}{{ site.baseurl }}/kb/{{ currentCollection.label }}/{% endcapture %}
+
+{% assign currentCollectionDocsByCategory = currentCollection.docs | group_by: 'category' %}
+
+{% comment %}Are we on a category page{% endcomment %}
+{% if dirParts[3] != nil %}
+
+    {% assign currentCategorySlug = dirParts[3] %}
+    {% capture currentCategoryIndexUrl %}{{ currentCollectionIndexUrl }}/{{ currentCategorySlug }}/{% endcapture %}
+
+    {% assign currentCategoryDatas = site.data.kb_setup.kb_categories[currentCollectionSlug] | where: "slug", currentCategorySlug | first %}
+
+{% endif %}
 {% assign categoryDatas = currentCollection.categories | where: "slug", currentCategorySlug | first %}
 
-<nav aria-label="You are here:" role="navigation">
-  <ul class="breadcrumbs">
-    <li><a href="{{ site.baseurl}}/">Home</a></li>
-    <li>{{ currentCollection.name }} : <a href="{{ currentCategoryIndexUrl }}">{{ categoryDatas.name }}</a></li>
-    <li>{{ page.title }}</li>
-  </ul>
-</nav>
+<div class="row">
+  <div class="col">
+    <h1 class="rubric-title">P2 Knowledge base</h1>
+  </div>
+</div>
 
 <div class="row">
-  <div class="medium-10 large-8 medium-centered columns">
+  <div class="col">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="{{ site.baseurl }}/kb/{{ currentCollection.label }}/">
+          Collection : {{ currentCollection.name }}</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="{{ site.baseurl }}/kb/{{ currentCollection.label }}/{{ currentCategoryDatas.slug }}/">Category : {{ currentCategoryDatas.name }}</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
 
-    <article>
-    <h2>{{ page.title }}</h2>
-      {% if page.date %}
-          <p class="post-meta">{{ page.date | date_to_string }}</p>
-      {% endif %}
-      <div class="post-content">
-        {{ content }}
-      </div>
-    </article>
+<div class="row">
+  <div class="col-12">
+{% include articles/kb-article-full.html post=page %}
 
     {% if page.related.size > 0 %}
       {% assign sortedArticles = page.related | sort: "date" %}
@@ -58,6 +85,5 @@ When on a category index page, we also create :
       </ul>
     {% endif %}
 
-
-  </div><!-- /.medium-10 large-8 medium-centered columns -->
-</div><!-- /.row -->
+  </div>
+</div>

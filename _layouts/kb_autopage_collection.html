@@ -1,0 +1,44 @@
+---
+layout: default
+autopages:
+  permalink: /kb/:coll/
+pagination:
+  enabled: true
+  collection: all
+  debug: false
+---
+{% assign currentCollectionSlug = page.pagination.collection %}
+
+<div class="row">
+  <div class="col">
+    <h1 class="rubric-title">P2 Knowledge base</h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          Collection : {{ currentCollectionSlug }}</a>
+        </li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+        <li>
+{% include articles/article-short.html post=post %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-12">
+    {% include nav/pagination-full.html %}
+  </div>
+</div>

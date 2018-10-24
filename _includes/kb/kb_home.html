@@ -1,0 +1,17 @@
+<h2 class="rubric-title">P2 Knownledge Base</h2>
+
+<p>Browse KB by <a href="/kb/categories">category</a></p>
+
+<h3 class="bg-warning">What's new in KB ?</h3>
+{% assign kb_collections = site.collections | where: "isKB", "true" %}
+{% assign all_kb_docs = "" | split: "" %}
+
+{% for collection in kb_collections %}
+{% assign all_kb_docs = all_kb_docs | concat: collection.docs %}
+{% endfor %}
+
+{% assign sorted = all_kb_docs | sort: 'date_added_kb' %}
+
+{% for d in all_kb_docs limit: 6 %}
+  {% include articles/article-title.html post=d %}
+{% endfor %}

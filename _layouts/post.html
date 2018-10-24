@@ -3,15 +3,50 @@ layout: default
 ---
 
 <div class="row">
-  <div class="col-md-8 p-3 border-right">
-  {% include news/news-full.html post=page %}
+  <div class="col">
+    <h1 class="rubric-title">News</h1>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8 p-3 border-right">
+  {% include articles/news-article-full.html post=page %}
+
+{% comment %} +++++++++++++++++++++++++
+Next and previous posts links
+{% endcomment %}
+    <hr>
+    <div class="row">
+      <div class="col-6">
+        {% if page.previous %}
+          <a href="{{ site.baseurl }}{{ page.previous.url }}">
+          &lt;&lt; Previous post <br>
+          "<em>{{ page.previous.title }}</em>"
+          </a>
+        {% endif %}
+      </div>
+      <div class="col-6 text-right">
+        {% if page.next %}
+          <a href="{{ site.baseurl }}{{ page.next.url }}">
+          Next post &gt;&gt; <br>
+          "<em>{{ page.next.title }}</em>"
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
   <div class="col col-md-4 p-3">
-    <h2>Recent posts</h2>
+    <h2>Last news</h2>
     <ul class="list-unstyled">
-    {% for post in site.posts limit: 6 %}
-      <li>{% include news/news-title.html post=post %}</li>
+    {% for post in site.posts limit: 10 %}
+    {% if post.url == page.url %}{% continue %}{% endif %}
+      <li>{% include articles/article-title.html post=post %}</li>
     {% endfor %}
     </ul>
   </div>
 </div>
+
+
+

@@ -28,11 +28,14 @@ layout: default
 
 <div class="row">
   <div class="col">
+    <h1 class="rubric-title">P2 Knowledge base</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-          P2 Knowledge Base
-        </li>
         <li class="breadcrumb-item">
           <a href="{{ site.baseurl }}/kb/{{ kbCollection.label }}">Collection : {{ kbCollection.name }}</a>
         </li>
@@ -49,7 +52,7 @@ layout: default
     <ul class="post-list">
       {% for post in paginator.posts %}
         <li>
-{% include kb/document-short.html document=post %}
+{% include articles/article-short.html post=post %}
         </li>
       {% endfor %}
     </ul>
