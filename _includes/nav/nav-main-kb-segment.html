@@ -9,12 +9,6 @@ Get Knowledge Base (kb) collections by selecting ones with default isKB set to t
 {%- for currentCollection in kbCollections -%}
 
   {%- assign urlStart = currentCollection.label | append: "/" | prepend: "/kb/" -%}
-{% if site.debug_liquid == true %}
-<!--
-urlStart : {{ urlStart }}
-page.url : {{ page.url }}
--->
-{% endif %}
   {%- assign categoryClass = "" -%}
   {%- if page.url contains urlStart -%}
     {% assign categoryClass = "current" %}
