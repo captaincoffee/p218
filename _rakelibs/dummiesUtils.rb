@@ -26,6 +26,13 @@ def get_tags()
   tagsArray
 end
 
+def get_categories()
+  prng = Random.new
+  catsArray = $tagsPool.sample(prng.rand($minTagsPerItem...$maxTagsPerItem))
+  d1("assigned TAGS : #{tagsArray.join(", ")}")
+  tagsArray
+end
+
 def get_content( paraNumber = 3, paraLength = 20)
   prng = Random.new
   content = prng.rand(2...paraNumber).times.map do |c|

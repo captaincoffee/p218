@@ -4,17 +4,13 @@ require "safe_yaml/load"
 def create_elements( type = 'post', numberOf = 1, clean = false, collectionName = "methods" )
   d1("## Create_elements : type=#{type} - numberOf=#{numberOf} - clean=#{clean} - collectionName=#{collectionName}")
 
-  currentCounter = 0
+  currentCounter     = 0
+  $config            = SafeYAML::load_file($configPath)
 
-  $config           = SafeYAML::load_file($configPath)
+  $kbCategoriesDatas = SafeYAML::load_file($kb_categories_file)
+  $articleTypesDatas = SafeYAML::load_file($kb_type_file)
 
-  kb_setup_datas = SafeYAML::load_file($kb_setup_file)
-
-  $kbCategoriesDatas = kb_setup_datas['kb_categories']
-  $articleTypesDatas = kb_setup_datas['article_types']
-
-  $categoriesPool= get_categories_pool(collectionName)
-
+  $categoriesPool = get_categories_pool(collectionName)
   $tags     = get_tags()
   tagsAsStr = "[#{$tags.join(', ')}]"
   content   = get_content($maxParagraphNumber, $maxParagraphLength)
@@ -22,6 +18,7 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
   case type
     when "post"
       elementsFolder = $posts_dir
+      categories     = $categoriesPool
     when "page"
       elementsFolder = $pages_dir
     when "collection"
@@ -79,13 +76,14 @@ def create_elements( type = 'post', numberOf = 1, clean = false, collectionName 
 
     front = {
       'title' => "#{title.gsub(/&/,'&amp;')}",
-      'date'  => "#{date.strftime('%Y-%m-%d %H:%M:%S %:z')}"
+      'date'  => "#{date.strftime('%Y-%m-%d %H:%M:%S %:z')}",
+      'lang'  => $locales.sample()
     }
 
     case type
       when "post"
         tags = tagsAsStr
-        front["tags"] = tags
+        front["category"] = $categoriesPool.sample(1).first['slug']
       when "page"
         #
       when "collection"

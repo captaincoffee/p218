@@ -6,7 +6,7 @@ include Benchmark # we need the CAPTION and FORMAT constants
 require_relative '_rakelibs/benchUtils.rb'
 require_relative '_rakelibs/dummies.rb'
 require_relative '_rakelibs/dummiesUtils.rb'
-
+$kbCategoriesDatas
 $debug1 = true
 $debug2 = true
 
@@ -24,28 +24,31 @@ $configPath = File.join($rootPath, '_config.yml')
 # $kbCategoriesPath = File.join($rootPath, '_data/kbCategories.yml')
 # $articleTypesPath = File.join($rootPath, '_data/articleTypes.yml')
 
-$kb_setup_file = File.join($rootPath, '_data/kb_setup.yml')
+$kb_categories_file = File.join($rootPath, '_data/kb_setup/kb_categories.yml')
+$kb_type_file = File.join($rootPath, '_data/kb_setup/article_types.yml')
 
 $posts_dir      = "_posts"
 $pages_dir      = "_pages"
 # $collectionsNames = ['manage']
 $collectionsNames = ['manage', 'materials', 'methods']
+$locales = ['en', 'fr']
 
-$numberOfPosts = 100
-$articlesPerCollection = 100
+
+$numberOfPosts = 10
+$articlesPerCollection = 10
 
 $default_ext    = "md"
 
-$numberOfCategories = 30 # or less depending on collection's categories number
+$numberOfCategories = 4 # or less depending on collection's categories number
 
 ################  TAGS SETUP #####################
 $maxParagraphNumber = 4
 $maxParagraphLength = 100
 
 ################  TAGS SETUP #####################
-$numberOfTags   = 100 # total number of tags - common to all collections
+$numberOfTags   = 10 # total number of tags - common to all collections
 $minTagsPerItem = 3  # minimum number of tag attributed to one article
-$maxTagsPerItem = 10 # maximum number of tag attributed to one article
+$maxTagsPerItem = 4 # maximum number of tag attributed to one article
 
 task :default => [:bench]
 
