@@ -170,6 +170,7 @@ autopages:
       - 'kb_autopage_collection.html'
     title: 'Posts in collection :coll' # :coll
     permalink: '/kb/:coll'
+
 ############################################################
 
 ############### RELATED ARTICLES ####################
@@ -218,7 +219,7 @@ defaults:
     scope:
       type: "pages"
     values:
-      layout: "default"
+      layout: "page"
   -
     scope:
       type: "documentation"
