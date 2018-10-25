@@ -3,8 +3,11 @@ layout: default
 autopages:
   permalink: /kb/:coll/
 pagination:
-  enabled: true
-  collection: all
+  enabled: false
+  collection:
+   - manage
+   - materials
+   - methods
   debug: false
 ---
 {% assign currentCollectionSlug = page.pagination.collection %}
