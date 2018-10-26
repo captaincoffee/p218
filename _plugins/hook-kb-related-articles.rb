@@ -38,7 +38,7 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
       end
     }
 
-    allDocs = allDocs.sort_by {|doc| doc.date}
+    allDocs = allDocs.sort_by {|doc| doc.date}.reverse
 
     allDocs.each { |doc|
 
