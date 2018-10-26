@@ -34,21 +34,21 @@ $collectionsNames = ['manage', 'materials', 'methods']
 $locales = ['en', 'fr']
 
 
-$numberOfPosts = 10
-$articlesPerCollection = 10
+$numberOfPosts = 100
+$articlesPerCollection = 100
 
 $default_ext    = "md"
 
-$numberOfCategories = 4 # or less depending on collection's categories number
+$numberOfCategories = 20 # or less depending on collection's categories number
 
 ################  TAGS SETUP #####################
-$maxParagraphNumber = 4
+$maxParagraphNumber = 6
 $maxParagraphLength = 100
 
 ################  TAGS SETUP #####################
-$numberOfTags   = 10 # total number of tags - common to all collections
+$numberOfTags   = 100 # total number of tags - common to all collections
 $minTagsPerItem = 3  # minimum number of tag attributed to one article
-$maxTagsPerItem = 4 # maximum number of tag attributed to one article
+$maxTagsPerItem = 8 # maximum number of tag attributed to one article
 
 task :default => [:bench]
 
