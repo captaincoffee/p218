@@ -177,10 +177,12 @@ autopages:
 # see _pligins/hook-related-article.rb
 
 # maximum number of related articles searched in each collection
+# for each article
 maxRelated : 10
 # minimum number of tag match to be a related
 minTagMatch: 4
-
+# how many related articles to show on article's page
+showRelatedNumber: 5
 
 ############### COLLECTIONS ####################
 collections:
