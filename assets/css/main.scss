@@ -33,7 +33,7 @@ html { font-size: 1.2rem; }
 
 .navbar-light {
   .navbar-brand {
-    color: $blue;
+    color: $primary;
   }
 }
 
@@ -74,7 +74,13 @@ html { font-size: 1.2rem; }
 }
 
 
+.documentationItem{
 
+  .itemTitle{
+    border-bottom: 1px solid $primary;
+  }
+
+}
 
 
 // algolia search
