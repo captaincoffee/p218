@@ -3,6 +3,8 @@ title: Pavement Preservation (P2) contents description
 ---
 
 ## Website structure
+* A markdown unordered list which will be replaced with the ToC, excluding the "Contents header" from above
+{:toc}
 
  - News
  - Agenda
@@ -11,7 +13,56 @@ title: Pavement Preservation (P2) contents description
 
 ### News
 
-### Agenda
+Standard front matter for posts
+FOR NOW IT'S THE SAME AS KB ARTICLES
+
+{% highlight yaml %}
+---
+title: Post title
+# this the creation date
+  date: 2010-12-13 19:49:13 +01:00
+# date of kb addition
+date_kb: 2014-12-13 19:49:13 +01:00
+
+# publication state
+# default: true
+# once set to false the post/collection article ????
+# will not be processed by jekyll
+published: true
+
+# Main source and source url if needed
+source: Name of the source
+source-url: http://example.com/source
+
+tags:
+  - tag1
+  - tag2
+  - tag3
+
+category: # NOT IN USE
+categories: # NOT IN USE
+
+# illustration images must be stored in path like
+# /assets/img/{{ collection.name }}/{{ year }}/{{ month }}/
+image_name: my_picture.jpg
+image_source: P2
+image_caption: Nice view from my window
+
+title_color: red
+
+# some youtube video
+# we can have several providers
+video_embed:
+
+# what is this ?
+sidebar:
+
+# what is this ?
+lead:
+
+---
+{% endhighlight %}
+
 
 ### Knowledge Base
 
@@ -35,6 +86,14 @@ Getting all kb collections can be done with :
 {%- endraw -%}
 {% endhighlight %}
 
+
+#### Creating an Article
+
+#### Creating a category
+
+#### Creating a new collection in kb
+
+### Agenda
 
 <hr>
 

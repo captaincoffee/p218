@@ -1,0 +1,80 @@
+---
+title: P2 Includes
+---
+{% assign rowClass = "documentationItem" %}
+
+<div class="row {{ rowClass }}">
+  <div class="col-12">
+    <h2 class="itemTitle">News short</h2>
+    <p>Pass a post or a collections article.</p>
+    {% highlight liquid %}
+    {% raw %}
+    {% assign post = site.posts | first %}
+    {% include articles/article-short.html post=post %}
+    {% endraw %}
+    {% endhighlight %}
+
+    <h4>Rendering</h4>
+    <hr>
+    {% assign post = site.posts | first %}
+    {% include articles/article-short.html post=post %}
+  </div>
+</div>
+
+<div class="row {{ rowClass }}">
+  <div class="col-12">
+    <h2 class="itemTitle">News title</h2>
+    <p>Pass a post or a collections article.</p>
+    {% highlight liquid %}
+    {% raw %}
+    {% assign post = site.posts | first %}
+    {% include articles/article-title.html post=post %}
+    {% endraw %}
+    {% endhighlight %}
+
+    <h4>Rendering</h4>
+    <hr>
+    {% assign post = site.posts | first %}
+    {% include articles/article-title.html post=post %}
+  </div>
+</div>
+
+<div class="row {{ rowClass }}">
+  <div class="col-12">
+    <h2 class="itemTitle">News full</h2>
+    <p>Pass a post</p>
+    {% highlight liquid %}
+    {% raw %}
+    {% assign post = site.posts | first %}
+    {% include articles/news-article-full.html post=post %}
+    {% endraw %}
+    {% endhighlight %}
+
+    <h4>Rendering</h4>
+    <hr>
+    {% assign post = site.posts | first %}
+    {% include articles/news-article-full.html post=post %}
+
+  </div>
+</div>
+
+<div class="row {{ rowClass }}">
+  <div class="col-12">
+    <h2 class="itemTitle">Placeholder</h2>
+    <p>Pass a post or a collections article.</p>
+    {% highlight liquid %}
+    {% raw %}
+    Yolo!!!
+    {% endraw %}
+    {% endhighlight %}
+
+    <h4>Rendering</h4>
+    <hr>
+
+  </div>
+</div>
+
+
+
+
+
