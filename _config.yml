@@ -28,8 +28,6 @@ plugins:
  - jekyll-sitemap
  - jekyll-paginate-v2
 
-
-
 excerpt_separator: "<!--more-->"
 
 # url: ""
@@ -180,7 +178,7 @@ autopages:
 # for each article
 maxRelated : 10
 # minimum number of tag match to be a related
-minTagMatch: 4
+minTagMatch: 2
 # how many related articles to show on article's page
 showRelatedNumber: 5
 
@@ -262,6 +260,7 @@ algolia:
       - title
       - unordered(content)
       - author
+      - type
 #      - category
 #      - tags
 

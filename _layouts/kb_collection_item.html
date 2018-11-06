@@ -67,14 +67,13 @@ When on a category index page, we also create :
 
       <h3>Related articles</h3>
       <ul>
-
-      {% for article in sortedArticles reversed %}
+      {% for article in sortedArticles limit: site.showRelatedNumber %}
 
         {% assign articleType = site.data.kb_setup.article_types | where: "slug", article.type | first %}
 
         <li>
           <a href="{{ site.baseurl }}{{ article.url }}">
-            <i class="{{ articleType.icon }}"></i> {{ article.title }}
+            {{ articleType.name }} <i class="{{ articleType.icon }}"></i> {{ article.title }}
           </a>
           {% assign currentCollectionSlug = article.collection %}
           {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}
