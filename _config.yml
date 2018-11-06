@@ -270,6 +270,19 @@ algolia:
     - pages/**/*
     - pages/*
 
+
+############### Algolia custom templates configuration ####################
+# see : - assets/js/algolia.js
+#       - _includes/algolia/search_results_modal.html
+#
+###########################################################################
+customAlgolia:
+  # minimum characters to type in search input before
+  # search is automatically fired
+  minSearchLength: 3
+
+
+
 ###########################################
 #  All debugs are disabled for production #
 #  DO NOT EDIT HERE !!!                   #

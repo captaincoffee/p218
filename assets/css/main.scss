@@ -86,24 +86,27 @@ html { font-size: 1.2rem; }
 
 }
 
-
 #search-results {
-  background: red;
-  z-index: $zindex-tooltip;
-  position: absolute;
-  width: 100%;
-  animation-duration: 1.5s;
-  animation-name: slidein;
+  background: #f8f9fa;
 }
 
-@keyframes slidein {
-  from {
-    opacity: 0;
-  }
+// .collapse{
+//   animation-duration: 1.5s;
+//   animation-name: slideout;
+//   .show{
+//     animation-name: slidein;
+//   }
+// }
 
-  to {
-    opacity: 95%;
-  }
+
+@keyframes slidein {
+  from { opacity: 0; }
+  to { opacity: 95%; }
+}
+
+@keyframes slideout {
+  from { opacity: 95%; }
+  to { opacity: 0%; }
 }
 
 // algolia search
@@ -418,5 +421,3 @@ select.ais-hits-per-page-selector, select.ais-numeric-selector, select.ais-sort-
   margin: 0 0 6px;
   padding: 0 0 6px;
   text-transform: uppercase; }
-
-/*# sourceMappingURL=instantsearch-theme-algolia.css.map*/

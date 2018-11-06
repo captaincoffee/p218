@@ -9,11 +9,11 @@
   <div class="container">
   {% include utils/noscript.md %}
   {% include utils/cookiewarning.md %}
-  {% include components/search-results.html %}
   {% if site.debug_breakpoints == true %}
     {% include debug/breakpoints.html %}
   {% endif %}
   <div id="content">
+    {% include components/search-results-modal.html %}
     {{ content }}
   </div>
   {% include footer.html %}
