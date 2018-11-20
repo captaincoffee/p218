@@ -4,25 +4,42 @@
     <div class="modal-content">
 
       <div class="modal-header">
-        <div id="search-box" class=""></div>
-        <h5 class="modal-title" id="searchModalLabel">
-          Search results for : <span id="search-query"></span>
-        </h5>
-
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              {{ site.title }} search
+              <button class="btn btn-sm float-right" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                close
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8">
+              <div id="search-box" class=""></div>
+            </div>
+            <div class="col-4">
+              <div id="clear-all"></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="modal-body">
-        <div id="clear-all"></div>
-        <div id="current-refined-values"></div>
-        <div id="refinement-list"></div>
-        <div id="refinement-list2"></div>
-        <div id="hits-per-page-selector"></div>
+        <div class="row">
+          <div class="col-12">
+            <div id="current-refined-values"></div>
+            <div id="refinement-list"></div>
+            <div id="refinement-list2"></div>
+            <div id="hits-per-page-selector"></div>
+          </div>
+        </div>
+
         <div id="hits"></div>
-        <div id="pagination"></div>
+
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div id="pagination"></div>
       </div>
 
     </div>

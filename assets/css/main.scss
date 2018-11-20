@@ -86,28 +86,22 @@ html { font-size: 1.2rem; }
 
 }
 
+.search-link{
+  cursor: pointer;
+  padding-left: 10px;
+  background: rgba(240, 50, 50, 0.2);
+}
 #search-results {
-  background: #f8f9fa;
+  background: rgba(240, 240, 240, 0.5);
 }
 
-// .collapse{
-//   animation-duration: 1.5s;
-//   animation-name: slideout;
-//   .show{
-//     animation-name: slidein;
-//   }
-// }
-
-
-@keyframes slidein {
-  from { opacity: 0; }
-  to { opacity: 95%; }
+.btn-xs {
+    padding: .15rem .5rem;
+    font-size: .675rem;
+    line-height: 1.2;
+    border-radius: .2rem;
 }
 
-@keyframes slideout {
-  from { opacity: 95%; }
-  to { opacity: 0%; }
-}
 
 // algolia search
 
