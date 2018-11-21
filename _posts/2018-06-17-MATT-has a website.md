@@ -1,9 +1,6 @@
 ---
 title: MATT is on the Web
-tags:
-  - FHWA
-  - MATT
-  - Mobile Asphalt Testing Trailer
+tags: FHWA, MATT, Mobile Asphalt Testing Trailer
 ---
 The FHWA's **Mobile Asphalt Testing Trailer** (MATT) Program provides asphalt and pavement testing, equipment demonstrations, as well as training. The Program can help DOTs implement innovations in materials and mix designs more quickly and efficiently.
 

@@ -1,10 +1,6 @@
 ---
 title: Asphalt Summer 2018
-tags:
-  - asphalt
-  - AI
-  - magazine
-  - asphalt institute
+tags: asphalt, AI, magazine, asphalt institute
 ---
 The Summer issue of the Asphalt Institute's magazine *Asphalt* is out.
 <!--more-->
