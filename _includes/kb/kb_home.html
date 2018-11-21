@@ -10,8 +10,15 @@
 {% assign all_kb_docs = all_kb_docs | concat: collection.docs %}
 {% endfor %}
 
-{% assign sorted = all_kb_docs | sort: 'date_added_kb' %}
+{% comment %} ++++++++++++++++++++
+if date_added_kb is not set OR is set as Date (2018-01-30) instead
+of Time (2018-01-30 12:34:00)
+Liquid Exception: Liquid error (/_includes/kb/kb_home.html line 14): comparison of Array with Array failed included in pages/index.html
+resolved with /_plugins/hook-kb-add-date-kb-added.rb
+++++++++++++++++++++ {% endcomment %}
 
-{% for d in all_kb_docs limit: 6 %}
+{% assign sorted = all_kb_docs | sort: 'date_added_kb' | reverse %}
+
+{% for d in sorted limit: 6 %}
   {% include articles/article-title.html post=d %}
 {% endfor %}
