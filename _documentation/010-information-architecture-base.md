@@ -1,5 +1,5 @@
 ---
-title: Pavement Preservation (P2) contents description
+title: Pavement Preservation (P2) Information Architecture (IA)
 ---
 
 ## Website structure
@@ -12,17 +12,23 @@ title: Pavement Preservation (P2) contents description
  - Faq
 
 ### News
-
+#### General
+Jekyll posts are used for news
 Standard front matter for posts
+
 FOR NOW IT'S THE SAME AS KB ARTICLES
 
 {% highlight yaml %}
 ---
 title: Post title
-# this the creation date
-  date: 2010-12-13 19:49:13 +01:00
-# date of kb addition
-date_kb: 2014-12-13 19:49:13 +01:00
+
+# for posts, this variable is optional
+# because jekyll guess date
+# from file name 2018-12-24-my-file-name.md
+date: 2010-12-24 19:49:13
+
+
+date_kb: 2014-12-13 19:49:00
 
 # publication state
 # default: true
@@ -62,6 +68,12 @@ lead:
 
 ---
 {% endhighlight %}
+
+
+
+
+
+
 
 
 ### Knowledge Base
