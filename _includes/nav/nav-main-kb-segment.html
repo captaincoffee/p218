@@ -3,9 +3,7 @@
 Get Knowledge Base (kb) collections by selecting ones with default isKB set to true. See _config.yml for kb collections{% endcomment %}
 
 {%- assign kbCollections = site.collections | where: "isKB", "true" -%}
-
 {%- assign categories = site.data.kb_setup.kb_categories -%}
-
 {%- for currentCollection in kbCollections -%}
 
   {%- assign urlStart = currentCollection.label | append: "/" | prepend: "/kb/" -%}
@@ -14,7 +12,7 @@ Get Knowledge Base (kb) collections by selecting ones with default isKB set to t
     {% assign categoryClass = "current" %}
   {% endif %}
 
-<li class="nav-item dropdown">
+<li class="nav-item dropdown kb-main-menu">
   <a class="nav-link dropdown-toggle {{ categoryClass }}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   {{ currentCollection.name }}
   </a>

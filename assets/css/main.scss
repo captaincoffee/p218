@@ -29,16 +29,25 @@ html { font-size: 1.2rem; }
   p{ margin: 0; }
 }
 
-
-
 .navbar-light {
-
-  background: #faf0ed;
-
+  background: white;
   .navbar-brand {
     color: $primary;
   }
 }
+
+.kb-main-menu{
+  .nav-link{
+    background: #28a7457d;
+    a{
+      color: theme-color($warning);
+    }
+  }
+}
+
+
+
+
 
 .container{
   background: $gray-100;
@@ -49,8 +58,6 @@ html { font-size: 1.2rem; }
   background: $primary;
   color: $white
 }
-
-
 
 // news
 .article{
