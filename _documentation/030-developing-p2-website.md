@@ -46,13 +46,19 @@ To use git-gui
 
 ### Ruby
 
- - Install some libraries :
+ - Install some libraries : `sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev`
 
-`sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev`
+> be sure to uninstall rvm ([see SO question](https://stackoverflow.com/a/3558763/1548376))
+> `rm -rf ~/.rvm` and clean your .bashrc file for any call
+{:.blockquote .alert .alert-danger}
 
  - Install rbenv (see [rbenv](https://github.com/rbenv/rbenv#installation))
 
+   If you already have rbenv installed you can just update with : `cd ~/.rbenv && git pull`
+
  - Install ruby-build (see [ruby-build](https://github.com/rbenv/ruby-build#readme))
+
+   If you already have ruby-build installed you can just update with : `cd ~/.rbenv/plugins/ruby-build && git pull`
 
  - Install desired ruby version :
 
