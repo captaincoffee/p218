@@ -84,7 +84,7 @@ liquid:
 pagination:
 
   # Site-wide kill switch, disabled here it doesn't run at all
-  enabled: false
+  enabled: true
 
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
   debug: false
@@ -140,7 +140,7 @@ pagination:
 # automatic page creation configuration
 # see https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-AUTOPAGES.md
 autopages:
-  enabled: false
+  enabled: true
 
   categories:
     enabled: true
@@ -237,16 +237,19 @@ defaults:
       type: "methods"
     values:
       layout: "kb_collection_item"
+      isKBDocument: true
   -
     scope:
       type: "materials"
     values:
       layout: "kb_collection_item"
+      isKBDocument: true
   -
     scope:
       type: "manage"
     values:
       layout: "kb_collection_item"
+      isKBDocument: true
 
 ############### Algolia jekyll plugin configuration ####################
 

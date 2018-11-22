@@ -12,6 +12,7 @@ Used on kb article page
     <time datetime="{{ currentPost.date }}">
       <em>{{ currentPost.date | date_to_string: "ordinal", "US" }}</em>
     </time>
+    {% include articles/date_added_kb.html %}
     <br>
     Category : {{ currentPost.category }}
     <br>
