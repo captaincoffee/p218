@@ -10,11 +10,18 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
 
   # only for knowledge base documents
   if document.collection.metadata['isKB']
-    date       = document.data['date']
-    date_added = document.data['date_added_kb']
-    if date_added.nil? || date_added.kind_of?(Date)
-      date_added = date.to_time
-      document.data['date_added_kb'] = date_added
+
+    d = document.data
+    date       = d['date']
+    date_added = d['date_added_kb']
+
+    if date_added.nil?
+      document.data['date_added_kb'] = date.to_time
     end
+
+    if date_added.kind_of?(Date)
+      document.data['date_added_kb'] = date_added.to_time
+    end
+
   end
 end
