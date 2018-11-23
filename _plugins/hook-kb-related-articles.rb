@@ -16,8 +16,10 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
     'title'=> str,
     'url'  => str,
     'date' => date,
+    'type' => str,
     'collection' => str,
-    'commonTags' => array
+    'commonTags' => array,
+    'isKBDocument' => true
   }
 =end
 
@@ -58,8 +60,10 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
             'title'=> doc.data['title'],
             'url'  => doc.url,
             'date' => doc.data['date'],
+            'type' => doc.data['type'],
             'collection' => doc.collection.label,
-            'commonTags' => commonTags
+            'commonTags' => commonTags,
+            'isKBDocument' => true
         }
 
         relatedDocs.push related

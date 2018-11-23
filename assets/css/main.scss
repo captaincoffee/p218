@@ -45,10 +45,6 @@ html { font-size: 1.2rem; }
   }
 }
 
-
-
-
-
 .container{
   background: $gray-100;
   position: relative;
@@ -58,6 +54,28 @@ html { font-size: 1.2rem; }
   background: $primary;
   color: $white
 }
+
+.article-type i{
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0;
+  background:url('/assets/img/p2_iconset_svgomg.svg') no-repeat 0 0;
+  background-size: 150px;
+}
+
+{% assign types = site.data.kb_setup.article_types %}
+{% assign horizontal-step = 32 %}
+{% assign imgSize = 150 %}
+{% for type in types %}
+/* forloop.index0 : {{ forloop.index0 }} */
+  {% assign hpos = forloop.index0 | times: horizontal-step | times: -1 %}
+
+  .article-type-{{ type.slug }} i{
+    background-position: {{ hpos }}px 0;
+  }
+{% endfor %}
 
 // news
 .article{
@@ -84,6 +102,11 @@ html { font-size: 1.2rem; }
   }
 }
 
+blockquote{
+  p{
+    margin: 0 .5rem;
+  }
+}
 
 .documentationItem{
 

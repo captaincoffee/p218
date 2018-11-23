@@ -14,5 +14,10 @@ Works for posts and KB articles
     </time>
   {% include articles/date_added_kb.html %}
   </div>
-  <h2><a href="{{ currentPost.url | relative_url }}">{{ currentPost.title }}</a></h2>
+  <h2>
+    <a href="{{ currentPost.url | relative_url }}">
+      {% include articles/article-type.html post=currentPost %}
+      {{ currentPost.title }}
+    </a>
+  </h2>
 </article>

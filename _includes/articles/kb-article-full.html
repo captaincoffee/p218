@@ -19,7 +19,10 @@ Used on kb article page
     {% if currentPost.tags %}Tags : {{ currentPost.tags | join:', ' }}{% endif %}
   </div>
 
-  <h2>{{ currentPost.title }}</h2>
+  <h2>
+    {% include articles/article-type.html post=currentPost %}
+    {{ currentPost.title }}
+  </h2>
 
   {{ currentPost.content }}
 

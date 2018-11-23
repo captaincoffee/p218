@@ -73,7 +73,8 @@ When on a category index page, we also create :
 
         <li>
           <a href="{{ site.baseurl }}{{ article.url }}">
-            {{ articleType.name }} <i class="{{ articleType.icon }}"></i> {{ article.title }}
+            {% include articles/article-type.html post=article %}
+            {{ article.title }}
           </a>
           {% assign currentCollectionSlug = article.collection %}
           {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}

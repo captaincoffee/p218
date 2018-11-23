@@ -69,7 +69,7 @@ sass:
   # style : nested (default), compact, compressed, expanded
   #         :nested, :compact, :compressed, :expanded also works
   # see http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-  style: compressed
+  style: nested
 
 
 ## new in 2.8
