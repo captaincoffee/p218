@@ -13,12 +13,12 @@ Get Knowledge Base (kb) collections by selecting ones with default isKB set to t
   {% endif %}
 
 <li class="nav-item dropdown kb-main-menu">
-  <a class="nav-link dropdown-toggle {{ categoryClass }}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <a class="nav-link dropdown-toggle {{ categoryClass }}" href="#" id="navbarDropdown{{ forloop.index }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   {{ currentCollection.name }}
   </a>
   {% comment %}Sort collections articles by category{% endcomment %}
   {%- assign byCategory = currentCollection.docs | group_by: 'category' -%}
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.index }}">
     {% comment %}Prints categories in the same order as collection.categories{% endcomment %}
     {%- for cat in categories[currentCollection.label] -%}
       {%- assign currentCat = cat.slug -%}
