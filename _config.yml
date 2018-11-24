@@ -8,7 +8,6 @@ timezone:    America/New_York
 
 default_author: "P2 editors"
 
-
 google-verification:    ""
 
 include:
@@ -32,7 +31,7 @@ excerpt_separator: "<!--more-->"
 
 # url: ""
 baseurl: ""
-
+kb-img-path: "/assets/img/kb"
 kramdown:
 #   auto_ids: true
 #   footnote_nr: 1
