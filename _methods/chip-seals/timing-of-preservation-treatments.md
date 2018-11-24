@@ -11,7 +11,7 @@ image_path:
 image_source:
 image_caption:
 title_color:
-video_embed: https://youtu.be/Q_Z3IuhAt5M
+video_embed: Q_Z3IuhAt5M
 sidebar:
 order-number:
 subtitle:
@@ -21,5 +21,3 @@ Elie Hajj, University of Nevada, Reno, discusses placement methods, materials, a
 
 Presented at the RMWPPP Meeting in Seattle, WA on October 23-25, 2017.
 <!--more-->
-
-// embed code goes here

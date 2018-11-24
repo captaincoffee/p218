@@ -11,7 +11,7 @@ image_path:
 image_source:
 image_caption:
 title_color:
-video_embed: https://youtu.be/gDGfADwqjX4
+video_embed: gDGfADwqjX4
 sidebar:
 order-number:
 subtitle:
@@ -21,5 +21,3 @@ Dale Heglund, PE/PLS, Director, North Dakota LTAP Center presents on the preserv
 
 Presented at the MPPP Annual Meeting in Kansas City, MO on September 29, 2015.
 <!--more-->
-
-// embed code goes here

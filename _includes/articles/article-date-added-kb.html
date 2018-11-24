@@ -1,3 +1,4 @@
+{% assign currentPost = include.post %}
 {% if currentPost.date_added_kb != currentPost.date and currentPost.isKBDocument == true %}
      (added to kb on
     <time datetime="{{ currentPost.date_added_kb }}">

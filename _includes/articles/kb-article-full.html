@@ -7,22 +7,22 @@ Used on kb article page
 
 <article class="article kb-full">
 
-  <div class="metadatas">
-    by <em>{{ author }}</em> on
-    <time datetime="{{ currentPost.date }}">
-      <em>{{ currentPost.date | date_to_string: "ordinal", "US" }}</em>
-    </time>
-    {% include articles/date_added_kb.html %}
-    <br>
-    Category : {{ currentPost.category }}
-    <br>
-    {% if currentPost.tags %}Tags : {{ currentPost.tags | join:', ' }}{% endif %}
-  </div>
-
   <h2>
     {% include articles/article-type.html post=currentPost %}
     {{ currentPost.title }}
   </h2>
+
+  <div class="metadatas">
+    by <em>{{ author }}</em> on
+    {% include articles/article-date-ordinal.html post=currentPost %}
+    {% include articles/article-date-added-kb.html post=currentPost %}
+    <br>
+    Category : {{ currentPost.category }}
+    <br>
+    {% include articles/article-tags.html post=currentPost %}
+  </div>
+  {% include articles/article-image.html post=currentPost %}
+  {% include articles/article-video.html post=currentPost %}
 
   {{ currentPost.content }}
 

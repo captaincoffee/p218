@@ -1,0 +1,2 @@
+{% assign currentPost = include.post %}
+{% if currentPost.tags %}Tags : {{ currentPost.tags | join:', ' }}{% endif %}

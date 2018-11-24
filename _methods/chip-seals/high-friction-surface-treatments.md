@@ -11,7 +11,7 @@ image_path:
 image_source:
 image_caption:
 title_color:
-video_embed: https://youtu.be/0aeRO2Vwc3k
+video_embed: 0aeRO2Vwc3k
 sidebar:
 order-number:
 subtitle:
@@ -21,5 +21,3 @@ Jeff Uhlmeyer, WSDOT State Pavement Engineer, discusses placement methods, mater
 
 Presented at the RMWPPP Meeting in Seattle, WA on October 23-25, 2017.
 <!--more-->
-
-// embed code goes here

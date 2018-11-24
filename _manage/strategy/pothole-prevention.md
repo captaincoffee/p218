@@ -11,7 +11,7 @@ image_path:
 image_source:
 image_caption:
 title_color:
-video_embed: https://youtu.be/IysBTYBvqO8
+video_embed: IysBTYBvqO8
 sidebar:
 order-number:
 subtitle:
@@ -20,5 +20,3 @@ lead:
 
 Pavement preservation is pothole prevention! Pothole Prevention is preventing potholes before they happen!  By sealing cracks early on and using preservation treatments, potholes can be prevented.
 <!--more-->
-
-// embed code goes here

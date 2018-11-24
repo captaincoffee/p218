@@ -1,0 +1,34 @@
+{% assign currentPost = include.post %}
+
+{% if currentPost.image_path %}
+
+  {% assign imgAlt = "" | split: "" %}
+  {% if currentPost.image_caption %}
+    {% assign imgAlt = imgAlt | push: currentPost.image_caption %}
+  {% endif %}
+  {% if currentPost.image_source %}
+    {% capture source %}(source : {{ currentPost.image_source }}){% endcapture %}
+    {% assign imgAlt = imgAlt | push: source %}
+  {% endif %}
+
+
+  <figure class="figure">
+    <img
+    src="{{ site.baseurl }}{{ site.kb-img-path }}/{{ currentCollection.label }}/{{ currentCategoryDatas.slug }}/{{ currentPost.image_path }}"
+    class="figure-img img-fluid"
+    alt="
+    {% if imgAlt.size > 0 %}
+      {{ imgAlt | join: ' ' }}
+    {% else %}
+      {{ currentPost.title }}
+    {% endif %}
+    "
+    >
+    {% if imgAlt.size > 0 %}
+    <figcaption class="figure-caption">
+      {{ imgAlt | join: ' ' }}
+    </figcaption>
+    {% endif %}
+  </figure>
+
+{% endif %}
