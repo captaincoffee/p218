@@ -1,9 +1,11 @@
 {% comment %} ++++ Knowledge base main menu ++++
 
-Get Knowledge Base (kb) collections by selecting ones with default isKB set to true. See _config.yml for kb collections{% endcomment %}
+Get Knowledge Base (kb) collections by selecting ones with default isKB set to true. See _config.yml for kb collections
+------------------------------------------ {% endcomment %}
 
 {%- assign kbCollections = site.collections | where: "isKB", "true" -%}
 {%- assign categories = site.data.kb_setup.kb_categories -%}
+
 {%- for currentCollection in kbCollections -%}
 
   {%- assign urlStart = currentCollection.label | append: "/" | prepend: "/kb/" -%}

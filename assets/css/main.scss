@@ -29,11 +29,15 @@ html { font-size: 1.2rem; }
   p{ margin: 0; }
 }
 
-.navbar-light {
-  background: white;
-  .navbar-brand {
-    color: $primary;
+.navbar-brand {
+
+  img {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    border: 1px solid $white;
   }
+
 }
 
 .kb-main-menu{
@@ -130,6 +134,7 @@ blockquote{
   cursor: pointer;
   padding-left: 10px;
   background: $danger;
+
 }
 #search-results {
   background: rgba(240, 240, 240, 0.5);
