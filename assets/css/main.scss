@@ -38,9 +38,19 @@ html { font-size: 1.2rem; }
 
 .kb-main-menu{
   .nav-link{
-    background: #28a7457d;
+    background: $green;
     a{
       color: theme-color($warning);
+    }
+  }
+  .dropdown-menu{
+    background: $green;
+    a{
+      color: $white;
+
+      &:hover{
+        color: $green;
+      }
     }
   }
 }
@@ -119,7 +129,7 @@ blockquote{
 .search-link{
   cursor: pointer;
   padding-left: 10px;
-  background: rgba(240, 50, 50, 0.2);
+  background: $danger;
 }
 #search-results {
   background: rgba(240, 240, 240, 0.5);
