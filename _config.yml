@@ -29,7 +29,7 @@ plugins:
 
 excerpt_separator: "<!--more-->"
 
-# url: ""
+url: https://p218.netlify.com/
 baseurl: ""
 kb-img-path: "/assets/img/kb"
 kramdown:
