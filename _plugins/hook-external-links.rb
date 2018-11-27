@@ -21,7 +21,8 @@
         link['rel'] = 'noopener noreferrer'
         link['target'] = "_blank"
 
-        Jekyll.logger.debug("external link", link.to_s)
+        #Jekyll.logger.info("external link document type", document.data['type'])
+        #Jekyll.logger.info("external link", link.to_s)
 
       end
 
@@ -38,6 +39,6 @@ Jekyll::Hooks.register :pages, :post_render do |page|
   # avoid to proccess js files
   allowed_extensions = ['.md', '.markdown', '.htm', '.html']
   if allowed_extensions.include?( page.ext )
-    # external_links(page)
+    external_links(page)
   end
 end
