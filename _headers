@@ -11,8 +11,8 @@
   # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
   X-Frame-Options: deny
 
-  https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
-  # X-XSS-Protection: 1; mode=block
+  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+  X-XSS-Protection: 1; mode=block
 
   # https://infosec.mozilla.org/guidelines/web_security#http-strict-transport-security
   # Only connect to this site and subdomains via HTTPS for the next two years and also include in the preload list
