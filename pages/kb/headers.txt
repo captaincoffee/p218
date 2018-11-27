@@ -1,0 +1,9 @@
+---
+title: headers
+menu: footer
+weight: 100
+layout: null
+permalink: kb/yolo/
+---
+
+{% include utils/headers.md %}

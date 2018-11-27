@@ -296,7 +296,7 @@ profile: false
 
 verbose: false
 
-comment_includes: true
+comment_includes: false
 
 debug_hooks: false
 
