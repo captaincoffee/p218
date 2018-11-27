@@ -19,9 +19,11 @@ layout: null
   X-XSS-Protection: 1; mode=block
 
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
-{%- comment %}
+
   # generator : https://report-uri.com/home/generate
   Content-Security-Policy: default-src *.{{ site.host }};
+
+{%- comment %}
   Content-Security-Policy: base-uri {{ site.host }};
 
   Content-Security-Policy: connect-src *.{{ site.host }} *.algolia.net;
