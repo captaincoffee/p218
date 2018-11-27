@@ -7,3 +7,17 @@
 /*
   X-Content-Type-Options: "nosniff"
 
+  X-Frame-Options: deny
+
+  X-XSS-Protection: 1; mode=block
+
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  Content-Security-Policy: default-src 'self';
+  Content-Security-Policy: img-src 'self;
+  Content-Security-policy: frame-src youtube.com;
+  Content-Security-Policy: media-src youtube.com;
+  Content-Security-Policy: script-src 'self';
+  Content-Security-Policy: connect-src *.algolia.net;
+  Content-Security-Policy: object-src 'none'
+  Content-Security-Policy: block-all-mixed-content;
