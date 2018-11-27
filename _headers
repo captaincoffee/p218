@@ -1,0 +1,31 @@
+# headers file for netlify
+# doc : https://www.netlify.com/docs/headers-and-basic-auth/
+# test : https://play.netlify.com/headers
+
+
+/*
+
+  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options
+  X-Content-Type-Options: nosniff
+
+  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+  X-Frame-Options: deny
+
+  https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
+  # X-XSS-Protection: 1; mode=block
+
+  # https://infosec.mozilla.org/guidelines/web_security#http-strict-transport-security
+  # Only connect to this site and subdomains via HTTPS for the next two years and also include in the preload list
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+  # https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
+
+  Content-Security-Policy: default-src 'self';
+  Content-Security-Policy: img-src 'self;
+  Content-Security-policy: frame-src youtube.com;
+  Content-Security-Policy: media-src youtube.com;
+  Content-Security-Policy: script-src 'self';
+  Content-Security-Policy: connect-src *.algolia.net;
+  Content-Security-Policy: object-src 'none'
+  Content-Security-Policy: block-all-mixed-content;

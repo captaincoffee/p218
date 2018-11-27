@@ -12,6 +12,7 @@ google-verification:    ""
 
 include:
   - .nojekyll
+  - _headers
               ]
 # exclude from the conversion and from sitemap.xml
 exclude:
