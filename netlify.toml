@@ -5,13 +5,16 @@
 ID = "p218"
 
 [build]
-#  command = "jekyll build --config _config.yml,_config_dev.yml && jekyll algolia"
-  command = "jekyll build && jekyll algolia"
   publish = "_site"
-#  environment = { JEKYLL_LOG_LEVEL = "debug", JEKYLL_ENV = "development" }
-  environment = { JEKYLL_LOG_LEVEL = "info", JEKYLL_ENV = "production" }
-
+  command = "jekyll build && jekyll algolia"
 
 [context.production]
+   command = "jekyll build && jekyll algolia"
+   environment = { JEKYLL_LOG_LEVEL = "info", JEKYLL_ENV = "production" }
+
+[context.branch-deploy]
+  #command = "jekyll build --config _config.yml,_config_dev.yml && jekyll algolia"
   command = "jekyll build && jekyll algolia"
-  environment = { JEKYLL_LOG_LEVEL = "info", JEKYLL_ENV = "production" }
+
+#  environment = { JEKYLL_LOG_LEVEL = "debug", JEKYLL_ENV = "development" }
+  environment = { JEKYLL_LOG_LEVEL = "debug", JEKYLL_ENV = "production" }

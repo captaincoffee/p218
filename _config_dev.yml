@@ -132,7 +132,7 @@ verbose: false
 # Digging into jekyll generated code, it's not always easy to spot
 # where code comes from.
 # Commenting start and end for an include, helps a lot.
-comment_includes: true
+comment_includes: false
 
 #### Debug site variables
 #
