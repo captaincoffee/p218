@@ -12,7 +12,7 @@ url: https://p218.netlify.com/
 pagination:
 
   # Site-wide kill switch, disabled here it doesn't run at all
-  enabled: true
+  enabled: false
 
   # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
   debug: false
@@ -150,7 +150,7 @@ site_vars_NOT_to_print:
 # - config
 # - data
 # - time
-# - tags
+ - tags
  - pages
  - posts
  - static_files
@@ -196,7 +196,7 @@ site_vars_NOT_to_print:
 # - liquid
 # - rdiscount
 # - redcarpet
-# - kramdown
+ - kramdown
 # - title
 # - email
 # - description
