@@ -3,6 +3,7 @@
 
 - templating & styles
 
+   - excerpts ?
    - news
    - kb + pages per collection
    - events

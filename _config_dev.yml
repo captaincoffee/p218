@@ -1,10 +1,11 @@
 ##################################################################
-##  Development setup                                           ##
+##  DEPLOY Development setup                                    ##
 ##                                                              ##
 ##  Use with jekyll build --config _config.yml,_config_dev.yml  ##
 ##################################################################
 
 url: https://p218.netlify.com/
+host: p218.netlify.com
 
 ############################################################
 # Site configuration for the Jekyll Pagination V2 Gem

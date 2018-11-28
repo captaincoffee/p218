@@ -2,10 +2,6 @@
 title: Developing P2 website
 ---
 
-
-## Security
-
-
 ## Stack
 
 ### Back end
@@ -21,15 +17,6 @@ title: Developing P2 website
  - **instantsearch**
 
 See package.json and yarn.lock for versions.
-
-
-## Quick links
-
- - [Github versioning for P218](https://github.com/captaincoffee/p218)
- - [Github project managment for P218](https://github.com/captaincoffee/p218/projects/1)
- - [Netlify admin interface](https://app.netlify.com/sites/sad-goldberg-49fc15/overview)
- - [Algolia serch dashboard](https://www.algolia.com/apps/K3NGJZEZ95/dashboard)
- - [Forestry.io CMS](https://app.forestry.io/dashboard/)
 
 ## Unbuntu 18.04 development environment install
 
@@ -100,7 +87,15 @@ We need node/yarn to install javascript and scss dependencies (bootstrap, algoli
     yarn
 
     # start the server
-    bundle exec jekyll serve
-
+    bundle exec jekyll serve --config _config.yml,_config_dev.yml,_config_local.yml
 
 **You site is now live at [http://127.0.0.1:4000](http://127.0.0.1:4000)**
+
+
+## Quick links
+
+ - [Github versioning for P218](https://github.com/captaincoffee/p218)
+ - [Github project managment for P218](https://github.com/captaincoffee/p218/projects/1)
+ - [Netlify admin interface](https://app.netlify.com/sites/sad-goldberg-49fc15/overview)
+ - [Algolia serch dashboard](https://www.algolia.com/apps/K3NGJZEZ95/dashboard)
+ - [Forestry.io CMS](https://app.forestry.io/dashboard/)
