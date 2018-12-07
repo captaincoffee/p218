@@ -4,7 +4,6 @@
 # test : https://play.netlify.com/headers
 # references : https://infosec.mozilla.org/guidelines/web_security
 #              https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/
-{% endcomment -%}
 
 /*
   X-Content-Type-Options: "nosniff"
@@ -15,12 +14,13 @@
   X-XSS-Protection: 1; mode=block
 
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+{% endcomment -%}
+
 
 {%- comment %}
   # generator : https://report-uri.com/home/generate
-{%- endcomment %}
-
   Content-Security-Policy: default-src *.{{ site.host }};
+{%- endcomment %}
 
 {%- comment %}
   Content-Security-Policy: base-uri {{ site.host }};
