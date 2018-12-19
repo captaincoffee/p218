@@ -1,9 +1,8 @@
 ---
-title: headers
+title: headers test
 menu: footer
 weight: 100
 layout: null
-permalink: kb/yolo/
 ---
 
 {% include utils/headers.md %}

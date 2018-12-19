@@ -4,6 +4,16 @@ title: Developing P2 website
 
 ## Stack
 
+### Tested OS
+
+ - Ubuntu 16-04 LTS - Xenial Xerus
+ - see [Ubuntu 18-04 LTS - Bionic Beaver](https://www.ubuntu.com/download/desktop)
+
+### Tools
+
+ - For basic code edition [Sublime Text](https://www.sublimetext.com/)
+ - If you want to hack into Jekyll or simply Ruby code, you can use [Rubymine](https://www.jetbrains.com/ruby/).
+
 ### Back end
  - git / Github
  - **ruby** managed with [rbenv](https://github.com/rbenv/rbenv)
@@ -14,7 +24,7 @@ title: Developing P2 website
 ### Front end
  - **bootstrap** + **popper.js**
  - **jquery** + **jquery.cookie**
- - **instantsearch**
+ - Algolia **instantsearch**
 
 See package.json and yarn.lock for versions.
 

@@ -4,8 +4,8 @@
 ##  Use with jekyll build --config _config.yml,_config_dev.yml  ##
 ##################################################################
 
-url: https://p218.netlify.com/
-host: p218.netlify.com
+# url: https://p218.netlify.com/
+# host: p218.netlify.com
 
 ############################################################
 # Site configuration for the Jekyll Pagination V2 Gem
@@ -197,7 +197,7 @@ site_vars_NOT_to_print:
 # - liquid
 # - rdiscount
 # - redcarpet
- - kramdown
+# - kramdown
 # - title
 # - email
 # - description

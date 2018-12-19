@@ -231,7 +231,7 @@ defaults:
     values:
       layout: null
 
-  # default layout for collections articles
+  # default config for knowledge base
   -
     scope:
       type: "methods"

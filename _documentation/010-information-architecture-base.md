@@ -12,6 +12,7 @@ title: Pavement Preservation (P2) Information Architecture (IA)
  - Faq
 
 ### News
+
 #### General
 Jekyll posts are used for news
 Standard front matter for posts
@@ -69,41 +70,71 @@ lead:
 ---
 {% endhighlight %}
 
+### Knowledge Base (KB)
 
-
-
-
-
-
-
-### Knowledge Base
-
-KB base element is a collection's file, and we call it **article**
-
-Articles are grouped in **collections**, then in **categories**.
-
-KB collections are configured to have an isKB variable set to true.
-
-    collections:
-      methods:
-        output: true
-        isKB: true
-        name: "Methods"
-        permalink: "/kb/:path/"
-
-Getting all kb collections can be done with :
-{% highlight liquid %}
-{%- raw -%}
-{%- assign kbCollections = site.collections | where: "isKB", "true" -%}
-{%- endraw -%}
-{% endhighlight %}
-
+  - KB base element is a collection's file, and we call it **Article**
+  - We have three **collections** used to display **articles** : **methods**, **materials** and **manage**.
+  - Inside collections Articles are grouped in **categories**.
+    eg : A **_materials/chip-seals/my_article.md** file will be in **Materials Collection** and in **Cheap Seals Categorie**.
+    And his **URL** will be **/kb/materials/cheap-seals:my-article/**.
+  - Articles can have one type (article, video, link, project or research)
+  - An Article can have one to many **tags**.
 
 #### Creating an Article
 
-#### Creating a category
+Article management **must** be done through Forestry.io CMS (see [see documentation](/documentation/070-forestry.io-cms/)).
 
-#### Creating a new collection in kb
+#### Manage Knowledge Base Collections
+
+If you want to add a collection to KB :
+
+ - in _config.yml, add a new collection and its default configuration
+
+{% highlight yaml %}
+collections:
+  [...]
+  collection-name:
+    output: true  # creates a page for each article in the collection
+    isKB: true    # used to easily find KB collections with liquid
+                  # eg : {% assign kb = site.collections | where: "isKB", "true" %}
+    name: "Collection Name"  # display name
+    permalink: "/kb/:path/"
+
+defaults:
+  [...]
+  # default config for knowledge base
+  [...]
+  -
+    scope:
+      type: "collection-name"
+    values:
+      layout: "kb_collection_item"
+      isKBDocument: true
+
+{% endhighlight %}
+
+ - create a new **_collection-name** folder
+
+ - in this folder, create categories folders
+
+ - edit collection's categories (see bellow)
+
+#### Manage collection's Categories
+
+If you want to add a category to a KB collection :
+
+  - create a folder in collection. (eg : for **_collection-name** example, we can create a **_collection-name/category-name** folder)
+
+  - edit **data/kb_setup/kb_categories.yml**
+
+  - add an entry for your category
+{% highlight yaml %}
+collection-name:
+    - { name: "Category Name", slug: category-name }
+{% endhighlight %}
+
+
+#### Manage article Types
 
 ### Agenda
 
@@ -111,57 +142,6 @@ Getting all kb collections can be done with :
 
 ## WIP
 
-## Pavement Preservation Knowledge Base
-
-### Knowledge base organization
-Base KB's element is **article**.
-
-**Articles** are organized in **collection** : **methods**, **materials** and **manage**.
-
-An **article** can be from one **category** (eg : Fog Seals, Chip Seals, Spray Seals, ... ). Each collection has is own categories (see **categories** paragraph for more informations).
-
-An **article** can be from one type (**article**, **video**, **link**, **project** or **research**).
-
-An **article** can have one to many **tags**.
-
-## Collections organization
-
-We have three **collections** used to display **articles** : **methods**, **materials** and **manage**.
-
-They are usual Jekyll collections.
-
-### Configuration
-This is the basic configuration for a collection.
-
-{% highlight yaml %}
-collections:
-
-  methods:
-    output: true   # every page in the collection will be created
-    isKB: true     # is part of Knowledge base
-    name: "Methods" # Print name used in titles, menus, ...
-    categories:
-      [...]
-{% endhighlight %}
-
-All articles for **methods** collections goes in a **_methods/categoryName** folder
-(see **categories** paragraph for more informations).
-
-In order to differentiate **KB** collections from other collections we set a `isKB: true` on the collection.
-
-### Collection's index page
-
-
-
-## Create a Category
-
-Articles are organized in collections, then in categories inside each collection.
-
-Article can be part of only one **category**.
-
-Each collection has is own categories.
-
-A category is automatically assigned depending on the folder name and default configuration rules.
 
 ### Add the category to *data/kb_setup.yml* under `kb_categories` configuration key.
 
