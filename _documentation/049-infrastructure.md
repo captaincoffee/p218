@@ -21,3 +21,7 @@ See [Netilify page](/documentation/060-netlify/)
 While it can be done locally with a text editor, it's better to use this tool only for development.
 
 Editor are advised to use Forestry.io CMS [see documentation](/documentation/070-forestry.io-cms/).
+
+### Fearch envine
+
+See [Algolia page](/documentation/080-algolia-search/)

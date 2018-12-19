@@ -77,6 +77,7 @@ lead:
   - Inside collections Articles are grouped in **categories**.
     eg : A **_materials/chip-seals/my_article.md** file will be in **Materials Collection** and in **Cheap Seals Categorie**.
     And his **URL** will be **/kb/materials/cheap-seals:my-article/**.
+  - Technically, the category is affected to articles by **_plugins/hook-collection-category-from-path.rb**. See this file for documentation.
   - Articles can have one type (article, video, link, project or research)
   - An Article can have one to many **tags**.
 
