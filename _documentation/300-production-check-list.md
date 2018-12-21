@@ -2,6 +2,8 @@
 title: Production Check list
 ---
 
+ - check and remove development credentials
+
  - remove test content
 
  - debug off

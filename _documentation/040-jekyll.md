@@ -10,7 +10,6 @@ Because, at some point, it can be good for your mental health.
 
 ## Working with Jekyll
 
-
 ### Debuging jekyll
 
 Jekyll debugging features :
@@ -75,4 +74,28 @@ ALGOLIA_API_KEY='your_secret_key' bundle exec jekyll algolia
 
 see : https://community.algolia.com/jekyll-algolia/netlify.html
 
+### hook-collection-category-from-path.rb
 
+A custom plugin to associate a category to a kb article depending on file location
+
+### hook-external-links.rb
+
+A custom plugin that ensures that external links contains :
+  - `rel="noopener noreferrer"` for security reasons
+  - `target="_blank`
+  - `externalLink` class
+
+## hook-kb-add-date-kb-added.rb
+A custom plugin that ensures that any article in KB :
+  - has a `date_added_kb` variable,
+  - that `date_added_kb` is set as a Time object (and not DateTime object).
+
+## hook-kb-related-articles.rb
+A custom plugin that sets `related` articles on kb articles based on number of common tags.
+
+## hook-remove-index-html-from-url-in-pagination-generated-pages.rb
+A custom plugins that removes *index.html* from pagination v2 created pages urls, in order to have consistant urls all around p2 site.
+
+### jekyll-sitemap
+
+### jekyll-seo

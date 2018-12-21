@@ -19,7 +19,7 @@ title: Developing P2 website
  - **ruby** managed with [rbenv](https://github.com/rbenv/rbenv)
    see [netlify current supported versions](https://www.netlify.com/docs/#ruby)
  - **bundler**
- - **jekyll: 3.8.4**
+ - **jekyll** see Gemfile.lock for current version
 
 ### Front end
  - **bootstrap** + **popper.js**
