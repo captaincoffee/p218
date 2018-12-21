@@ -2,13 +2,16 @@
 title: Events
 menu: main1
 weight: 30
-permalink: events/
+permalink: agenda/
 ---
 
-<h1>{{ page.title }}</h1>
+{% assign events = site.events | where_exp: "event", "event.date > site.time" %}
 
 <ul>
-  <li>event 1 - date</li>
-  <li>event 2 - date</li>
-  <li>event 3 - date</li>
+{% for e in events %}
+  <li>
+    <h3>{{ e.title }}</h3>
+    {{ e.content }}
+  </li>
+{% endfor %}
 </ul>
