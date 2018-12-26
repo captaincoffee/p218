@@ -228,7 +228,7 @@ page_vars_NOT_to_print:
   - content
 #  - relative_path
 #  - id
-  - collection
+#  - collection
   - excerpt
 #  - draft
 #  - categories
