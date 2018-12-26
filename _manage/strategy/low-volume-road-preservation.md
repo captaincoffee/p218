@@ -1,17 +1,18 @@
 ---
 title: Low Volume Road Preservation
 author: Dale Heglund
+published: true
 date: 2015-11-25
 date_added_kb: 2018-06-10
 source: NCPP
 source-url:
 tags: [FDR, fog seal, crack seal, low volume roads, cold climate, distress identification, MPPP, NCPP]
 type: video
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed: gDGfADwqjX4
+video_id: gDGfADwqjX4
 sidebar:
 order-number:
 subtitle:

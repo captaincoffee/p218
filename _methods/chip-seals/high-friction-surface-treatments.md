@@ -1,17 +1,18 @@
 ---
 title: High Friction Surface Treatments
 author: Jeff Uhlmeyer
+published: true
 date: 2015-11-25
 date_added_kb: 2018-06-10
 source: NCPP
 source-url:
 tags: [aggregate, epoxy, calcined bauxite, HFST, high friction, friction numbers, NCPP, RMWCPP, project selection, safety]
 type: video
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed: 0aeRO2Vwc3k
+video_id: 0aeRO2Vwc3k
 sidebar:
 order-number:
 subtitle:

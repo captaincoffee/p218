@@ -1,17 +1,18 @@
 ---
 title: International Slurry Surfacing Association Training Resources
 author:
+published: true
 date: 2018-06-15
 date_added_kb: 2018-06-15
 source: ISSA
 source-url:
 tags: [asphalt emulsion, certification, training, workshop, webinar, microsurfacing, slurry, chip seal]
 type: article
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed:
+video_id:
 sidebar:
 order-number:
 subtitle:

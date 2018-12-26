@@ -1,17 +1,18 @@
 ---
 title: DART Field Validation and Prototype Refinement
 author: Chetana Rao, Matthew Bandyk
+published: true
 date: 2017-12-01
 date_added_kb: 2018-06-10
 source: TRB
 source-url: http://onlinepubs.trb.org/onlinepubs/IDEA/FinalReports/Highway/NCHRP193.pdf
 tags: [asphalt, asphalt binder, DART, field test, QC, QA, verification]
 type: research
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed:
+video_id:
 sidebar:
 order-number:
 subtitle:
@@ -21,5 +22,3 @@ This report summarizes findings from a National Cooperative Highway Research Pro
 <!--more-->
 
 In this study, the research team performed validation tests to determine the effectiveness of the DART in production environments such as a paving job site, a field laboratory, and a binder production facility.
-
-{% include link-2-original.md %}

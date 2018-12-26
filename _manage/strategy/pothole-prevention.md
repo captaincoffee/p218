@@ -1,17 +1,18 @@
 ---
 title: Pothole Prevention
 author:
+published: true
 date: 2012-01-20
 date_added_kb: 2018-06-10
 source: NCPP
 source-url:
 tags: [pothole, crack sealing, NCPP]
 type: video
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed: IysBTYBvqO8
+video_id: IysBTYBvqO8
 sidebar:
 order-number:
 subtitle:

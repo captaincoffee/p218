@@ -1,17 +1,18 @@
 ---
 title: Field Evaluation and Cost Effectiveness of Crack Sealing in Flexible and Composite Pavements
 author: Momen Mousa, Mostafa A. Elseifi, Mohammad Bashar, Zhongjie Zhang, Kevin Gaspard
+published: true
 date: 2018-04-24
 date_added_kb: 2018-06-10
 source: Transportation Research Record
 source-url: http://journals.sagepub.com/doi/full/10.1177/0361198118767417
 tags: [crack treatments]
 type: research
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed:
+video_id:
 sidebar:
 order-number:
 subtitle:
@@ -24,5 +25,3 @@ Surface cracking in asphalt concrete (AC) is a major failure mechanism that deve
 Crack sealing is a surface treatment technique where hot-poured bituminous-based materials are applied into transverse and longitudinal cracks using various configurations (5,6). Field performance of CS is commonly evaluated for failure exhibited by the sealant material. Sealant failures result from excessive stresses in the sealant as the crack opens and closes with temperature variation and traffic loading. These failure mechanisms can be attributed to improper material selection or neglecting one or more of the construction considerations (7). Common sealant failures include adhesion loss, cohesion loss, spalls, pullout, extrusive, and intrusive failures (7,8).
 
 Crack sealing has received considerable interest in Louisiana in recent years. The selection and construction processes for CS has been well researched and documented in previous studies (9–15). Yet, fewer studies were conducted to assess field performance of CS, especially in hot and wet climates such as Louisiana. Therefore, factors that may affect the field performance of CS should be evaluated and quantified to ensure that the treatment is only used when positive benefits are expected. This would also allow quantifying cost-effectiveness of this treatment method in controlling cracks and enhancing PSL.
-
-{% include link-2-original.md %}

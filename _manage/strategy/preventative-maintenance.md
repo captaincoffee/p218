@@ -1,17 +1,18 @@
 ---
 title: Preventative Maintenance - Project Selection
 author:
+published: true
 date: 2009-05-09
 date_added_kb: 2018-06-10
 source: NCPP
 source-url:
 tags: [project selection, FHWA, NCPP, FP2]
 type: video
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed: qwu1hBPxAho
+video_id: qwu1hBPxAho
 sidebar:
 order-number:
 subtitle:

@@ -1,17 +1,18 @@
 ---
 title: The FHWA’s Demonstration Project for Enhanced Durability of Asphalt Pavements through Increased In-Place Pavement Density
 author: Tim Aschenbrener, E. Ray Brown, Nam Tran, Phillip B. Blankenship
+published: true
 date: 2018-04-24
 date_added_kb: 2018-06-10
 source: Transportation Research Record
 source-url: http://journals.sagepub.com/doi/full/10.1177/0361198118767419
 tags: [field density, demonstration projects, FHWA, AI, NCAT, hot mix asphalt, HMA]
 type: research
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed:
+video_id:
 sidebar:
 order-number:
 subtitle:
@@ -21,5 +22,3 @@ The overall objective of the demonstration project was to achieve increased in-p
 <!--more-->
 
 Each field demonstration project included a control and one or more test sections. The control section was built by the contractor to achieve the required in-place density based on their routine construction practices. At least one test section was built as part of the agreement with FHWA, and the goal of this section was to use improved paving and compaction techniques to increase density. The contractor was encouraged to employ techniques that did not require additional rollers or a higher asphalt content that would result in significantly increased cost. In some states, additional test sections were constructed by the SHAs and contractors to evaluate other techniques, which generally included additional rollers to improve density or other ideas of interest that they believed would work best in their local state.
-
-{% include link-2-original.md %}

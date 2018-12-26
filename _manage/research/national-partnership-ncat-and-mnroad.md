@@ -1,6 +1,7 @@
 ---
 title: National Partnership - NCAT and MnROAD
 author: Jerry Geib
+published: true
 date: 2015-11-25
 date_added_kb: 2015-06-15
 source: NCPP
@@ -8,13 +9,13 @@ source-url:
 tags: [research, test track, MPPP, NCPP]
 type: video
 
-image_path:
+image:
 image_source:
 image_caption:
 
 title_color:
 
-video_embed: NDAdtY5g7PE
+video_id: NDAdtY5g7PE
 sidebar:
 order-number:
 subtitle:

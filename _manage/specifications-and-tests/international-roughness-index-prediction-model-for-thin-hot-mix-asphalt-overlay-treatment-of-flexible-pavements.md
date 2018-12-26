@@ -1,17 +1,18 @@
 ---
 title: International Roughness Index Prediction Model for Thin Hot Mix Asphalt Overlay Treatment of Flexible Pavements
 author: Jinsong Qian, Chen Jin, Jiake Zhang, Jianming Ling, Chao Sun
+published: true
 date: 2018-04-07
 date_added_kb: 2018-06-10
 source: Transportation Research Record
 source-url: http://journals.sagepub.com/doi/full/10.1177/0361198118768522
 tags: [IRI, prediction, thin overlays, LTPP, climate]
 type: research
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed:
+video_id:
 sidebar:
 order-number:
 subtitle:
@@ -21,5 +22,3 @@ The objective of this paper is to develop a post-thin-overlay IRI prediction mod
 <!--more-->
 
 **Abstract**: Pavement performance prediction after maintenance and rehabilitation is important to pavement management. A two-parameter exponential international roughness index (IRI) regression model for thin hot mix asphalt overlay was developed based on information from the U.S. Long Term Pavement Performance (LTPP) database. The model influence parameters α and β, which represent the initial IRI as the thin overlay completion and shape factor of IRI deterioration curve, were statistically analyzed. The results suggested that the IRI deterioration trends in high-temperature and low-temperature regions are different. This is because β was mainly affected by the structural strength and equivalent single axle loads in the high and medium temperature region and mainly affected by the average annual precipitation in low temperature region. In-situ data from LTPP database was used to verify the IRI prediction model, and it was found that the predicted IRI and measured IRI exhibited similar trends.
-
-{% include link-2-original.md %}

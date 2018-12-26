@@ -1,17 +1,18 @@
 ---
 title: M-E Flexible Pavement Design - Issues and Challenges
 author: Marshall R. Thompson, Ph.D., P.E
+published: true
 date: 2016-02-04
 date_added_kb: 2018-06-10
 source: Geo-Institute of ASCE
 source-url:
 tags: [mix design, tests, HMA, ASCE, Monismith Lecture, AASHTO Road Test, MEPDG]
 type: video
-image_path:
+image:
 image_source:
 image_caption:
 title_color:
-video_embed: M_vezLCXVi0
+video_id: M_vezLCXVi0
 sidebar:
 order-number:
 subtitle:
