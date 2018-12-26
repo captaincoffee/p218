@@ -1,6 +1,6 @@
 {% assign currentPost = include.post %}
 
-{% if currentPost.image_path %}
+{% if currentPost.image and currentPost.image != '' %}
 
   {% assign imgAlt = "" | split: "" %}
   {% if currentPost.image_caption %}
@@ -14,7 +14,7 @@
 
   <figure class="figure">
     <img
-    src="{{ site.baseurl }}{{ site.kb-img-path }}/{{ currentCollection.label }}/{{ currentCategoryDatas.slug }}/{{ currentPost.image_path }}"
+    src="{{ site.baseurl }}{{ currentPost.image }}"
     class="figure-img img-fluid"
     alt="
     {% if imgAlt.size > 0 %}

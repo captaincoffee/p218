@@ -1,0 +1,9 @@
+{% assign currentPost = include.post %}
+{% if currentPost.source and currentPost.source != '' %}
+<p>
+<strong>Source: {{ currentPost.source }}</strong>
+{% if currentPost.source-url and currentPost.source-url != '' %}
+<br><a href="{{ currentPost.source-url }}">Read the Original</a>
+{% endif %}
+</p>
+{% endif %}

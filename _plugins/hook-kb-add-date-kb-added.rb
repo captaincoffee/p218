@@ -15,7 +15,7 @@ Jekyll::Hooks.register :documents, :pre_render do |document, payload|
     date       = d['date']
     date_added = d['date_added_kb']
 
-    if date_added.nil?
+    if date_added.nil? or date_added == ''
       document.data['date_added_kb'] = date.to_time
     end
 
