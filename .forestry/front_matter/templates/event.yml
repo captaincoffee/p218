@@ -1,0 +1,65 @@
+---
+label: event
+hide_body: true
+is_partial: false
+fields:
+- name: title
+  label: Title
+  type: textarea
+  hidden: false
+  default: ''
+- type: boolean
+  name: published
+  label: Published
+  default: true
+- type: datetime
+  name: start_date
+  label: Start date
+  config:
+    required: true
+- type: datetime
+  name: end_date
+  label: End date
+  description: This is not required for single day events.
+- name: location
+  label: Location
+  type: text
+  hidden: false
+  default: ''
+- name: opening-hours
+  label: Opening hours
+  type: text
+  hidden: false
+  default: ''
+- type: text
+  name: event_type
+  label: Event type
+  description: "(webinar, conference, workshop, ...)"
+- type: text
+  name: host
+  label: Host
+- type: text
+  name: venue
+  label: Venue
+- type: text
+  label: City
+  name: city
+- type: text
+  label: State / province
+  name: state_province
+- type: text
+  name: country
+  label: Country
+- type: textarea
+  name: description
+  label: Description
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
+- type: text
+  name: registration_informations
+  label: Registration informations
+  description: Host website or phone number
+pages:
+- _events/event-with-cms.md

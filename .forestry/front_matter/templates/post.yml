@@ -1,0 +1,22 @@
+---
+label: post
+hide_body: false
+is_partial: false
+fields:
+- name: title
+  label: Title
+  type: textarea
+  hidden: false
+  default: ''
+  config:
+    required: true
+- name: tags
+  label: Tags
+  type: tag_list
+  hidden: false
+  default: ''
+- type: boolean
+  name: published
+  label: Published
+  description: An unpublished post will only be visible in netlify deploy preview.
+  default: true

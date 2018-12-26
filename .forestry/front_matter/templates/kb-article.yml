@@ -1,0 +1,81 @@
+---
+label: kb-article
+hide_body: false
+is_partial: false
+fields:
+- name: title
+  label: Title
+  type: textarea
+  hidden: false
+  default: ''
+  config:
+    required: true
+- type: boolean
+  name: published
+  label: Published
+  default: true
+- type: select
+  name: type
+  config:
+    source:
+      type: simple
+    options:
+    - article
+    - video
+    - research
+    - project
+    - link
+    required: true
+  label: Type
+  default: article
+- name: tags
+  label: Tags
+  type: tag_list
+  hidden: false
+  default: ''
+  description: Tags are helpful to link articles together (related articles)
+- name: author
+  label: Author
+  type: text
+  hidden: false
+  default: ''
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: ''
+  description: Date of the referenced document or event.
+  config:
+    required: true
+- name: date_added_kb
+  label: Date added kb
+  type: datetime
+  hidden: false
+  default: ''
+  description: Date of publication in the knowledge base. If not filled, will be set
+    to the above Date.
+- name: source
+  label: Source
+  type: text
+  hidden: false
+  default: ''
+- name: source-url
+  label: Source url
+  type: textarea
+  hidden: false
+  default: ''
+- type: file
+  name: image
+  label: image
+- type: text
+  name: image_source
+  label: Image source
+- type: text
+  name: image_caption
+  label: Image caption
+- type: text
+  name: video_id
+  label: Video id
+  description: 'This is the Youtube video id (eg : 0aeRO2Vwc3k)'
+pages:
+- _manage/life-cycle-cost-analysis/economic-analysis-of-pavement-preservation-techniques.md
