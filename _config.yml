@@ -31,7 +31,7 @@ plugins:
 
 excerpt_separator: "<!--more-->"
 
-url: https://p218.netlify.com/
+url: https://p218.netlify.com
 baseurl: ""
 logo: /assets/img/logos/p2_white_176c9c.svg
 kb-img-path: "/assets/img/kb"
