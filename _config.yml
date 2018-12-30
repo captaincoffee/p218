@@ -8,7 +8,7 @@ timezone:    America/New_York
 
 default_author: "P2 editors"
 
-google-verification:    ""
+google-verification: ""
 
 include:
   - .nojekyll
@@ -26,13 +26,17 @@ exclude:
 
 plugins:
  - jekyll-sitemap
+ - jekyll-seo-tag
  - jekyll-paginate-v2
 
 excerpt_separator: "<!--more-->"
 
 url: https://p218.netlify.com/
 baseurl: ""
+logo: /assets/img/logos/p2_white_176c9c.svg
 kb-img-path: "/assets/img/kb"
+
+
 kramdown:
 #   auto_ids: true
 #   footnote_nr: 1

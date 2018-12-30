@@ -7,7 +7,7 @@ gem 'stringex'
 
 group :jekyll_plugins do
   gem 'jekyll-sitemap'
-
+  gem 'jekyll-seo-tag'
   ############################################
   # CHANGE THIS IN PRODUCTION
   # gem 'jekyll-paginate-v2'
