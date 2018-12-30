@@ -1,11 +1,13 @@
 ---
 layout: default
 ---
-
 <div class="row">
   <div class="col">
-    <h1 class="rubric-title">{{ page.title }}</h1>
+    <h1 class="rubric-title">{{ page.title }}
+{% if page.pagination.enabled == true %}
+ - <small>page {{ paginator.page }}/{{ paginator.total_pages }}</small>
+{% endif %}
+    </h1>
   </div>
 </div>
-
 {{ content }}

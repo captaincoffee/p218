@@ -25,10 +25,13 @@ layout: default
 {% endfor %}
 
 {%- assign kbCollection = site.collections | where: "label", collectionLabel | first -%}
-
 <div class="row">
   <div class="col">
-    <h1 class="rubric-title">P2 Knowledge base</h1>
+    <h1 class="rubric-title">P2 Knowledge base
+{% if page.pagination.enabled == true %}
+ - <small>page {{ paginator.page }}/{{ paginator.total_pages }}</small>
+{% endif %}
+    </h1>
   </div>
 </div>
 

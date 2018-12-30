@@ -7,12 +7,6 @@ pagination:
 ---
 <div class="row">
   <div class="col">
-    <h1 class="rubric-title">News &gt; page {{ paginator.page }}/{{ paginator.total_pages }}</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
   {% for post in paginator.posts %}
     {% include articles/article-short.html post=post %}
     {% unless forloop.last %}<hr>{% endunless %}
