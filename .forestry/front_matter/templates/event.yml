@@ -21,11 +21,6 @@ fields:
   name: end_date
   label: End date
   description: This is not required for single day events.
-- name: location
-  label: Location
-  type: text
-  hidden: false
-  default: ''
 - name: opening-hours
   label: Opening hours
   type: text
