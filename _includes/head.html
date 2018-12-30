@@ -21,3 +21,6 @@
 <meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml?v=E65myhfd46">
 <meta name="theme-color" content="#176c9c">
 {% seo %}
+{%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include utils/google-analytics.html -%}
+{%- endif -%}

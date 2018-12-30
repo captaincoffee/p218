@@ -8,7 +8,8 @@ timezone:    America/New_York
 
 default_author: "P2 editors"
 
-google-verification: ""
+google_verification:
+google_analytics: "UA-38261653-2"
 
 include:
   - .nojekyll
