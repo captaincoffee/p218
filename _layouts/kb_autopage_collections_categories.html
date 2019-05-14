@@ -1,7 +1,10 @@
 ---
 layout: default
 ---
+<!-- WORKS on KB Collction:Category List Pages -->
+
 {% comment %} Deduce collection and category {% endcomment %}
+
 
 {%- assign currentCategory = page.autopages.display_name -%}
 {%- assign kbCategoriesDatas = site.data.kb_setup.kb_categories -%}
@@ -25,42 +28,51 @@ layout: default
 {% endfor %}
 
 {%- assign kbCollection = site.collections | where: "label", collectionLabel | first -%}
-<div class="row">
-  <div class="col">
-    <h1 class="rubric-title">P2 Knowledge base
-{% if page.pagination.enabled == true %}
- - <small>page {{ paginator.page }}/{{ paginator.total_pages }}</small>
-{% endif %}
-    </h1>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="{{ site.baseurl }}/kb/{{ kbCollection.label }}">Collection : {{ kbCollection.name }}</a>
+          <a href="{{ site.baseurl }}/kb/{{ kbCollection.label }}">{{ kbCollection.name }}</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          <strong>Category : {{ categoryDisplay }}</strong>
+          <strong>{{ categoryDisplay }}</strong>
         </li>
       </ol>
     </nav>
+
+    <h1 class="display-5">Test 02 {{ categoryDisplay }}
+
+    </h1>
+    <p class="lead">{{ page.lead }}</p>
+    
+    {% if page.pagination.enabled == true %}
+    <p class="paginator">page {{ paginator.page }} of {{ paginator.total_pages }}</p>
+    {% endif %}
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12">
-    <ul class="post-list">
-      {% for post in paginator.posts %}
-        <li>
-{% include articles/article-short.html post=post %}
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="col-12">
-    {% include nav/pagination-full.html %}
+<div class="container-fluid">
+  <div id="content">
+
+    <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+        <ul class="list-unstyled">
+          {% for post in paginator.posts %}
+            <li>
+              {% include articles/article-short.html post=post %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-10 col-lg-8 mx-auto">
+        {% include nav/pagination-full.html %}
+    </div>
+    
   </div>
 </div>
+
+
+

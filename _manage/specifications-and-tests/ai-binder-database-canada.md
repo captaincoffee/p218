@@ -7,7 +7,7 @@ date_added_kb: 2018-06-20
 source: Asphalt Institute
 source-url: http://www.asphaltinstitute.org/engineering/specification-databases/canadian-province-binder-specifications/
 tags: [asphalt institute, asphalt, binder, specifications, canada, standards]
-type: article
+type: link
 image:
 image_source:
 image_caption:

@@ -9,7 +9,7 @@ pagination:
   <div class="col">
   {% for post in paginator.posts %}
     {% include articles/article-short.html post=post %}
-    {% unless forloop.last %}<hr>{% endunless %}
+    <!-- {% unless forloop.last %}<hr>{% endunless %} -->
   {% endfor %}
 
   {% include nav/pagination-full.html %}

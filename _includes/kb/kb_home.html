@@ -1,8 +1,8 @@
-<h2 class="rubric-title">P2 Knownledge Base</h2>
+<h2 class="rubric-title">Test 06 P2 Resources</h2>
 
 <p>Browse KB by <a href="/kb/categories">category</a></p>
 
-<h3 class="bg-warning">What's new in KB ?</h3>
+<h3 class="bg-warning">Latest Additions</h3>
 {% assign kb_collections = site.collections | where: "isKB", "true" %}
 {% assign all_kb_docs = "" | split: "" %}
 
@@ -12,6 +12,6 @@
 
 {% assign sorted = all_kb_docs | sort: 'date_added_kb' | reverse %}
 
-{% for d in sorted limit: 6 %}
+{% for d in sorted limit: 8 %}
   {% include articles/article-title.html post=d %}
 {% endfor %}

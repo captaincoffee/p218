@@ -1,7 +1,6 @@
 {% assign currentPost = include.post %}
 {% if currentPost.date_added_kb != currentPost.date and currentPost.isKBDocument == true %}
-     (added to kb on
+     (added 
     <time datetime="{{ currentPost.date_added_kb }}">
-      <em>{{ currentPost.date_added_kb | date_to_string: "ordinal", "US" }}</em>
-    </time>)
+      <em>{{ currentPost.date_added_kb | date_to_string: "ordinal", "US" }}</em></time>)
 {% endif %}

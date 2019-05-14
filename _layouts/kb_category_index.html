@@ -5,18 +5,19 @@ layout: default
 {%- assign currentCategoryDatas = site.data.kb_setup.kb_categories[currentCollection.label] | where: "slug", page.category | first -%}
 
 <div class="row">
-  <div class="col">
+  <div class="col col-lg-10 mx-auto">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">Knowledge base</li>
-        <li class="breadcrumb-item active" aria-current="page">{{ currentCollection.name }} : {{ currentCategoryDatas.name }}</li>
+        <li class="breadcrumb-item">Resources</li>
+        <li class="breadcrumb-item active" aria-current="page"><strong>category_index</strong>{{ currentCollection.name }} : {{ currentCategoryDatas.name }}</li>
       </ol>
     </nav>
   </div>
 </div>
 
 <div class="row">
-  <div class="col">
+  <div class="col-lg-10 col-lg-8 mx-auto">
+    <strong>category_index</strong>
 {% include components/kb_category_documents.html
   currentCategoryDatas=currentCategoryDatas
   currentCollection=currentCollection

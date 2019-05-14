@@ -1,52 +1,47 @@
 ---
 layout: default
 ---
+<!-- WORKS on KB Single POST (news) Pages -->
 
-<div class="row">
-  <div class="col">
-    <h1 class="rubric-title">News</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-8 p-3 border-right">
-  {% include articles/news-article-full.html post=page %}
-
-{% comment %} +++++++++++++++++++++++++
-Next and previous posts links
-{% endcomment %}
-    <hr>
-    <div class="row">
-      <div class="col-6">
-        {% if page.previous %}
-          <a href="{{ site.baseurl }}{{ page.previous.url }}">
-          &lt;&lt; Previous post <br>
-          "<em>{{ page.previous.title }}</em>"
-          </a>
-        {% endif %}
-      </div>
-      <div class="col-6 text-right">
-        {% if page.next %}
-          <a href="{{ site.baseurl }}{{ page.next.url }}">
-          Next post &gt;&gt; <br>
-          "<em>{{ page.next.title }}</em>"
-          </a>
-        {% endif %}
-      </div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ site.baseurl }}/news/">News</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><strong>{{ page.title | capitalize }}</strong></li>
+            </ol>
+          </nav>
+      <h1 class="display-5">Test 04 {{page.title}}
+      </h1>
+      <p class="lead">{{ page.lead }}</p>
+      {% if page.pagination.enabled == true %}
+      <p class="paginator">page {{ paginator.page }} of {{ paginator.total_pages }}</p>
+      {% endif %}
     </div>
-
   </div>
 
-  <div class="col col-md-4 p-3">
-    <h2>Last news</h2>
-    <ul class="list-unstyled">
-    {% for post in site.posts limit: 10 %}
-    {% if post.url == page.url %}{% continue %}{% endif %}
-      <li>{% include articles/article-title.html post=post %}</li>
-    {% endfor %}
-    </ul>
+
+  
+  <div class="container-fluid">
+      <div id="content">
+  
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+              {% include articles/news-article-full.html post=page %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+              {% include articles/news_next_previous_pager.html %}
+            </div>
+        </div>
+
+        <div class="row">            
+            <div class="col-lg-8 mx-auto">
+              {% include articles/news-latest.html %}
+            </div>
+        </div>
+  
+      </div>
   </div>
-</div>
-
-
-

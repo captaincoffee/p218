@@ -1,15 +1,28 @@
 ---
+layout: default
 permalink: /
 title: Home
 # menu: main1
 weight: 10
 ---
-<div class="row">
-  <div class="col-md-7 p-3">
-    {% include news/news-home.html %}
-  </div>
-  <div class="col col-md-5 p-3">
-    {% include kb/kb_home.html %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>PavementPreservation.com</h1>
+    <p class="lead"><em>For Students, Industry &amp; Agency Practitioners</em></p>
   </div>
 </div>
 
+<div class="container">
+    <div id="content">
+            
+            <div class="row">
+              <div class="col-md-7 p-3">
+                {% include news/news-home.html %}
+              </div>
+              <div class="col col-md-5 p-3">
+                {% include kb/kb_home.html %}
+              </div>
+            </div>
+       
+    </div>
+  </div>

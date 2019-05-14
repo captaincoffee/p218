@@ -6,15 +6,15 @@ Used on post page
 {% assign author = currentPost.author | default: site.default_author %}
 
 <article class="article news-full">
-
   <div class="metadatas">
-    by <em>{{ author }}</em> on
-    <time datetime="{{ currentPost.date }}">
+    <p><time datetime="{{ currentPost.date }}">
       <em>{{ currentPost.date | date_to_string: "ordinal", "US" }}</em>
     </time>
+    by <em>{{ author }}</em></p>
+    
   </div>
 
-  <h2><a href="{{ currentPost.url | relative_url }}">{{ currentPost.title }}</a></h2>
+  <h2>Test 08 Posts <a href="{{ currentPost.url | relative_url }}">{{ currentPost.title }}</a></h2>
   <p>{% if currentPost.tags %}Tags : {{ currentPost.tags | join:', ' }}{% endif %}</p>
 
   {{ currentPost.content }}

@@ -10,64 +10,75 @@ pagination:
    - methods
   debug: false
 ---
+<!-- WORKS on KB Single Collection (i.e. Manage OR Manage OR Materials) List Pages -->
+
+
 {% assign currentCollectionSlug = page.pagination.collection %}
 {% assign currentCollection = site.collections | where: "label", currentCollectionSlug | first %}
 {% assign currentCollectionDocsByCategory = currentCollection.docs | group_by: 'category' %}
 
 
-<div class="row">
-  <div class="col">
-    <h1 class="rubric-title">P2 Knowledge base</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          Collection : {{ currentCollectionSlug }}</a>
+          {{ currentCollectionSlug | capitalize }}</a>
         </li>
       </ol>
     </nav>
+    <h1 class="display-5">Test 03 {{ currentCollectionSlug | capitalize }}
+    </h1>
+    <p class="lead">{{ page.lead }}</p>
+
+    {% if page.pagination.enabled == true %}
+    <p class="paginator">page {{ paginator.page }} of {{ paginator.total_pages }}</p>
+    {% endif %}
   </div>
 </div>
+  
+          {% comment %}
 
-{% comment %}
+      <div class="row">
+          <div class="col-md-8 col-md-10 mx-auto">
+            <ul class="list-unstyled">
+              {% for post in paginator.posts %}
+                <li>
+                  {% include articles/article-short.html post=post %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        <div class="col-md-8 mx-auto">
+          {% include nav/pagination-full.html %}
+        </div>
+      </div>
+  
+          {% endcomment %}
 
-  <div class="row">
-    <div class="col-12">
-      <ul class="post-list">
-        {% for post in paginator.posts %}
-          <li>
-  {% include articles/article-short.html post=post %}
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-    <div class="col-12">
-      {% include nav/pagination-full.html %}
+<div class="container-fluid">
+    <div id="content">
+
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-unstyled">
+            {% for categoryDatas in currentCollectionDocsByCategory %}
+              {% assign currentCategoryDatas = site.data.kb_setup.kb_categories[currentCollectionSlug] | where: "slug", categoryDatas.name | first %}
+              {% if categoryDatas.size > 0 %}
+                <li>
+                  <!-- <a href="{{ site.baseurl }}/kb/{{ currentCollectionSlug }}/{{ categoryDatas.name }}/">
+                    {{ currentCategoryDatas.name }} -
+                    {{ categoryDatas.size }} document{% if categoryDatas.size > 1 %}s{% endif %}
+                  </a> -->
+                  <a href="{{ site.baseurl }}/kb/{{ currentCollectionSlug }}/{{ categoryDatas.name }}/">
+                    {{ currentCategoryDatas.name }} ({{ categoryDatas.size }})
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
-
-{% endcomment %}
-
-<div class="row">
-  <div class="col-12">
-    <ul>
-      {% for categoryDatas in currentCollectionDocsByCategory %}
-        {% assign currentCategoryDatas = site.data.kb_setup.kb_categories[currentCollectionSlug] | where: "slug", categoryDatas.name | first %}
-        {% if categoryDatas.size > 0 %}
-        <li>
-          <a href="{{ site.baseurl }}/kb/{{ currentCollectionSlug }}/{{ categoryDatas.name }}/">
-            {{ currentCategoryDatas.name }} -
-            {{ categoryDatas.size }} document{% if categoryDatas.size > 1 %}s{% endif %}
-          </a>
-        </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </div>
-</div>
-
-

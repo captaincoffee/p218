@@ -1,9 +1,8 @@
 {% comment %} +++++++++++++++++++++++++++++++++++
-Used to display article's type on kb articles only
+Used to display article's type and icon on kb articles only
 +++++++++++++++++++++++++++++++++++ {% endcomment %}
 
 {% assign currentPost = include.post %}
 {% if currentPost.isKBDocument == true %}
   {% assign typeDatas = site.data.kb_setup.article_types | where: "slug", currentPost.type | first %}
-  <span class="article-type article-type-{{ typeDatas.slug }}"><i>&nbsp;</i>{{ typeDatas.name }}</span> :
-{% endif %}
+  <span class="article-type article-type-{{ typeDatas.slug }}"><i>&nbsp;</i>{{ typeDatas.name }}</span>{% endif %}

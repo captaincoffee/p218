@@ -8,7 +8,7 @@ title: Pavement Preservation (P2) Information Architecture (IA)
 
  - News
  - Agenda
- - Pavement Preservation Knowledge Base
+ - Pavement Preservation Knowledge Base (now called Resources)
  - Faq
 
 ### News

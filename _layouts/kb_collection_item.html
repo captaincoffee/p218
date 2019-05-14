@@ -36,55 +36,78 @@ When on a category index page, we also create :
 {% endif %}
 {% assign categoryDatas = currentCollection.categories | where: "slug", currentCategorySlug | first %}
 
-<div class="row">
-  <div class="col">
-    <h1 class="rubric-title">P2 Knowledge base</h1>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container ">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="{{ site.baseurl }}/kb/{{ currentCollection.label }}/">
-          Collection : {{ currentCollection.name }}</a>
+          {{ currentCollection.name }}</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="{{ site.baseurl }}/kb/{{ currentCollection.label }}/{{ currentCategoryDatas.slug }}/">Category : {{ currentCategoryDatas.name }}</a>
+          <a href="{{ site.baseurl }}/kb/{{ currentCollection.label }}/{{ currentCategoryDatas.slug }}/">{{ currentCategoryDatas.name }}</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page"><strong>{{ page.title | capitalize }}</strong>
         </li>
       </ol>
     </nav>
+
+    {% include articles/article-type.html post=currentPost %}
+    <h1 class="display-5">Test 01 {{ page.title }}
+    </h1>
+
+
+    <p class="lead">{{ page.lead }}</p>
+      <hr>
+    
+      <div class="row jmeta">
+        <div class="col-md-7">
+            <p>{% if page.author %}<small>Author</small><br><strong>{{ page.author | join:', ' }}</strong>{% endif %}</p>
+        </div>
+        <div class="col col-md-5">
+            <p>{% if page.date %}<small>Published</small><br><strong>{{page.date | date_to_string: "ordinal", "US"}}</strong>{% endif %}</p>
+            <p>{% if page.date_added_kb %}<small>Added</small><br><strong>{{page.date_added_kb | date_to_string: "ordinal", "US"}}</strong>{% endif %}</p>
+        </div>
+        <div class="col">
+            <p>{% if page.tags %}<small>Tags</small><br><strong>{{ page.tags | join:', ' }}</strong>{% endif %}</p>
+        </div>
+      </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12">
-{% include articles/kb-article-full.html post=page %}
+<div class="container-fluid">
+    <div id="content">
 
-    {% if page.related.size > 0 %}
-      {% assign sortedArticles = page.related | sort: "date" %}
-
-      <h3>Related articles</h3>
-      <ul>
-      {% for article in sortedArticles limit: site.showRelatedNumber %}
-
-        {% assign articleType = site.data.kb_setup.article_types | where: "slug", article.type | first %}
-
-        <li>
-          <a href="{{ site.baseurl }}{{ article.url }}">
-            {% include articles/article-type.html post=article %}
-            {{ article.title }}
-          </a>
-          {% assign currentCollectionSlug = article.collection %}
-          {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}
-          date: {{ article.date | date_to_string }} -
-          in {{ currentCollection.name }} collection -
-          matching on : <span>{{ article.commonTags | join: ", " }}</span>
-        </li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-
-  </div>
-</div>
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto">
+      {% include articles/kb-article-full.html post=page %}
+      
+          {% if page.related.size > 0 %}
+            {% assign sortedArticles = page.related | sort: "date" %}
+      
+            <h3>Related Articles</h3>
+            <ul class="related">
+            {% for article in sortedArticles limit: site.showRelatedNumber %}
+      
+              {% assign articleType = site.data.kb_setup.article_types | where: "slug", article.type | first %}
+      
+              <li>
+                  {% include articles/article-type.html post=article %}<br>
+                <a href="{{ site.baseurl }}{{ article.url }}">
+                 
+                  {{ article.title }}
+                </a>
+                
+                {% assign currentCollectionSlug = article.collection %}
+                {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}
+                date: {{ article.date | date_to_string }} -
+                in {{ currentCollection.name }} collection -
+                matching on : <span>{{ article.commonTags | join: ", " }}</span>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+      
+        </div>
+      </div>

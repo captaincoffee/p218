@@ -1,0 +1,7 @@
+<h2>Latest News</h2>
+<ul class="list-unstyled">
+{% for post in site.posts limit: 10 %}
+{% if post.url == page.url %}{% continue %}{% endif %}
+  <li>{% include articles/article-title.html post=post %}</li>
+{% endfor %}
+</ul>

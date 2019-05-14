@@ -7,7 +7,7 @@ permalink: agenda/
 
 {% assign events = site.events | where_exp: "event", "event.date > site.time" %}
 
-<ul>
+<ul class="list-unstyled">
 {% for e in events %}
   <li>
     <h3>{{ e.title }}</h3>

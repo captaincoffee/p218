@@ -1,0 +1,24 @@
+{% comment %} +++++++++++++++++++++++++
+Next and previous posts links
+news_next_previous_pager.html
+{% endcomment %}
+
+<hr>
+<div class="row">
+<div class="col-6">
+{% if page.previous %}
+<a href="{{ site.baseurl }}{{ page.previous.url }}">
+&#8592; Previous post <br>
+"<em>{{ page.previous.title }}</em>"
+</a>
+{% endif %}
+</div>
+<div class="col-6 text-right">
+{% if page.next %}
+<a href="{{ site.baseurl }}{{ page.next.url }}">
+Next post &#8594; <br>
+"<em>{{ page.next.title }}</em>"
+</a>
+{% endif %}
+</div>
+</div>

@@ -8,7 +8,7 @@ published: false
 
 <h2>KB Tags</h2>
 
-<ul>
+<ul class="list-unstyled">
 {% assign sorted = site.pages | sort: "title" %}
 {% for my_page in sorted %}
   {% if my_page.url contains "/kb/tag/" and my_page.autogen == nil %}

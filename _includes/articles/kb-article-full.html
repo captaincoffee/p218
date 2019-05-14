@@ -5,22 +5,23 @@ Used on kb article page
 {% assign currentPost = include.post %}
 {% assign author = currentPost.author | default: site.default_author %}
 
-<article class="article kb-full">
+<!-- <article class="article kb-full">
 
-  <h2>
+  
     {% include articles/article-type.html post=currentPost %}
-    {{ currentPost.title }}
-  </h2>
+    <h2>{{ currentPost.title }}</h2>
 
   <div class="metadatas">
-    by <em>{{ author }}</em> on
+    kb_article_full
     {% include articles/article-date-ordinal.html post=currentPost %}
     {% include articles/article-date-added-kb.html post=currentPost %}
+    {% if currentPost.author %}by <em>{{ currentPost.author }}</em>{% endif %}
+    
     <br>
-    Category : {{ currentPost.category }}
+    {{ currentPost.category }}
     <br>
     {% include articles/article-tags.html post=currentPost %}
-  </div>
+  </div> -->
   {% include articles/article-image.html post=currentPost %}
   {% include articles/article-video.html post=currentPost %}
 

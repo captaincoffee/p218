@@ -4,20 +4,22 @@ menu: footer
 weight: 90
 permalink: kb/categories/
 ---
-<div class="row">
+<div class="row col-6 mx-auto">
 {% assign kb_collections = site.collections | where: "isKB", "true" %}
 {% for kb_col in kb_collections %}
-  <div class="col-md-4">
+  <div>
     {% assign collectionCategoriesDatas = site.data.kb_setup.kb_categories[kb_col.label] %}
     <h2>{{ kb_col.name }}</h2>
     {% assign docs_by_category = kb_col.docs | group_by: 'category' %}
-    <ul>
+ 
+ 
+    <ul class="list-unstyled">
       {% for cat in docs_by_category %}
         {% assign catDatas = collectionCategoriesDatas | where: 'slug', cat.name | first %}
         {% assign nbDocs = cat.items.size %}
         <li>
           <a href="{{ site.baseurl }}/kb/{{ kb_col.label }}/{{ catDatas.slug }}/">
-            {{ catDatas.name }} ({{ nbDocs }} documents)
+            {{ catDatas.name }} ({{ nbDocs }})
           </a>
         </li>
       {% endfor %}

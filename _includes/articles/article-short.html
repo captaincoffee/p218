@@ -7,18 +7,17 @@ Works for posts and KB articles
 {% assign author = currentPost.author | default: site.default_author %}
 
 <article class="article article-short">
-
   <div class="metadatas">
-    by <em>{{ author }}</em> on
-    <time datetime="{{ currentPost.date }}">
+      <time datetime="{{ currentPost.date }}">
       <em>{{ currentPost.date | date_to_string: "ordinal", "US" }}</em>
     </time>
-    {% include articles/article-date-added-kb.html %}
-  </div>
+      {% include articles/article-date-added-kb.html %}
+      {% if currentPost.author %}by <em>{{ currentPost.author }}</em>{% endif %}
 
+  </div>
+  {% include articles/article-type.html post=currentPost %}
   <h2>
     <a href="{{ currentPost.url | relative_url }}">
-    {% include articles/article-type.html post=currentPost %}
     {{ currentPost.title }}
     </a>
   </h2>
@@ -36,6 +35,6 @@ Works for posts and KB articles
   </span>
 
   <p>
-    <a href="{{ currentPost.url | relative_url }}">Read more...</a>
+    <a href="{{ currentPost.url | relative_url }}" aria-label="Read more about {{ currentPost.title}}">Read more...</a>
   </p>
 </article>

@@ -20,7 +20,7 @@ Get Knowledge Base (kb) collections by selecting ones with default isKB set to t
   </a>
   {% comment %}Sort collections articles by category{% endcomment %}
   {%- assign byCategory = currentCollection.docs | group_by: 'category' -%}
-  <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.index }}">
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown{{ forloop.index }}">
     {% comment %}Prints categories in the same order as collection.categories{% endcomment %}
     {%- for cat in categories[currentCollection.label] -%}
       {%- assign currentCat = cat.slug -%}
