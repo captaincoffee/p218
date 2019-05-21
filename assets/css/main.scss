@@ -18,18 +18,18 @@ html {
 
 body {
   margin-top: 55px;
-  margin-bottom: 30px;
-  overflow: hidden;
+  // margin-bottom: 30px;
+  // overflow: hidden;
 
 }
 
 // Per https://www.codeply.com/go/1KXwX3I1Mh
 // To fix scroll on menu when menu items extend beyond screen
 // May need overflow: hidden on body class
-.fixed-top .navbar-collapse {
-  max-height: calc(100vh - 4.5em);
-  overflow-y: auto;
-}
+// .fixed-top .navbar-collapse {
+//   max-height: calc(100vh - 4.5em);
+//   overflow-y: auto;
+// }
 
 .article {
   // max-width: 800px;
