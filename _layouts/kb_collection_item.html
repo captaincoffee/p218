@@ -100,10 +100,20 @@ When on a category index page, we also create :
                 </a>
                 
                 {% assign currentCollectionSlug = article.collection %}
-                {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}
-                date: {{ article.date | date_to_string }} -
-                in {{ currentCollection.name }} collection -
-                matching on : <span>{{ article.commonTags | join: ", " }}</span>
+                {% assign currentCollection = site.collections | where:'label',currentCollectionSlug | first %}<br>
+                {{ article.date | date_to_string }} -
+                in
+                <!-- {{ currentCollection.name }} collection - 
+                <button type="button" class="btn btn-success btn-sm">{{ currentCollection.name }}</button><br> -->
+
+                <a href="{{ site.baseurl }}/kb/{{ currentCollection.name }}" class="btn btn-success btn-xs" role="button">{{ currentCollection.name }}</a>
+                matching 
+                <ul class="tag-list">
+                  <li>
+                    <a href="{{ site.baseurl }}/kb/#" class="btn btn-info btn-xs" role="button">{{ article.commonTags }} </a>
+                </li>
+                </ul>
+                <!-- matching on : <span>{{ article.commonTags | join: ", " }}</span> -->
               </li>
             {% endfor %}
             </ul>

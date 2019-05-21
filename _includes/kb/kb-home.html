@@ -1,8 +1,10 @@
+<!-- Used on the HOME page for the Knowledge Base section -->
+
 <h2 class="rubric-title">Test 06 P2 Resources</h2>
 
-<p>Browse KB by <a href="/kb/categories">category</a></p>
+<p>browse KB <a href="/kb/categories">By Category</a></p>
 
-<h3 class="bg-warning">Latest Additions</h3>
+<h3 class="rubric-title bg-warning">Recent Additions</h3>
 {% assign kb_collections = site.collections | where: "isKB", "true" %}
 {% assign all_kb_docs = "" | split: "" %}
 
@@ -12,6 +14,14 @@
 
 {% assign sorted = all_kb_docs | sort: 'date_added_kb' | reverse %}
 
-{% for d in sorted limit: 8 %}
+<!-- Remember to adjust kb-latest -->
+{% for d in sorted limit: 8 %} 
   {% include articles/article-title.html post=d %}
 {% endfor %}
+</p>
+<p class="text-right">
+    {% include kb/kb-latest-button.html %}
+</p>
+
+
+  </div>

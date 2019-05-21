@@ -14,7 +14,7 @@ Used on post page
     
   </div>
 
-  <h2>Test 08 Posts <a href="{{ currentPost.url | relative_url }}">{{ currentPost.title }}</a></h2>
+  <h2>Test 08 Posts {{ currentPost.title }}</h2>
   <p>{% if currentPost.tags %}Tags : {{ currentPost.tags | join:', ' }}{% endif %}</p>
 
   {{ currentPost.content }}

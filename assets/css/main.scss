@@ -8,12 +8,27 @@ html {
   font-size: 1rem;
 }
 
-a:focus {
-  outline: 3px solid #000;
+.row {
+  margin-bottom: 2rem;
 }
+
+// a:focus {
+//   outline: 2px solid #000;
+// }
 
 body {
   margin-top: 55px;
+  margin-bottom: 30px;
+  overflow: hidden;
+
+}
+
+// Per https://www.codeply.com/go/1KXwX3I1Mh
+// To fix scroll on menu when menu items extend beyond screen
+// May need overflow: hidden on body class
+.fixed-top .navbar-collapse {
+  max-height: calc(100vh - 4.5em);
+  overflow-y: auto;
 }
 
 .article {
@@ -76,13 +91,14 @@ list-unstyled {
     }
   }
   .dropdown-menu {
-    background: $primary;
+    background: $info;
     
     a {
-      color: $white;
+      color: $black;
 
       &:hover {
-        color: $primary;
+        color: $white;
+        background: $primary;
       }
     }
   }
@@ -115,6 +131,7 @@ list-unstyled {
 }
 
 .jumbotron {
+  margin-bottom: 2.5rem;
 
   .jmeta {
     line-height: 1.3em;
@@ -141,7 +158,8 @@ list-unstyled {
 
 .rubric-title {
   background: $primary;
-  color: $white
+  color: $white;
+  padding: 0.125rem 0.25rem;
 }
 
 .paginator {
@@ -165,8 +183,6 @@ list-unstyled {
     margin-left: 0;
   }
 }
-
-
 
 {% assign types = site.data.kb_setup.article_types %}
 {% assign horizontal-step = 32 %}
@@ -223,6 +239,10 @@ blockquote{
   }
 }
 
+.next-previous {
+  margin-bottom: 4rem;
+}
+
 .documentationItem {
 
   .itemTitle {
@@ -230,19 +250,19 @@ blockquote{
   }
 }
 
-.newspaper2 {
-  -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  -moz-column-count: 2; /* Firefox */
-  column-count: 2;
-  padding: 0 1em;
-  -webkit-column-gap: 1.5em; /* Chrome, Safari, Opera */
-  -moz-column-gap: 1.5em; /* Firefox */
-  column-gap: 1.5em;
-  -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
-  -moz-column-rule: 1px solid lightblue; /* Firefox */
-  column-rule: 1px solid lightblue;
-  column-width: 40%;
-}
+// .newspaper2 {
+//   -webkit-column-count: 2; /* Chrome, Safari, Opera */
+//   -moz-column-count: 2; /* Firefox */
+//   column-count: 2;
+//   padding: 0 1em;
+//   -webkit-column-gap: 1.5em; /* Chrome, Safari, Opera */
+//   -moz-column-gap: 1.5em; /* Firefox */
+//   column-gap: 1.5em;
+//   -webkit-column-rule: 1px solid lightblue; /* Chrome, Safari, Opera */
+//   -moz-column-rule: 1px solid lightblue; /* Firefox */
+//   column-rule: 1px solid lightblue;
+//   column-width: 40%;
+// }
 
 .search-link {
   cursor: pointer;
@@ -277,6 +297,18 @@ ul.related {
     margin-bottom: .25em;
   }
 } 
+
+.tag-list {
+  display: inline-block;
+  list-style: none;
+}
+
+footer {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+
 
 // algolia search *****************************************
 

@@ -1,0 +1,14 @@
+
+{% assign kb_collections = site.collections | where: "isKB", "true" %}
+{% assign all_kb_docs = "" | split: "" %}
+
+{% for collection in kb_collections %}
+{% assign all_kb_docs = all_kb_docs | concat: collection.docs %}
+{% endfor %}
+
+{% assign sorted = all_kb_docs | sort: 'date_added_kb' | reverse %}
+
+{% for d in sorted limit: 20 offset: 8 %}
+  {% include articles/article-title.html post=d %}
+{% endfor %}
+

@@ -4,21 +4,23 @@ news_next_previous_pager.html
 {% endcomment %}
 
 <hr>
-<div class="row">
-<div class="col-6">
-{% if page.previous %}
-<a href="{{ site.baseurl }}{{ page.previous.url }}">
-&#8592; Previous post <br>
-"<em>{{ page.previous.title }}</em>"
-</a>
-{% endif %}
+<div class="row next-previous">
+    <div class="col-6">
+        {% if page.previous %}
+        <a href="{{ site.baseurl }}{{ page.previous.url }}" class="btn btn-info btn-sm" role="button">&#8592; Previous post</a><br>"<em>{{ page.previous.title }}</em>"
+        {% endif %}
+    </div>
+    <div class="col-6 text-right">
+        {% if page.next %}
+        <a href="{{ site.baseurl }}{{ page.next.url }}" class="btn btn-info btn-sm" role="button"> Next post &#x2192; </a><br>"<em>{{ page.next.title }}</em>"
+        {% endif %}
+    </div>
 </div>
-<div class="col-6 text-right">
-{% if page.next %}
-<a href="{{ site.baseurl }}{{ page.next.url }}">
-Next post &#8594; <br>
-"<em>{{ page.next.title }}</em>"
-</a>
-{% endif %}
-</div>
-</div>
+
+
+<!-- previous
+&#8592;
+
+next
+&#x2192; -->
+

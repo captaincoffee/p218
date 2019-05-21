@@ -289,7 +289,8 @@ $text-muted:                  $gray-600 !default;
 $blockquote-small-color:      $gray-600 !default;
 $blockquote-font-size:        ($font-size-base * 1.25) !default;
 
-$hr-border-color:             rgba($black, .1) !default;
+// $hr-border-color:             rgba($black, .1) !default;
+$hr-border-color:             rgba($primary, .5) !default;
 $hr-border-width:             $border-width !default;
 
 $mark-padding:                .2em !default;
@@ -893,8 +894,9 @@ $figure-caption-color:              $gray-600 !default;
 // Breadcrumbs
 
 // $breadcrumb-padding-y:              .75rem !default;
-$breadcrumb-padding-y:              .375rem !default;
-$breadcrumb-padding-x:              1rem !default;
+$breadcrumb-padding-y:              .25rem !default;
+
+// $breadcrumb-padding-x:               1rem !default;
 $breadcrumb-item-padding:           .5rem !default;
 
 // $breadcrumb-margin-bottom:          1rem !default;
