@@ -17,7 +17,7 @@ html {
 // }
 
 body {
-  margin-top: 55px;
+  // margin-top: 55px;
   // margin-bottom: 30px;
   // overflow: hidden;
 
@@ -40,9 +40,9 @@ body {
   padding: .25 1.5rem;
 }
 
-.navbar-main {
-  margin-bottom: 2px;
-}
+// .navbar-main {
+//   margin-bottom: 2px;
+// }
 
 @include media-breakpoint-up(sm) {
   html { font-size: 1rem; 
@@ -92,7 +92,11 @@ list-unstyled {
   }
   .dropdown-menu {
     background: $info;
+    padding: 0;
     
+    .dropdown-item:last-child {
+      border: none;
+    } 
     a {
       color: $black;
 
@@ -109,11 +113,11 @@ list-unstyled {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-@include media-breakpoint-up(lg) {
-  .navbar-main {
-    margin-bottom: 10px;
-  }
-}
+// @include media-breakpoint-up(lg) {
+//   .navbar-main {
+//     margin-bottom: 10px;
+//   }
+// }
 
 @media (max-width: 768px) {
   .nav-link {
