@@ -3,51 +3,17 @@ new_page_extension: md
 auto_deploy: false
 admin_path: "/admin"
 webhook_url: 
-sections:
-- type: directory
-  path: _manage
-  label: KB Manage
-  create: all
-  match: "**/*"
-  templates:
-  - kb-article
-- type: directory
-  path: _materials
-  label: KB Materials
-  create: all
-  match: "**/*"
-  templates:
-  - kb-article
-- type: directory
-  path: _methods
-  label: KB Methods
-  create: all
-  match: "**/*"
-  templates:
-  - kb-article
-- type: jekyll-posts
-  label: Posts
-  create: all
-  templates:
-  - post
-- type: directory
-  path: _events
-  label: Events
-  create: documents
-  match: "**/*.md"
-  templates:
-  - event
-- type: jekyll-pages
-  label: Pages
-  create: all
-- type: directory
-  path: _data
-  label: Data
-  create: all
-  match: "**/*.yml"
-  new_doc_ext: yml
+sections: 
 upload_dir: assets/img/uploads
 public_path: "/assets/img/uploads"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":year:/:month:/:filename:"
+build:
+  preview_env:
+  - JEKYLL_ENV=staging
+  preview_output_directory: _site
+  preview_docker_image: forestryio/build:latest
+  mount_path: "/opt/buildhome/repo"
+  instant_preview_command: bundle exec jekyll serve --drafts --unpublished --future
+    --port 8080 --host 0.0.0.0 -d _site
